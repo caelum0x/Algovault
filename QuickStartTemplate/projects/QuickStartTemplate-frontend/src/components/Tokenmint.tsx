@@ -18,9 +18,9 @@ interface TokenMintProps {
 const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
   // 👇 Default placeholder values (safe customization points for learners)
   const [assetName, setAssetName] = useState<string>('MasterPass Token') // token name
-  const [unitName, setUnitName] = useState<string>('MPT')               // short ticker
-  const [total, setTotal] = useState<string>('1000')                    // human-readable total
-  const [decimals, setDecimals] = useState<string>('0')                 // 0 = whole tokens only
+  const [unitName, setUnitName] = useState<string>('MPT') // short ticker
+  const [total, setTotal] = useState<string>('1000') // human-readable total
+  const [decimals, setDecimals] = useState<string>('0') // 0 = whole tokens only
 
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -71,8 +71,8 @@ const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
         signer: transactionSigner,
         total: onChainTotal,
         decimals: Number(decimalsBig),
-        assetName,   // <— customize token name
-        unitName,    // <— customize unit/ticker
+        assetName, // <— customize token name
+        unitName, // <— customize unit/ticker
         defaultFrozen: false,
       })
 
@@ -95,18 +95,13 @@ const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
   // Modal UI
   // ------------------------------
   return (
-    <dialog
-      id="token_modal"
-      className={`modal modal-bottom sm:modal-middle backdrop-blur-sm ${openModal ? 'modal-open' : ''}`}
-    >
+    <dialog id="token_modal" className={`modal modal-bottom sm:modal-middle backdrop-blur-sm ${openModal ? 'modal-open' : ''}`}>
       <div className="modal-box bg-neutral-800 text-gray-100 rounded-2xl shadow-xl border border-neutral-700 p-6">
         <h3 className="flex items-center gap-3 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-2">
           <BsCoin className="text-3xl" />
           Create a MasterPass Token
         </h3>
-        <p className="text-gray-400 text-sm mb-6">
-          This creates a standard fungible token (ASA) on the Algorand TestNet.
-        </p>
+        <p className="text-gray-400 text-sm mb-6">This creates a standard fungible token (ASA) on the Algorand TestNet.</p>
 
         {/* Input fields for customization */}
         <div className="space-y-4">
@@ -169,7 +164,9 @@ const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
             />
             <div className="flex items-center gap-1 mt-2 text-xs text-gray-500">
               <AiOutlineInfoCircle />
-              <p>On-chain total = <code>total × 10^decimals</code>.</p>
+              <p>
+                On-chain total = <code>total × 10^decimals</code>.
+              </p>
             </div>
           </div>
         </div>

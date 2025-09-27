@@ -20,7 +20,7 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [previewUrl, setPreviewUrl] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
-  
+
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   // Wallet + notification hooks
@@ -62,7 +62,7 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
 
     enqueueSnackbar('Uploading and preparing NFT...', { variant: 'info' })
     let metadataUrl = ''
-    
+
     try {
       // ---------------------------------
       // Detect backend URL automatically
@@ -122,17 +122,17 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
       const createNFTResult = await algorand.send.assetCreate({
         sender: activeAddress,
         signer: transactionSigner,
-        total: 1n,                     // supply = 1 → NFT
-        decimals: 0,                   // indivisible
-        assetName: 'MasterPass Ticket',// <— change name
-        unitName: 'MTK',               // <— change ticker
-        url: metadataUrl,              // IPFS metadata
+        total: 1n, // supply = 1 → NFT
+        decimals: 0, // indivisible
+        assetName: 'MasterPass Ticket', // <— change name
+        unitName: 'MTK', // <— change ticker
+        url: metadataUrl, // IPFS metadata
         metadataHash,
         defaultFrozen: false,
       })
 
       enqueueSnackbar(`✅ NFT Minted! ASA ID: ${createNFTResult.assetId}`, { variant: 'success' })
-      
+
       // Reset form + close modal
       setSelectedFile(null)
       setPreviewUrl('')
@@ -154,11 +154,9 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
           <AiOutlineCloudUpload className="text-3xl" />
           Mint a MasterPass NFT
         </h3>
-        
+
         <div className="space-y-4">
-          <label className="block text-sm font-medium text-gray-400">
-            Select an image to mint
-          </label>
+          <label className="block text-sm font-medium text-gray-400">Select an image to mint</label>
           <div
             className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-neutral-700 rounded-xl cursor-pointer hover:border-cyan-500 transition-colors"
             onClick={handleDivClick}
@@ -182,7 +180,7 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
             />
           </div>
         </div>
-        
+
         {/* Action buttons */}
         <div className="modal-action mt-6 flex flex-col-reverse sm:flex-row-reverse gap-3">
           <button

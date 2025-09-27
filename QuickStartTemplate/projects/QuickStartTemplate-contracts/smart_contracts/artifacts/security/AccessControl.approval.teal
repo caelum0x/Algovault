@@ -1,0 +1,3550 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 0 1 2 3
+    bytecblock "superAdmin" 0x151f7c75 "totalAdmins" "totalOperators" "totalUsers" "_role" "_revoked" "_status" 0x00 "permissionRequestCount" "emergencyOverride" "_expiresAt" "_requester" "_targetRole" "_requestedPermissions" "_approvals" "maxAdmins" "maxOperators" "multiSigRequiredForAdmin" "defaultUserPermissions" "lastSecurityAudit" "accessLogCount" "_permissions" "_revokedAt" "_revokedBy" "_reason" "_requestedAt" "_approvers" 0x002e "adminSessionDuration" "operatorSessionDuration" "_assignedBy" "_assignedAt"
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@28
+    pushbytess 0x109bbeb1 0x6bc71cc3 0x929dff72 0x3036cc0a 0xf231f043 0x41d2ae45 0xe366dc3a 0x9cc9212b 0x324a6721 0xe989e581 0x20c97ee5 0x03031b5f 0x720ce2fe 0x53e2b505 0xc9b43020 0x8387c7a9 0xdb52925b 0x3e153dc9 0x5504d370 0x74b1648f 0xb88bb5b2 0xfb7cb809 0x8fb8a747 // method "initialize(uint64,uint64,uint64,uint64)void", method "assignRole(byte[],uint64,uint64,uint64)void", method "revokeRole(byte[],string)void", method "requestPermission(uint64,uint64,string)uint64", method "approvePermissionRequest(uint64)void", method "rejectPermissionRequest(uint64,string)void", method "enableEmergencyOverride()void", method "disableEmergencyOverride()void", method "transferSuperAdmin(byte[])void", method "updateAccessControlSettings(uint64,uint64,uint64,uint64)void", method "performSecurityAudit()void", method "checkExpiredRoles()void", method "cleanupOldRequests()void", method "logAccess(string,byte[],uint64,byte[])void", method "hasRole(byte[],uint64)bool", method "hasPermission(byte[],uint64)bool", method "canExecuteFunction(byte[],string)bool", method "isSessionValid(byte[],uint64)bool", method "getUserRole(byte[])(uint64,uint64,byte[],uint64,uint64,uint64,uint64,byte[])", method "getPermissionRequest(uint64)(byte[],uint64,uint64,byte[],uint64,uint64,byte[],uint64)", method "getAccessControlStats()(uint64,uint64,uint64,uint64,bool,uint64)", method "getAllUserRoles()byte[][]", method "getPermissionRequestsByUser(byte[])(byte[],uint64,uint64,byte[],uint64,uint64,byte[],uint64)[]"
+    txna ApplicationArgs 0
+    match main_initialize_route@3 main_assignRole_route@4 main_revokeRole_route@5 main_requestPermission_route@6 main_approvePermissionRequest_route@7 main_rejectPermissionRequest_route@8 main_enableEmergencyOverride_route@9 main_disableEmergencyOverride_route@10 main_transferSuperAdmin_route@11 main_updateAccessControlSettings_route@12 main_performSecurityAudit_route@13 main_checkExpiredRoles_route@14 main_cleanupOldRequests_route@15 main_logAccess_route@16 main_hasRole_route@17 main_hasPermission_route@18 main_canExecuteFunction_route@19 main_isSessionValid_route@20 main_getUserRole_route@21 main_getPermissionRequest_route@22 main_getAccessControlStats_route@23 main_getAllUserRoles_route@24 main_getPermissionRequestsByUser_route@25
+
+main_after_if_else@32:
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    intc_0 // 0
+    return
+
+main_getPermissionRequestsByUser_route@25:
+    // smart_contracts/security/access_control.algo.ts:524
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:524
+    // @abimethod()
+    callsub getPermissionRequestsByUser
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getAllUserRoles_route@24:
+    // smart_contracts/security/access_control.algo.ts:517
+    // getAllUserRoles(): bytes[] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    pushbytes 0x151f7c750000
+    log
+    intc_1 // 1
+    return
+
+main_getAccessControlStats_route@23:
+    // smart_contracts/security/access_control.algo.ts:496
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getAccessControlStats
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    bytec 8 // 0x00
+    intc_0 // 0
+    uncover 7
+    setbit
+    uncover 5
+    itob
+    uncover 5
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getPermissionRequest_route@22:
+    // smart_contracts/security/access_control.algo.ts:473
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/security/access_control.algo.ts:473
+    // @abimethod()
+    callsub getPermissionRequest
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    uncover 7
+    itob
+    uncover 7
+    itob
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    uncover 7
+    itob
+    uncover 7
+    itob
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    uncover 7
+    itob
+    dig 7
+    len
+    pushint 46 // 46
+    +
+    bytec 28 // 0x002e
+    uncover 8
+    concat
+    uncover 7
+    concat
+    dig 1
+    itob
+    extract 6 2
+    concat
+    dig 6
+    len
+    uncover 2
+    +
+    swap
+    uncover 5
+    concat
+    uncover 4
+    concat
+    swap
+    itob
+    extract 6 2
+    concat
+    swap
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getUserRole_route@21:
+    // smart_contracts/security/access_control.algo.ts:438
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:438
+    // @abimethod()
+    callsub getUserRole
+    uncover 7
+    itob
+    uncover 7
+    itob
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    uncover 7
+    itob
+    uncover 7
+    itob
+    uncover 7
+    itob
+    uncover 7
+    itob
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    uncover 7
+    uncover 7
+    concat
+    pushbytes 0x0034
+    concat
+    dig 6
+    len
+    pushint 52 // 52
+    +
+    swap
+    uncover 6
+    concat
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    swap
+    itob
+    extract 6 2
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_isSessionValid_route@20:
+    // smart_contracts/security/access_control.algo.ts:411
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/security/access_control.algo.ts:411
+    // @abimethod()
+    callsub isSessionValid
+    bytec 8 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_canExecuteFunction_route@19:
+    // smart_contracts/security/access_control.algo.ts:393
+    // canExecuteFunction(user: bytes, functionName: string): boolean {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:393
+    // canExecuteFunction(user: bytes, functionName: string): boolean {
+    callsub canExecuteFunction
+    bytec 8 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_hasPermission_route@18:
+    // smart_contracts/security/access_control.algo.ts:363
+    // hasPermission(user: bytes, permission: uint64): boolean {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/security/access_control.algo.ts:363
+    // hasPermission(user: bytes, permission: uint64): boolean {
+    callsub hasPermission
+    bytec 8 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_hasRole_route@17:
+    // smart_contracts/security/access_control.algo.ts:344
+    // hasRole(user: bytes, role: uint64): boolean {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/security/access_control.algo.ts:344
+    // hasRole(user: bytes, role: uint64): boolean {
+    callsub hasRole
+    bytec 8 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_logAccess_route@16:
+    // smart_contracts/security/access_control.algo.ts:337
+    // logAccess(action: string, targetUser: bytes, role: uint64, actor: bytes): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:337
+    // logAccess(action: string, targetUser: bytes, role: uint64, actor: bytes): void {
+    callsub logAccess
+    intc_1 // 1
+    return
+
+main_cleanupOldRequests_route@15:
+    // smart_contracts/security/access_control.algo.ts:332
+    // cleanupOldRequests(): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    intc_1 // 1
+    return
+
+main_checkExpiredRoles_route@14:
+    // smart_contracts/security/access_control.algo.ts:327
+    // checkExpiredRoles(): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    intc_1 // 1
+    return
+
+main_performSecurityAudit_route@13:
+    // smart_contracts/security/access_control.algo.ts:314
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub performSecurityAudit
+    intc_1 // 1
+    return
+
+main_updateAccessControlSettings_route@12:
+    // smart_contracts/security/access_control.algo.ts:299
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/security/access_control.algo.ts:299
+    // @abimethod()
+    callsub updateAccessControlSettings
+    intc_1 // 1
+    return
+
+main_transferSuperAdmin_route@11:
+    // smart_contracts/security/access_control.algo.ts:282
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:282
+    // @abimethod()
+    callsub transferSuperAdmin
+    intc_1 // 1
+    return
+
+main_disableEmergencyOverride_route@10:
+    // smart_contracts/security/access_control.algo.ts:273
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub disableEmergencyOverride
+    intc_1 // 1
+    return
+
+main_enableEmergencyOverride_route@9:
+    // smart_contracts/security/access_control.algo.ts:264
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub enableEmergencyOverride
+    intc_1 // 1
+    return
+
+main_rejectPermissionRequest_route@8:
+    // smart_contracts/security/access_control.algo.ts:251
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:251
+    // @abimethod()
+    callsub rejectPermissionRequest
+    intc_1 // 1
+    return
+
+main_approvePermissionRequest_route@7:
+    // smart_contracts/security/access_control.algo.ts:224
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/security/access_control.algo.ts:224
+    // @abimethod()
+    callsub approvePermissionRequest
+    intc_1 // 1
+    return
+
+main_requestPermission_route@6:
+    // smart_contracts/security/access_control.algo.ts:203
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:203
+    // @abimethod()
+    callsub requestPermission
+    itob
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_revokeRole_route@5:
+    // smart_contracts/security/access_control.algo.ts:170
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/access_control.algo.ts:170
+    // @abimethod()
+    callsub revokeRole
+    intc_1 // 1
+    return
+
+main_assignRole_route@4:
+    // smart_contracts/security/access_control.algo.ts:106
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/security/access_control.algo.ts:106
+    // @abimethod()
+    callsub assignRole
+    intc_1 // 1
+    return
+
+main_initialize_route@3:
+    // smart_contracts/security/access_control.algo.ts:73
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/security/access_control.algo.ts:73
+    // @abimethod()
+    callsub initialize
+    intc_1 // 1
+    return
+
+main_bare_routing@28:
+    // smart_contracts/security/access_control.algo.ts:45
+    // export class AccessControl extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@32
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_1 // 1
+    return
+
+
+// _puya_lib.arc4.dynamic_array_concat_dynamic_element(array_items_count: uint64, array_head_and_tail: bytes, new_items_count: uint64, new_head_and_tail: bytes) -> bytes:
+dynamic_array_concat_dynamic_element:
+    proto 4 1
+    pushbytes ""
+    dup
+    frame_dig -2
+    intc_2 // 2
+    *
+    frame_dig -4
+    intc_2 // 2
+    *
+    intc_0 // 0
+
+dynamic_array_concat_dynamic_element_for_header@1:
+    frame_dig 4
+    frame_dig 3
+    <
+    bz dynamic_array_concat_dynamic_element_after_for@4
+    frame_dig -3
+    frame_dig 4
+    dup
+    cover 2
+    extract_uint16
+    frame_dig 2
+    +
+    itob
+    extract 6 2
+    frame_dig 1
+    swap
+    concat
+    frame_bury 1
+    intc_2 // 2
+    +
+    frame_bury 4
+    b dynamic_array_concat_dynamic_element_for_header@1
+
+dynamic_array_concat_dynamic_element_after_for@4:
+    frame_dig -3
+    len
+    frame_bury 0
+    intc_0 // 0
+    frame_bury 4
+
+dynamic_array_concat_dynamic_element_for_header@5:
+    frame_dig 4
+    frame_dig 2
+    <
+    bz dynamic_array_concat_dynamic_element_after_for@8
+    frame_dig -1
+    frame_dig 4
+    dup
+    cover 2
+    extract_uint16
+    frame_dig 0
+    +
+    itob
+    extract 6 2
+    frame_dig 1
+    swap
+    concat
+    frame_bury 1
+    intc_2 // 2
+    +
+    frame_bury 4
+    b dynamic_array_concat_dynamic_element_for_header@5
+
+dynamic_array_concat_dynamic_element_after_for@8:
+    frame_dig -4
+    frame_dig -2
+    +
+    itob
+    extract 6 2
+    frame_dig 1
+    concat
+    frame_dig -3
+    frame_dig 3
+    frame_dig 0
+    substring3
+    concat
+    frame_dig -1
+    len
+    frame_dig -1
+    frame_dig 2
+    uncover 2
+    substring3
+    concat
+    frame_bury 0
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.initialize(maxAdmins: uint64, maxOperators: uint64, multiSigRequired: uint64, defaultPermissions: uint64) -> void:
+initialize:
+    // smart_contracts/security/access_control.algo.ts:73-79
+    // @abimethod()
+    // initialize(
+    //   maxAdmins: uint64,
+    //   maxOperators: uint64,
+    //   multiSigRequired: uint64,
+    //   defaultPermissions: uint64
+    // ): void {
+    proto 4 0
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:80
+    // assert(!this.superAdmin.value)
+    len
+    !
+    assert
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    bytec_0 // "superAdmin"
+    // smart_contracts/security/access_control.algo.ts:82
+    // this.superAdmin.value = Txn.sender.bytes
+    txn Sender
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:55
+    // maxAdmins = GlobalState<uint64>()
+    bytec 16 // "maxAdmins"
+    // smart_contracts/security/access_control.algo.ts:83
+    // this.maxAdmins.value = maxAdmins
+    frame_dig -4
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:56
+    // maxOperators = GlobalState<uint64>()
+    bytec 17 // "maxOperators"
+    // smart_contracts/security/access_control.algo.ts:84
+    // this.maxOperators.value = maxOperators
+    frame_dig -3
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:57
+    // multiSigRequiredForAdmin = GlobalState<uint64>() // Number of approvals needed
+    bytec 18 // "multiSigRequiredForAdmin"
+    // smart_contracts/security/access_control.algo.ts:85
+    // this.multiSigRequiredForAdmin.value = multiSigRequired
+    frame_dig -2
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:61
+    // defaultUserPermissions = GlobalState<uint64>()
+    bytec 19 // "defaultUserPermissions"
+    // smart_contracts/security/access_control.algo.ts:86
+    // this.defaultUserPermissions.value = defaultPermissions
+    frame_dig -1
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    bytec 4 // "totalUsers"
+    // smart_contracts/security/access_control.algo.ts:88
+    // this.totalUsers.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    bytec_2 // "totalAdmins"
+    // smart_contracts/security/access_control.algo.ts:89
+    // this.totalAdmins.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    bytec_3 // "totalOperators"
+    // smart_contracts/security/access_control.algo.ts:90
+    // this.totalOperators.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:60
+    // permissionRequestCount = GlobalState<uint64>()
+    bytec 9 // "permissionRequestCount"
+    // smart_contracts/security/access_control.algo.ts:91
+    // this.permissionRequestCount.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:62
+    // emergencyOverride = GlobalState<boolean>()
+    bytec 10 // "emergencyOverride"
+    // smart_contracts/security/access_control.algo.ts:92
+    // this.emergencyOverride.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:65
+    // adminSessionDuration = GlobalState<uint64>() // Max session time for admins
+    bytec 29 // "adminSessionDuration"
+    // smart_contracts/security/access_control.algo.ts:95
+    // this.adminSessionDuration.value = 28800 // 8 hours
+    pushint 28800 // 28800
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:66
+    // operatorSessionDuration = GlobalState<uint64>()
+    bytec 30 // "operatorSessionDuration"
+    // smart_contracts/security/access_control.algo.ts:96
+    // this.operatorSessionDuration.value = 14400 // 4 hours
+    pushint 14400 // 14400
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:69
+    // failedAccessAttempts = GlobalState<uint64>()
+    pushbytes "failedAccessAttempts"
+    // smart_contracts/security/access_control.algo.ts:98
+    // this.failedAccessAttempts.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:70
+    // lastSecurityAudit = GlobalState<uint64>()
+    bytec 20 // "lastSecurityAudit"
+    // smart_contracts/security/access_control.algo.ts:99
+    // this.lastSecurityAudit.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:71
+    // accessLogCount = GlobalState<uint64>()
+    bytec 21 // "accessLogCount"
+    // smart_contracts/security/access_control.algo.ts:100
+    // this.accessLogCount.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:103
+    // this.assignRole(Txn.sender.bytes, ROLE_SUPERADMIN, (1 << PERMISSION_READ) | (1 << PERMISSION_WRITE) | (1 << PERMISSION_EXECUTE) | (1 << PERMISSION_MANAGE) | (1 << PERMISSION_EMERGENCY), 0)
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushints 4 31 // 4, 31
+    // smart_contracts/security/access_control.algo.ts:103
+    // this.assignRole(Txn.sender.bytes, ROLE_SUPERADMIN, (1 << PERMISSION_READ) | (1 << PERMISSION_WRITE) | (1 << PERMISSION_EXECUTE) | (1 << PERMISSION_MANAGE) | (1 << PERMISSION_EMERGENCY), 0)
+    intc_0 // 0
+    callsub assignRole
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.assignRole(user: bytes, role: uint64, permissions: uint64, expiresAt: uint64) -> void:
+assignRole:
+    // smart_contracts/security/access_control.algo.ts:106-112
+    // @abimethod()
+    // assignRole(
+    //   user: bytes,
+    //   role: uint64,
+    //   permissions: uint64,
+    //   expiresAt: uint64
+    // ): void {
+    proto 4 0
+    intc_0 // 0
+    dupn 7
+    pushbytes ""
+    // smart_contracts/security/access_control.algo.ts:113
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:14
+    // const PERMISSION_MANAGE: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:113
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    callsub hasPermission
+    assert
+    // smart_contracts/security/access_control.algo.ts:116
+    // if (role === ROLE_ADMIN) {
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:7
+    // const ROLE_ADMIN: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:116
+    // if (role === ROLE_ADMIN) {
+    ==
+    dup
+    bz assignRole_else_body@2
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalAdmins"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:55
+    // maxAdmins = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 16 // "maxAdmins"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:117
+    // assert(this.totalAdmins.value < this.maxAdmins.value)
+    <
+    assert
+
+assignRole_after_if_else@5:
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:123
+    // const roleKey = concat(user, Bytes('_role'))
+    bytec 5 // "_role"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    frame_bury 7
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:124
+    // const permissionsKey = concat(user, Bytes('_permissions'))
+    bytec 22 // "_permissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 3
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:125
+    // const assignedByKey = concat(user, Bytes('_assignedBy'))
+    bytec 31 // "_assignedBy"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 1
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:126
+    // const assignedAtKey = concat(user, Bytes('_assignedAt'))
+    bytec 32 // "_assignedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 0
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:127
+    // const expiresAtKey = concat(user, Bytes('_expiresAt'))
+    bytec 11 // "_expiresAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 2
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:128
+    // const revokedKey = concat(user, Bytes('_revoked'))
+    bytec 6 // "_revoked"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 6
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:129
+    // const revokedAtKey = concat(user, Bytes('_revokedAt'))
+    bytec 23 // "_revokedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 4
+    frame_dig -4
+    // smart_contracts/security/access_control.algo.ts:130
+    // const revokedByKey = concat(user, Bytes('_revokedBy'))
+    bytec 24 // "_revokedBy"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 5
+    // smart_contracts/security/access_control.algo.ts:134
+    // if (Box<uint64>({ key: roleKey }).exists) {
+    box_len
+    bury 1
+    bz assignRole_after_if_else@18
+    // smart_contracts/security/access_control.algo.ts:136
+    // prevRole = Box<uint64>({ key: roleKey }).value
+    frame_dig 7
+    box_get
+    swap
+    btoi
+    dup
+    frame_bury 8
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:7
+    // const ROLE_ADMIN: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:139
+    // if (prevRole === ROLE_ADMIN && role !== ROLE_ADMIN) {
+    ==
+    bz assignRole_else_body@9
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:7
+    // const ROLE_ADMIN: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:139
+    // if (prevRole === ROLE_ADMIN && role !== ROLE_ADMIN) {
+    !=
+    bz assignRole_else_body@9
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalAdmins"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:140
+    // this.totalAdmins.value = this.totalAdmins.value - 1
+    intc_1 // 1
+    -
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    bytec_2 // "totalAdmins"
+    // smart_contracts/security/access_control.algo.ts:140
+    // this.totalAdmins.value = this.totalAdmins.value - 1
+    swap
+    app_global_put
+
+assignRole_after_if_else@18:
+    // smart_contracts/security/access_control.algo.ts:149
+    // Box<uint64>({ key: roleKey }).value = role
+    frame_dig -3
+    itob
+    frame_dig 7
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:150
+    // Box<uint64>({ key: permissionsKey }).value = permissions
+    frame_dig -2
+    itob
+    frame_dig 3
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:151
+    // Box<bytes>({ key: assignedByKey }).value = Txn.sender.bytes
+    txn Sender
+    frame_dig 1
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:152
+    // Box<uint64>({ key: assignedAtKey }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    frame_dig 0
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:153
+    // Box<uint64>({ key: expiresAtKey }).value = expiresAt
+    frame_dig -1
+    itob
+    frame_dig 2
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:154
+    // Box<uint64>({ key: revokedKey }).value = 0 // false
+    intc_0 // 0
+    itob
+    frame_dig 6
+    dig 1
+    box_put
+    // smart_contracts/security/access_control.algo.ts:155
+    // Box<uint64>({ key: revokedAtKey }).value = 0
+    frame_dig 4
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:156
+    // Box<bytes>({ key: revokedByKey }).value = Global.zeroAddress.bytes
+    global ZeroAddress
+    frame_dig 5
+    dup
+    box_del
+    pop
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:159
+    // if (role === ROLE_ADMIN) {
+    frame_dig 9
+    bz assignRole_else_body@20
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalAdmins"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:160
+    // this.totalAdmins.value = this.totalAdmins.value + 1
+    intc_1 // 1
+    +
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    bytec_2 // "totalAdmins"
+    // smart_contracts/security/access_control.algo.ts:160
+    // this.totalAdmins.value = this.totalAdmins.value + 1
+    swap
+    app_global_put
+
+assignRole_after_if_else@26:
+    // smart_contracts/security/access_control.algo.ts:167
+    // this.logAccess('ROLE_ASSIGNED', user, role, Txn.sender.bytes)
+    pushbytes "ROLE_ASSIGNED"
+    frame_dig -4
+    frame_dig -3
+    txn Sender
+    callsub logAccess
+    retsub
+
+assignRole_else_body@20:
+    // smart_contracts/security/access_control.algo.ts:161
+    // } else if (role === ROLE_OPERATOR) {
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:6
+    // const ROLE_OPERATOR: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:161
+    // } else if (role === ROLE_OPERATOR) {
+    ==
+    bz assignRole_else_body@22
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "totalOperators"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:162
+    // this.totalOperators.value = this.totalOperators.value + 1
+    intc_1 // 1
+    +
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    bytec_3 // "totalOperators"
+    // smart_contracts/security/access_control.algo.ts:162
+    // this.totalOperators.value = this.totalOperators.value + 1
+    swap
+    app_global_put
+    b assignRole_after_if_else@26
+
+assignRole_else_body@22:
+    // smart_contracts/security/access_control.algo.ts:163
+    // } else if (role === ROLE_USER) {
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:5
+    // const ROLE_USER: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/access_control.algo.ts:163
+    // } else if (role === ROLE_USER) {
+    ==
+    bz assignRole_after_if_else@26
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 4 // "totalUsers"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:164
+    // this.totalUsers.value = this.totalUsers.value + 1
+    intc_1 // 1
+    +
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    bytec 4 // "totalUsers"
+    // smart_contracts/security/access_control.algo.ts:164
+    // this.totalUsers.value = this.totalUsers.value + 1
+    swap
+    app_global_put
+    b assignRole_after_if_else@26
+
+assignRole_else_body@9:
+    // smart_contracts/security/access_control.algo.ts:141
+    // } else if (prevRole === ROLE_OPERATOR && role !== ROLE_OPERATOR) {
+    frame_dig 8
+    // smart_contracts/security/access_control.algo.ts:6
+    // const ROLE_OPERATOR: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:141
+    // } else if (prevRole === ROLE_OPERATOR && role !== ROLE_OPERATOR) {
+    ==
+    bz assignRole_else_body@12
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:6
+    // const ROLE_OPERATOR: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:141
+    // } else if (prevRole === ROLE_OPERATOR && role !== ROLE_OPERATOR) {
+    !=
+    bz assignRole_else_body@12
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "totalOperators"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:142
+    // this.totalOperators.value = this.totalOperators.value - 1
+    intc_1 // 1
+    -
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    bytec_3 // "totalOperators"
+    // smart_contracts/security/access_control.algo.ts:142
+    // this.totalOperators.value = this.totalOperators.value - 1
+    swap
+    app_global_put
+    b assignRole_after_if_else@18
+
+assignRole_else_body@12:
+    // smart_contracts/security/access_control.algo.ts:143
+    // } else if (prevRole === ROLE_USER && role !== ROLE_USER) {
+    frame_dig 8
+    // smart_contracts/security/access_control.algo.ts:5
+    // const ROLE_USER: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/access_control.algo.ts:143
+    // } else if (prevRole === ROLE_USER && role !== ROLE_USER) {
+    ==
+    bz assignRole_after_if_else@18
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:5
+    // const ROLE_USER: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/access_control.algo.ts:143
+    // } else if (prevRole === ROLE_USER && role !== ROLE_USER) {
+    !=
+    bz assignRole_after_if_else@18
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 4 // "totalUsers"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:144
+    // this.totalUsers.value = this.totalUsers.value - 1
+    intc_1 // 1
+    -
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    bytec 4 // "totalUsers"
+    // smart_contracts/security/access_control.algo.ts:144
+    // this.totalUsers.value = this.totalUsers.value - 1
+    swap
+    app_global_put
+    b assignRole_after_if_else@18
+
+assignRole_else_body@2:
+    // smart_contracts/security/access_control.algo.ts:118
+    // } else if (role === ROLE_OPERATOR) {
+    frame_dig -3
+    // smart_contracts/security/access_control.algo.ts:6
+    // const ROLE_OPERATOR: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:118
+    // } else if (role === ROLE_OPERATOR) {
+    ==
+    bz assignRole_after_if_else@5
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "totalOperators"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:56
+    // maxOperators = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 17 // "maxOperators"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:119
+    // assert(this.totalOperators.value < this.maxOperators.value)
+    <
+    assert
+    b assignRole_after_if_else@5
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.revokeRole(user: bytes, reason: bytes) -> void:
+revokeRole:
+    // smart_contracts/security/access_control.algo.ts:170-171
+    // @abimethod()
+    // revokeRole(user: bytes, reason: string): void {
+    proto 2 0
+    // smart_contracts/security/access_control.algo.ts:172
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:14
+    // const PERMISSION_MANAGE: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:172
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    callsub hasPermission
+    assert
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:173
+    // assert(user !== this.superAdmin.value) // Cannot revoke super admin
+    frame_dig -2
+    !=
+    assert
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:175
+    // const roleKey = concat(user, Bytes('_role'))
+    bytec 5 // "_role"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:176
+    // const revokedKey = concat(user, Bytes('_revoked'))
+    bytec 6 // "_revoked"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:177
+    // const revokedAtKey = concat(user, Bytes('_revokedAt'))
+    bytec 23 // "_revokedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:178
+    // const revokedByKey = concat(user, Bytes('_revokedBy'))
+    bytec 24 // "_revokedBy"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:180
+    // assert(Box<uint64>({ key: roleKey }).exists)
+    dig 3
+    box_len
+    bury 1
+    assert
+    // smart_contracts/security/access_control.algo.ts:182
+    // const role = Box<uint64>({ key: roleKey }).value
+    uncover 3
+    box_get
+    swap
+    btoi
+    dup
+    cover 3
+    cover 5
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:183
+    // const revoked = Box<uint64>({ key: revokedKey }).value
+    dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:184
+    // assert(revoked === 0)
+    !
+    assert
+    // smart_contracts/security/access_control.algo.ts:187
+    // Box<uint64>({ key: revokedKey }).value = 1
+    intc_1 // 1
+    itob
+    uncover 4
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:188
+    // Box<uint64>({ key: revokedAtKey }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    uncover 3
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:189
+    // Box<bytes>({ key: revokedByKey }).value = Txn.sender.bytes
+    txn Sender
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/security/access_control.algo.ts:7
+    // const ROLE_ADMIN: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:192
+    // if (role === ROLE_ADMIN) {
+    ==
+    bz revokeRole_else_body@2
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalAdmins"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:193
+    // this.totalAdmins.value = this.totalAdmins.value - 1
+    intc_1 // 1
+    -
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    bytec_2 // "totalAdmins"
+    // smart_contracts/security/access_control.algo.ts:193
+    // this.totalAdmins.value = this.totalAdmins.value - 1
+    swap
+    app_global_put
+
+revokeRole_after_if_else@8:
+    // smart_contracts/security/access_control.algo.ts:200
+    // this.logAccess('ROLE_REVOKED', user, role, Txn.sender.bytes)
+    txn Sender
+    pushbytes "ROLE_REVOKED"
+    frame_dig -2
+    frame_dig 0
+    uncover 3
+    callsub logAccess
+    retsub
+
+revokeRole_else_body@2:
+    // smart_contracts/security/access_control.algo.ts:194
+    // } else if (role === ROLE_OPERATOR) {
+    frame_dig 0
+    // smart_contracts/security/access_control.algo.ts:6
+    // const ROLE_OPERATOR: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:194
+    // } else if (role === ROLE_OPERATOR) {
+    ==
+    bz revokeRole_else_body@4
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "totalOperators"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:195
+    // this.totalOperators.value = this.totalOperators.value - 1
+    intc_1 // 1
+    -
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    bytec_3 // "totalOperators"
+    // smart_contracts/security/access_control.algo.ts:195
+    // this.totalOperators.value = this.totalOperators.value - 1
+    swap
+    app_global_put
+    b revokeRole_after_if_else@8
+
+revokeRole_else_body@4:
+    // smart_contracts/security/access_control.algo.ts:196
+    // } else if (role === ROLE_USER) {
+    frame_dig 0
+    // smart_contracts/security/access_control.algo.ts:5
+    // const ROLE_USER: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/access_control.algo.ts:196
+    // } else if (role === ROLE_USER) {
+    ==
+    bz revokeRole_after_if_else@8
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 4 // "totalUsers"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:197
+    // this.totalUsers.value = this.totalUsers.value - 1
+    intc_1 // 1
+    -
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    bytec 4 // "totalUsers"
+    // smart_contracts/security/access_control.algo.ts:197
+    // this.totalUsers.value = this.totalUsers.value - 1
+    swap
+    app_global_put
+    b revokeRole_after_if_else@8
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.requestPermission(targetRole: uint64, requestedPermissions: uint64, reason: bytes) -> uint64:
+requestPermission:
+    // smart_contracts/security/access_control.algo.ts:203-208
+    // @abimethod()
+    // requestPermission(
+    //   targetRole: uint64,
+    //   requestedPermissions: uint64,
+    //   reason: string
+    // ): uint64 {
+    proto 3 1
+    // smart_contracts/security/access_control.algo.ts:60
+    // permissionRequestCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 9 // "permissionRequestCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:209
+    // const requestId: uint64 = this.permissionRequestCount.value + 1 as uint64
+    intc_1 // 1
+    +
+    // smart_contracts/security/access_control.algo.ts:60
+    // permissionRequestCount = GlobalState<uint64>()
+    bytec 9 // "permissionRequestCount"
+    // smart_contracts/security/access_control.algo.ts:210
+    // this.permissionRequestCount.value = requestId
+    dig 1
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:212
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_requester')) }).value = Txn.sender.bytes
+    dup
+    itob
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:212
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_requester')) }).value = Txn.sender.bytes
+    bytec 12 // "_requester"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:212
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_requester')) }).value = Txn.sender.bytes
+    txn Sender
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:213
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_targetRole')) }).value = targetRole
+    bytec 13 // "_targetRole"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:213
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_targetRole')) }).value = targetRole
+    frame_dig -3
+    itob
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:214
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_requestedPermissions')) }).value = requestedPermissions
+    bytec 14 // "_requestedPermissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:214
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_requestedPermissions')) }).value = requestedPermissions
+    frame_dig -2
+    itob
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:215
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_reason')) }).value = Bytes(reason)
+    bytec 25 // "_reason"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:215
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_reason')) }).value = Bytes(reason)
+    dup
+    box_del
+    pop
+    frame_dig -1
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:216
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_requestedAt')) }).value = Global.latestTimestamp
+    bytec 26 // "_requestedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:216
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_requestedAt')) }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:217
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_approvals')) }).value = 0
+    bytec 15 // "_approvals"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:217
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_approvals')) }).value = 0
+    intc_0 // 0
+    itob
+    swap
+    dig 1
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/security/access_control.algo.ts:218
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_approvers')) }).value = Bytes('')
+    bytec 27 // "_approvers"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:218
+    // Box<bytes>({ key: concat(Bytes(requestId), Bytes('_approvers')) }).value = Bytes('')
+    dup
+    box_del
+    pop
+    pushbytes ""
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    swap
+    // smart_contracts/security/access_control.algo.ts:219
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_status')) }).value = 0 // pending
+    bytec 7 // "_status"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:219
+    // Box<uint64>({ key: concat(Bytes(requestId), Bytes('_status')) }).value = 0 // pending
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:220
+    // this.logAccess('PERMISSION_REQUESTED', Txn.sender.bytes, targetRole, Txn.sender.bytes)
+    pushbytes "PERMISSION_REQUESTED"
+    txn Sender
+    frame_dig -3
+    txn Sender
+    callsub logAccess
+    // smart_contracts/security/access_control.algo.ts:221
+    // return requestId
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.approvePermissionRequest(requestId: uint64) -> void:
+approvePermissionRequest:
+    // smart_contracts/security/access_control.algo.ts:224-225
+    // @abimethod()
+    // approvePermissionRequest(requestId: uint64): void {
+    proto 1 0
+    // smart_contracts/security/access_control.algo.ts:226
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:14
+    // const PERMISSION_MANAGE: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:226
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    callsub hasPermission
+    assert
+    // smart_contracts/security/access_control.algo.ts:227
+    // const statusKey = concat(Bytes(requestId), Bytes('_status'))
+    frame_dig -1
+    itob
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:227
+    // const statusKey = concat(Bytes(requestId), Bytes('_status'))
+    bytec 7 // "_status"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    uncover 2
+    dup
+    // smart_contracts/security/access_control.algo.ts:228
+    // const approvalsKey = concat(Bytes(requestId), Bytes('_approvals'))
+    bytec 15 // "_approvals"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 1
+    // smart_contracts/security/access_control.algo.ts:229
+    // const requesterKey = concat(Bytes(requestId), Bytes('_requester'))
+    bytec 12 // "_requester"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    cover 3
+    dig 1
+    // smart_contracts/security/access_control.algo.ts:230
+    // const targetRoleKey = concat(Bytes(requestId), Bytes('_targetRole'))
+    bytec 13 // "_targetRole"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    cover 3
+    swap
+    // smart_contracts/security/access_control.algo.ts:231
+    // const requestedPermissionsKey = concat(Bytes(requestId), Bytes('_requestedPermissions'))
+    bytec 14 // "_requestedPermissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    cover 2
+    // smart_contracts/security/access_control.algo.ts:232
+    // assert(Box<uint64>({ key: statusKey }).exists)
+    dig 1
+    box_len
+    bury 1
+    assert
+    // smart_contracts/security/access_control.algo.ts:233
+    // const status = Box<uint64>({ key: statusKey }).value
+    swap
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:234
+    // assert(status === 0)
+    !
+    assert
+    // smart_contracts/security/access_control.algo.ts:236
+    // let approvals = Box<uint64>({ key: approvalsKey }).value
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:237
+    // approvals = approvals + 1 as uint64
+    intc_1 // 1
+    +
+    // smart_contracts/security/access_control.algo.ts:238
+    // Box<uint64>({ key: approvalsKey }).value = approvals
+    dup
+    itob
+    uncover 2
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:57
+    // multiSigRequiredForAdmin = GlobalState<uint64>() // Number of approvals needed
+    intc_0 // 0
+    bytec 18 // "multiSigRequiredForAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:240
+    // if (approvals >= this.multiSigRequiredForAdmin.value) {
+    >=
+    bz approvePermissionRequest_after_if_else@2
+    // smart_contracts/security/access_control.algo.ts:241
+    // Box<uint64>({ key: statusKey }).value = 1 // approved
+    intc_1 // 1
+    itob
+    frame_dig 0
+    swap
+    box_put
+    // smart_contracts/security/access_control.algo.ts:243
+    // const requester = Box<bytes>({ key: requesterKey }).value
+    frame_dig 1
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:244
+    // const targetRole = Box<uint64>({ key: targetRoleKey }).value
+    frame_dig 2
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:245
+    // const requestedPermissions = Box<uint64>({ key: requestedPermissionsKey }).value
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:246
+    // this.assignRole(requester, targetRole, requestedPermissions, 0)
+    intc_0 // 0
+    callsub assignRole
+
+approvePermissionRequest_after_if_else@2:
+    // smart_contracts/security/access_control.algo.ts:248
+    // this.logAccess('PERMISSION_APPROVED', Box<bytes>({ key: requesterKey }).value, Box<uint64>({ key: targetRoleKey }).value, Txn.sender.bytes)
+    frame_dig 1
+    box_get
+    assert // Box must have value
+    frame_dig 2
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    txn Sender
+    pushbytes "PERMISSION_APPROVED"
+    cover 3
+    callsub logAccess
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.rejectPermissionRequest(requestId: uint64, reason: bytes) -> void:
+rejectPermissionRequest:
+    // smart_contracts/security/access_control.algo.ts:251-252
+    // @abimethod()
+    // rejectPermissionRequest(requestId: uint64, reason: string): void {
+    proto 2 0
+    // smart_contracts/security/access_control.algo.ts:253
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:14
+    // const PERMISSION_MANAGE: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:253
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    callsub hasPermission
+    assert
+    // smart_contracts/security/access_control.algo.ts:254
+    // const statusKey = concat(Bytes(requestId), Bytes('_status'))
+    frame_dig -2
+    itob
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:254
+    // const statusKey = concat(Bytes(requestId), Bytes('_status'))
+    bytec 7 // "_status"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:255
+    // assert(Box<uint64>({ key: statusKey }).exists)
+    dup
+    box_len
+    bury 1
+    assert
+    // smart_contracts/security/access_control.algo.ts:256
+    // const status = Box<uint64>({ key: statusKey }).value
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:257
+    // assert(status === 0)
+    !
+    assert
+    // smart_contracts/security/access_control.algo.ts:258
+    // Box<uint64>({ key: statusKey }).value = 2 // rejected
+    intc_2 // 2
+    itob
+    box_put
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:259
+    // const requesterKey = concat(Bytes(requestId), Bytes('_requester'))
+    bytec 12 // "_requester"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/security/access_control.algo.ts:260
+    // const targetRoleKey = concat(Bytes(requestId), Bytes('_targetRole'))
+    bytec 13 // "_targetRole"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:261
+    // this.logAccess('PERMISSION_REJECTED', Box<bytes>({ key: requesterKey }).value, Box<uint64>({ key: targetRoleKey }).value, Txn.sender.bytes)
+    swap
+    box_get
+    assert // Box must have value
+    swap
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    txn Sender
+    pushbytes "PERMISSION_REJECTED"
+    cover 3
+    callsub logAccess
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.enableEmergencyOverride() -> void:
+enableEmergencyOverride:
+    // smart_contracts/security/access_control.algo.ts:266
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:266
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    ==
+    assert
+    // smart_contracts/security/access_control.algo.ts:62
+    // emergencyOverride = GlobalState<boolean>()
+    bytec 10 // "emergencyOverride"
+    // smart_contracts/security/access_control.algo.ts:268
+    // this.emergencyOverride.value = true
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:270
+    // this.logAccess('EMERGENCY_OVERRIDE_ENABLED', Txn.sender.bytes, ROLE_SUPERADMIN, Txn.sender.bytes)
+    pushbytes "EMERGENCY_OVERRIDE_ENABLED"
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/security/access_control.algo.ts:270
+    // this.logAccess('EMERGENCY_OVERRIDE_ENABLED', Txn.sender.bytes, ROLE_SUPERADMIN, Txn.sender.bytes)
+    txn Sender
+    callsub logAccess
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.disableEmergencyOverride() -> void:
+disableEmergencyOverride:
+    // smart_contracts/security/access_control.algo.ts:275
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:275
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    ==
+    assert
+    // smart_contracts/security/access_control.algo.ts:62
+    // emergencyOverride = GlobalState<boolean>()
+    bytec 10 // "emergencyOverride"
+    // smart_contracts/security/access_control.algo.ts:277
+    // this.emergencyOverride.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:279
+    // this.logAccess('EMERGENCY_OVERRIDE_DISABLED', Txn.sender.bytes, ROLE_SUPERADMIN, Txn.sender.bytes)
+    pushbytes "EMERGENCY_OVERRIDE_DISABLED"
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/security/access_control.algo.ts:279
+    // this.logAccess('EMERGENCY_OVERRIDE_DISABLED', Txn.sender.bytes, ROLE_SUPERADMIN, Txn.sender.bytes)
+    txn Sender
+    callsub logAccess
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.transferSuperAdmin(newSuperAdmin: bytes) -> void:
+transferSuperAdmin:
+    // smart_contracts/security/access_control.algo.ts:282-283
+    // @abimethod()
+    // transferSuperAdmin(newSuperAdmin: bytes): void {
+    proto 1 0
+    // smart_contracts/security/access_control.algo.ts:284
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:284
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    ==
+    assert
+    // smart_contracts/security/access_control.algo.ts:285
+    // assert(newSuperAdmin !== Global.zeroAddress.bytes)
+    frame_dig -1
+    global ZeroAddress
+    !=
+    assert
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    bytec_0 // "superAdmin"
+    // smart_contracts/security/access_control.algo.ts:288
+    // this.superAdmin.value = newSuperAdmin
+    frame_dig -1
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:291
+    // this.assignRole(newSuperAdmin, ROLE_SUPERADMIN, (1 << PERMISSION_READ) | (1 << PERMISSION_WRITE) | (1 << PERMISSION_EXECUTE) | (1 << PERMISSION_MANAGE) | (1 << PERMISSION_EMERGENCY), 0)
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushints 4 31 // 4, 31
+    // smart_contracts/security/access_control.algo.ts:291
+    // this.assignRole(newSuperAdmin, ROLE_SUPERADMIN, (1 << PERMISSION_READ) | (1 << PERMISSION_WRITE) | (1 << PERMISSION_EXECUTE) | (1 << PERMISSION_MANAGE) | (1 << PERMISSION_EMERGENCY), 0)
+    intc_0 // 0
+    callsub assignRole
+    // smart_contracts/security/access_control.algo.ts:294
+    // this.revokeRole(oldSuperAdmin, 'Super admin transferred')
+    dup
+    pushbytes "Super admin transferred"
+    callsub revokeRole
+    // smart_contracts/security/access_control.algo.ts:296
+    // this.logAccess('SUPER_ADMIN_TRANSFERRED', newSuperAdmin, ROLE_SUPERADMIN, oldSuperAdmin)
+    pushbytes "SUPER_ADMIN_TRANSFERRED"
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/security/access_control.algo.ts:296
+    // this.logAccess('SUPER_ADMIN_TRANSFERRED', newSuperAdmin, ROLE_SUPERADMIN, oldSuperAdmin)
+    uncover 3
+    callsub logAccess
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.updateAccessControlSettings(newMaxAdmins: uint64, newMaxOperators: uint64, newMultiSigRequired: uint64, newDefaultPermissions: uint64) -> void:
+updateAccessControlSettings:
+    // smart_contracts/security/access_control.algo.ts:299-305
+    // @abimethod()
+    // updateAccessControlSettings(
+    //   newMaxAdmins: uint64,
+    //   newMaxOperators: uint64,
+    //   newMultiSigRequired: uint64,
+    //   newDefaultPermissions: uint64
+    // ): void {
+    proto 4 0
+    // smart_contracts/security/access_control.algo.ts:306
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:306
+    // assert(Txn.sender.bytes === this.superAdmin.value)
+    ==
+    assert
+    // smart_contracts/security/access_control.algo.ts:55
+    // maxAdmins = GlobalState<uint64>()
+    bytec 16 // "maxAdmins"
+    // smart_contracts/security/access_control.algo.ts:308
+    // this.maxAdmins.value = newMaxAdmins
+    frame_dig -4
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:56
+    // maxOperators = GlobalState<uint64>()
+    bytec 17 // "maxOperators"
+    // smart_contracts/security/access_control.algo.ts:309
+    // this.maxOperators.value = newMaxOperators
+    frame_dig -3
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:57
+    // multiSigRequiredForAdmin = GlobalState<uint64>() // Number of approvals needed
+    bytec 18 // "multiSigRequiredForAdmin"
+    // smart_contracts/security/access_control.algo.ts:310
+    // this.multiSigRequiredForAdmin.value = newMultiSigRequired
+    frame_dig -2
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:61
+    // defaultUserPermissions = GlobalState<uint64>()
+    bytec 19 // "defaultUserPermissions"
+    // smart_contracts/security/access_control.algo.ts:311
+    // this.defaultUserPermissions.value = newDefaultPermissions
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.performSecurityAudit() -> void:
+performSecurityAudit:
+    // smart_contracts/security/access_control.algo.ts:316
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:14
+    // const PERMISSION_MANAGE: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:316
+    // assert(this.hasPermission(Txn.sender.bytes, PERMISSION_MANAGE))
+    callsub hasPermission
+    assert
+    // smart_contracts/security/access_control.algo.ts:70
+    // lastSecurityAudit = GlobalState<uint64>()
+    bytec 20 // "lastSecurityAudit"
+    // smart_contracts/security/access_control.algo.ts:322
+    // this.lastSecurityAudit.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:324
+    // this.logAccess('SECURITY_AUDIT_PERFORMED', Txn.sender.bytes, ROLE_NONE, Txn.sender.bytes)
+    pushbytes "SECURITY_AUDIT_PERFORMED"
+    txn Sender
+    // smart_contracts/security/access_control.algo.ts:4
+    // const ROLE_NONE: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/security/access_control.algo.ts:324
+    // this.logAccess('SECURITY_AUDIT_PERFORMED', Txn.sender.bytes, ROLE_NONE, Txn.sender.bytes)
+    txn Sender
+    callsub logAccess
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.logAccess(action: bytes, targetUser: bytes, role: uint64, actor: bytes) -> void:
+logAccess:
+    // smart_contracts/security/access_control.algo.ts:337
+    // logAccess(action: string, targetUser: bytes, role: uint64, actor: bytes): void {
+    proto 4 0
+    // smart_contracts/security/access_control.algo.ts:71
+    // accessLogCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 21 // "accessLogCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:338
+    // const logId: uint64 = this.accessLogCount.value + 1 as uint64
+    intc_1 // 1
+    +
+    // smart_contracts/security/access_control.algo.ts:71
+    // accessLogCount = GlobalState<uint64>()
+    bytec 21 // "accessLogCount"
+    // smart_contracts/security/access_control.algo.ts:339
+    // this.accessLogCount.value = logId
+    swap
+    app_global_put
+    // smart_contracts/security/access_control.algo.ts:340
+    // log(action, targetUser, role, actor, Global.latestTimestamp)
+    frame_dig -4
+    frame_dig -3
+    concat
+    frame_dig -2
+    itob
+    concat
+    frame_dig -1
+    concat
+    global LatestTimestamp
+    itob
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.hasRole(user: bytes, role: uint64) -> uint64:
+hasRole:
+    // smart_contracts/security/access_control.algo.ts:344
+    // hasRole(user: bytes, role: uint64): boolean {
+    proto 2 1
+    pushbytes ""
+    dup
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:345
+    // const roleKey = concat(user, Bytes('_role'))
+    bytec 5 // "_role"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:346
+    // const revokedKey = concat(user, Bytes('_revoked'))
+    bytec 6 // "_revoked"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:347
+    // const expiresAtKey = concat(user, Bytes('_expiresAt'))
+    bytec 11 // "_expiresAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/security/access_control.algo.ts:348
+    // if (!Box<uint64>({ key: roleKey }).exists) {
+    box_len
+    bury 1
+    bnz hasRole_after_if_else@2
+    // smart_contracts/security/access_control.algo.ts:349
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+hasRole_after_if_else@2:
+    // smart_contracts/security/access_control.algo.ts:351
+    // const userRole = Box<uint64>({ key: roleKey }).value
+    frame_dig 2
+    box_get
+    swap
+    btoi
+    frame_bury 1
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:352
+    // const revoked = Box<uint64>({ key: revokedKey }).value
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:353
+    // const expiresAt = Box<uint64>({ key: expiresAtKey }).value
+    frame_dig 4
+    box_get
+    swap
+    btoi
+    frame_bury 0
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:354
+    // if (revoked === 1) {
+    intc_1 // 1
+    ==
+    bz hasRole_after_if_else@4
+    // smart_contracts/security/access_control.algo.ts:355
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+hasRole_after_if_else@4:
+    // smart_contracts/security/access_control.algo.ts:357
+    // if (expiresAt > 0 && Global.latestTimestamp > expiresAt) {
+    frame_dig 0
+    bz hasRole_after_if_else@7
+    global LatestTimestamp
+    frame_dig 0
+    >
+    bz hasRole_after_if_else@7
+    // smart_contracts/security/access_control.algo.ts:358
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+hasRole_after_if_else@7:
+    // smart_contracts/security/access_control.algo.ts:360
+    // return userRole === role || userRole === ROLE_SUPERADMIN
+    frame_dig 1
+    frame_dig -1
+    ==
+    bnz hasRole_bool_true@9
+    frame_dig 1
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/security/access_control.algo.ts:360
+    // return userRole === role || userRole === ROLE_SUPERADMIN
+    ==
+    bz hasRole_bool_false@10
+
+hasRole_bool_true@9:
+    intc_1 // 1
+
+hasRole_bool_merge@11:
+    // smart_contracts/security/access_control.algo.ts:360
+    // return userRole === role || userRole === ROLE_SUPERADMIN
+    frame_bury 0
+    retsub
+
+hasRole_bool_false@10:
+    intc_0 // 0
+    b hasRole_bool_merge@11
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.hasPermission(user: bytes, permission: uint64) -> uint64:
+hasPermission:
+    // smart_contracts/security/access_control.algo.ts:363
+    // hasPermission(user: bytes, permission: uint64): boolean {
+    proto 2 1
+    intc_0 // 0
+    dupn 2
+    pushbytes ""
+    dupn 3
+    // smart_contracts/security/access_control.algo.ts:62
+    // emergencyOverride = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 10 // "emergencyOverride"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:364
+    // if (this.emergencyOverride.value && user === this.superAdmin.value) {
+    bz hasPermission_after_if_else@3
+    // smart_contracts/security/access_control.algo.ts:52
+    // superAdmin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_0 // "superAdmin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:364
+    // if (this.emergencyOverride.value && user === this.superAdmin.value) {
+    frame_dig -2
+    ==
+    bz hasPermission_after_if_else@3
+    // smart_contracts/security/access_control.algo.ts:365
+    // return true
+    intc_1 // 1
+    frame_bury 0
+    retsub
+
+hasPermission_after_if_else@3:
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:367
+    // const roleKey = concat(user, Bytes('_role'))
+    bytec 5 // "_role"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:368
+    // const permissionsKey = concat(user, Bytes('_permissions'))
+    bytec 22 // "_permissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 1
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:369
+    // const revokedKey = concat(user, Bytes('_revoked'))
+    bytec 6 // "_revoked"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 2
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:370
+    // const expiresAtKey = concat(user, Bytes('_expiresAt'))
+    bytec 11 // "_expiresAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 0
+    // smart_contracts/security/access_control.algo.ts:371
+    // if (!Box<uint64>({ key: roleKey }).exists) {
+    box_len
+    bury 1
+    bnz hasPermission_after_if_else@5
+    // smart_contracts/security/access_control.algo.ts:372
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+hasPermission_after_if_else@5:
+    // smart_contracts/security/access_control.algo.ts:374
+    // const revoked = Box<uint64>({ key: revokedKey }).value
+    frame_dig 2
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:375
+    // const expiresAt = Box<uint64>({ key: expiresAtKey }).value
+    frame_dig 0
+    box_get
+    swap
+    btoi
+    frame_bury 3
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:376
+    // if (revoked === 1) {
+    intc_1 // 1
+    ==
+    bz hasPermission_after_if_else@7
+    // smart_contracts/security/access_control.algo.ts:377
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+hasPermission_after_if_else@7:
+    // smart_contracts/security/access_control.algo.ts:379
+    // if (expiresAt > 0 && Global.latestTimestamp > expiresAt) {
+    frame_dig 3
+    bz hasPermission_after_if_else@10
+    global LatestTimestamp
+    frame_dig 3
+    >
+    bz hasPermission_after_if_else@10
+    // smart_contracts/security/access_control.algo.ts:380
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+hasPermission_after_if_else@10:
+    // smart_contracts/security/access_control.algo.ts:382
+    // const permissions = Box<uint64>({ key: permissionsKey }).value
+    frame_dig 1
+    box_get
+    swap
+    btoi
+    frame_bury 6
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:384
+    // let permissionBit: uint64 = 1
+    intc_1 // 1
+    frame_bury 5
+    // smart_contracts/security/access_control.algo.ts:385
+    // let i: uint64 = 0
+    intc_0 // 0
+    frame_bury 4
+
+hasPermission_while_top@11:
+    // smart_contracts/security/access_control.algo.ts:386
+    // while (i < permission) {
+    frame_dig 4
+    frame_dig -1
+    <
+    // smart_contracts/security/access_control.algo.ts:386-389
+    // while (i < permission) {
+    //   permissionBit = permissionBit * 2 as uint64
+    //   i = i + 1 as uint64
+    // }
+    bz hasPermission_after_while@13
+    // smart_contracts/security/access_control.algo.ts:387
+    // permissionBit = permissionBit * 2 as uint64
+    frame_dig 5
+    intc_2 // 2
+    *
+    frame_bury 5
+    // smart_contracts/security/access_control.algo.ts:388
+    // i = i + 1 as uint64
+    frame_dig 4
+    intc_1 // 1
+    +
+    frame_bury 4
+    b hasPermission_while_top@11
+
+hasPermission_after_while@13:
+    // smart_contracts/security/access_control.algo.ts:390
+    // return (permissions / permissionBit) % 2 === 1
+    frame_dig 6
+    frame_dig 5
+    /
+    intc_2 // 2
+    %
+    intc_1 // 1
+    ==
+    frame_bury 0
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.canExecuteFunction(user: bytes, functionName: bytes) -> uint64:
+canExecuteFunction:
+    // smart_contracts/security/access_control.algo.ts:393
+    // canExecuteFunction(user: bytes, functionName: string): boolean {
+    proto 2 1
+    // smart_contracts/security/access_control.algo.ts:395
+    // if (functionName === 'stake' || functionName === 'withdraw' || functionName === 'claimRewards') {
+    frame_dig -1
+    pushbytes "stake"
+    ==
+    bnz canExecuteFunction_if_body@3
+    frame_dig -1
+    pushbytes "withdraw"
+    ==
+    bnz canExecuteFunction_if_body@3
+    frame_dig -1
+    pushbytes "claimRewards"
+    ==
+    bz canExecuteFunction_after_if_else@4
+
+canExecuteFunction_if_body@3:
+    // smart_contracts/security/access_control.algo.ts:396
+    // return this.hasPermission(user, PERMISSION_EXECUTE)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:13
+    // const PERMISSION_EXECUTE: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:396
+    // return this.hasPermission(user, PERMISSION_EXECUTE)
+    callsub hasPermission
+    retsub
+
+canExecuteFunction_after_if_else@4:
+    // smart_contracts/security/access_control.algo.ts:399
+    // if (functionName === 'updateRewardRate' || functionName === 'pausePool') {
+    frame_dig -1
+    pushbytes "updateRewardRate"
+    ==
+    bnz canExecuteFunction_if_body@6
+    frame_dig -1
+    pushbytes "pausePool"
+    ==
+    bz canExecuteFunction_after_if_else@7
+
+canExecuteFunction_if_body@6:
+    // smart_contracts/security/access_control.algo.ts:400
+    // return this.hasPermission(user, PERMISSION_MANAGE)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:14
+    // const PERMISSION_MANAGE: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:400
+    // return this.hasPermission(user, PERMISSION_MANAGE)
+    callsub hasPermission
+    retsub
+
+canExecuteFunction_after_if_else@7:
+    // smart_contracts/security/access_control.algo.ts:403
+    // if (functionName === 'emergencyWithdraw' || functionName === 'emergencyPause') {
+    frame_dig -1
+    pushbytes "emergencyWithdraw"
+    ==
+    bnz canExecuteFunction_if_body@9
+    frame_dig -1
+    pushbytes "emergencyPause"
+    ==
+    bz canExecuteFunction_after_if_else@10
+
+canExecuteFunction_if_body@9:
+    // smart_contracts/security/access_control.algo.ts:404
+    // return this.hasPermission(user, PERMISSION_EMERGENCY)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:15
+    // const PERMISSION_EMERGENCY: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/security/access_control.algo.ts:404
+    // return this.hasPermission(user, PERMISSION_EMERGENCY)
+    callsub hasPermission
+    retsub
+
+canExecuteFunction_after_if_else@10:
+    // smart_contracts/security/access_control.algo.ts:408
+    // return this.hasPermission(user, PERMISSION_READ)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:11
+    // const PERMISSION_READ: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/security/access_control.algo.ts:408
+    // return this.hasPermission(user, PERMISSION_READ)
+    callsub hasPermission
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.isSessionValid(user: bytes, sessionStartTime: uint64) -> uint64:
+isSessionValid:
+    // smart_contracts/security/access_control.algo.ts:411-412
+    // @abimethod()
+    // isSessionValid(user: bytes, sessionStartTime: uint64): boolean {
+    proto 2 1
+    pushbytes ""
+    dupn 2
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:413
+    // const roleKey = concat(user, Bytes('_role'))
+    bytec 5 // "_role"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:414
+    // const revokedKey = concat(user, Bytes('_revoked'))
+    bytec 6 // "_revoked"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -2
+    // smart_contracts/security/access_control.algo.ts:415
+    // const expiresAtKey = concat(user, Bytes('_expiresAt'))
+    bytec 11 // "_expiresAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/security/access_control.algo.ts:416
+    // if (!Box<uint64>({ key: roleKey }).exists) {
+    box_len
+    bury 1
+    bnz isSessionValid_after_if_else@2
+    // smart_contracts/security/access_control.algo.ts:417
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+isSessionValid_after_if_else@2:
+    // smart_contracts/security/access_control.algo.ts:419
+    // const userRole = Box<uint64>({ key: roleKey }).value
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    frame_bury 2
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:420
+    // const revoked = Box<uint64>({ key: revokedKey }).value
+    frame_dig 4
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:421
+    // const expiresAt = Box<uint64>({ key: expiresAtKey }).value
+    frame_dig 5
+    box_get
+    swap
+    btoi
+    frame_bury 0
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:422
+    // if (revoked === 1) {
+    intc_1 // 1
+    ==
+    bz isSessionValid_after_if_else@4
+    // smart_contracts/security/access_control.algo.ts:423
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+isSessionValid_after_if_else@4:
+    // smart_contracts/security/access_control.algo.ts:425
+    // if (expiresAt > 0 && Global.latestTimestamp > expiresAt) {
+    frame_dig 0
+    bz isSessionValid_after_if_else@7
+    global LatestTimestamp
+    frame_dig 0
+    >
+    bz isSessionValid_after_if_else@7
+    // smart_contracts/security/access_control.algo.ts:426
+    // return false
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+isSessionValid_after_if_else@7:
+    // smart_contracts/security/access_control.algo.ts:428
+    // let maxSessionDuration: uint64 = 3600
+    pushint 3600 // 3600
+    frame_bury 1
+    // smart_contracts/security/access_control.algo.ts:429
+    // if (userRole === ROLE_ADMIN || userRole === ROLE_SUPERADMIN) {
+    frame_dig 2
+    // smart_contracts/security/access_control.algo.ts:7
+    // const ROLE_ADMIN: uint64 = 3;
+    intc_3 // 3
+    // smart_contracts/security/access_control.algo.ts:429
+    // if (userRole === ROLE_ADMIN || userRole === ROLE_SUPERADMIN) {
+    ==
+    bnz isSessionValid_if_body@9
+    frame_dig 2
+    // smart_contracts/security/access_control.algo.ts:8
+    // const ROLE_SUPERADMIN: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/security/access_control.algo.ts:429
+    // if (userRole === ROLE_ADMIN || userRole === ROLE_SUPERADMIN) {
+    ==
+    bz isSessionValid_else_body@10
+
+isSessionValid_if_body@9:
+    // smart_contracts/security/access_control.algo.ts:65
+    // adminSessionDuration = GlobalState<uint64>() // Max session time for admins
+    intc_0 // 0
+    bytec 29 // "adminSessionDuration"
+    app_global_get_ex
+    swap
+    frame_bury 1
+    assert // check GlobalState exists
+
+isSessionValid_after_if_else@13:
+    // smart_contracts/security/access_control.algo.ts:434
+    // return (Global.latestTimestamp - sessionStartTime) <= maxSessionDuration
+    global LatestTimestamp
+    frame_dig -1
+    -
+    frame_dig 1
+    <=
+    frame_bury 0
+    retsub
+
+isSessionValid_else_body@10:
+    // smart_contracts/security/access_control.algo.ts:431
+    // } else if (userRole === ROLE_OPERATOR) {
+    frame_dig 2
+    // smart_contracts/security/access_control.algo.ts:6
+    // const ROLE_OPERATOR: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/access_control.algo.ts:431
+    // } else if (userRole === ROLE_OPERATOR) {
+    ==
+    bz isSessionValid_after_if_else@13
+    // smart_contracts/security/access_control.algo.ts:66
+    // operatorSessionDuration = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 30 // "operatorSessionDuration"
+    app_global_get_ex
+    swap
+    frame_bury 1
+    assert // check GlobalState exists
+    b isSessionValid_after_if_else@13
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.getUserRole(user: bytes) -> uint64, uint64, bytes, uint64, uint64, uint64, uint64, bytes:
+getUserRole:
+    // smart_contracts/security/access_control.algo.ts:438-439
+    // @abimethod()
+    // getUserRole(user: bytes): { role: uint64, permissions: uint64, assignedBy: bytes, assignedAt: uint64, expiresAt: uint64, revoked: uint64, revokedAt: uint64, revokedBy: bytes } {
+    proto 1 8
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:440
+    // const roleKey = concat(user, Bytes('_role'))
+    bytec 5 // "_role"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:441
+    // const permissionsKey = concat(user, Bytes('_permissions'))
+    bytec 22 // "_permissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:442
+    // const assignedByKey = concat(user, Bytes('_assignedBy'))
+    bytec 31 // "_assignedBy"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:443
+    // const assignedAtKey = concat(user, Bytes('_assignedAt'))
+    bytec 32 // "_assignedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:444
+    // const expiresAtKey = concat(user, Bytes('_expiresAt'))
+    bytec 11 // "_expiresAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:445
+    // const revokedKey = concat(user, Bytes('_revoked'))
+    bytec 6 // "_revoked"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:446
+    // const revokedAtKey = concat(user, Bytes('_revokedAt'))
+    bytec 23 // "_revokedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/security/access_control.algo.ts:447
+    // const revokedByKey = concat(user, Bytes('_revokedBy'))
+    bytec 24 // "_revokedBy"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/security/access_control.algo.ts:448
+    // if (Box<uint64>({ key: roleKey }).exists) {
+    box_len
+    bury 1
+    bz getUserRole_after_if_else@2
+    // smart_contracts/security/access_control.algo.ts:450
+    // role: Box<uint64>({ key: roleKey }).value,
+    frame_dig 0
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:451
+    // permissions: Box<uint64>({ key: permissionsKey }).value,
+    frame_dig 1
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:452
+    // assignedBy: Box<bytes>({ key: assignedByKey }).value,
+    frame_dig 2
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:453
+    // assignedAt: Box<uint64>({ key: assignedAtKey }).value,
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:454
+    // expiresAt: Box<uint64>({ key: expiresAtKey }).value,
+    frame_dig 4
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:455
+    // revoked: Box<uint64>({ key: revokedKey }).value,
+    frame_dig 5
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:456
+    // revokedAt: Box<uint64>({ key: revokedAtKey }).value,
+    frame_dig 6
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:457
+    // revokedBy: Box<bytes>({ key: revokedByKey }).value
+    frame_dig 7
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:449-458
+    // return {
+    //   role: Box<uint64>({ key: roleKey }).value,
+    //   permissions: Box<uint64>({ key: permissionsKey }).value,
+    //   assignedBy: Box<bytes>({ key: assignedByKey }).value,
+    //   assignedAt: Box<uint64>({ key: assignedAtKey }).value,
+    //   expiresAt: Box<uint64>({ key: expiresAtKey }).value,
+    //   revoked: Box<uint64>({ key: revokedKey }).value,
+    //   revokedAt: Box<uint64>({ key: revokedAtKey }).value,
+    //   revokedBy: Box<bytes>({ key: revokedByKey }).value
+    // }
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    retsub
+
+getUserRole_after_if_else@2:
+    // smart_contracts/security/access_control.algo.ts:61
+    // defaultUserPermissions = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 19 // "defaultUserPermissions"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:464
+    // assignedBy: Global.zeroAddress.bytes,
+    global ZeroAddress
+    // smart_contracts/security/access_control.algo.ts:469
+    // revokedBy: Global.zeroAddress.bytes
+    dup
+    // smart_contracts/security/access_control.algo.ts:4
+    // const ROLE_NONE: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/security/access_control.algo.ts:461-470
+    // return {
+    //   role: ROLE_NONE,
+    //   permissions: this.defaultUserPermissions.value,
+    //   assignedBy: Global.zeroAddress.bytes,
+    //   assignedAt: 0,
+    //   expiresAt: 0,
+    //   revoked: 0,
+    //   revokedAt: 0,
+    //   revokedBy: Global.zeroAddress.bytes
+    // }
+    uncover 3
+    uncover 3
+    // smart_contracts/security/access_control.algo.ts:465
+    // assignedAt: 0,
+    intc_0 // 0
+    // smart_contracts/security/access_control.algo.ts:466-468
+    // expiresAt: 0,
+    // revoked: 0,
+    // revokedAt: 0,
+    dupn 3
+    // smart_contracts/security/access_control.algo.ts:461-470
+    // return {
+    //   role: ROLE_NONE,
+    //   permissions: this.defaultUserPermissions.value,
+    //   assignedBy: Global.zeroAddress.bytes,
+    //   assignedAt: 0,
+    //   expiresAt: 0,
+    //   revoked: 0,
+    //   revokedAt: 0,
+    //   revokedBy: Global.zeroAddress.bytes
+    // }
+    uncover 7
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    uncover 15
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.getPermissionRequest(requestId: uint64) -> bytes, uint64, uint64, bytes, uint64, uint64, bytes, uint64:
+getPermissionRequest:
+    // smart_contracts/security/access_control.algo.ts:473-474
+    // @abimethod()
+    // getPermissionRequest(requestId: uint64): { requester: bytes, targetRole: uint64, requestedPermissions: uint64, reason: bytes, requestedAt: uint64, approvals: uint64, approvers: bytes, status: uint64 } {
+    proto 1 8
+    // smart_contracts/security/access_control.algo.ts:475
+    // const requesterKey = concat(Bytes(requestId), Bytes('_requester'))
+    frame_dig -1
+    itob
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:475
+    // const requesterKey = concat(Bytes(requestId), Bytes('_requester'))
+    bytec 12 // "_requester"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 1
+    // smart_contracts/security/access_control.algo.ts:476
+    // const targetRoleKey = concat(Bytes(requestId), Bytes('_targetRole'))
+    bytec 13 // "_targetRole"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 2
+    // smart_contracts/security/access_control.algo.ts:477
+    // const requestedPermissionsKey = concat(Bytes(requestId), Bytes('_requestedPermissions'))
+    bytec 14 // "_requestedPermissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 3
+    // smart_contracts/security/access_control.algo.ts:478
+    // const reasonKey = concat(Bytes(requestId), Bytes('_reason'))
+    bytec 25 // "_reason"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 4
+    // smart_contracts/security/access_control.algo.ts:479
+    // const requestedAtKey = concat(Bytes(requestId), Bytes('_requestedAt'))
+    bytec 26 // "_requestedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 5
+    // smart_contracts/security/access_control.algo.ts:480
+    // const approvalsKey = concat(Bytes(requestId), Bytes('_approvals'))
+    bytec 15 // "_approvals"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dig 6
+    // smart_contracts/security/access_control.algo.ts:481
+    // const approversKey = concat(Bytes(requestId), Bytes('_approvers'))
+    bytec 27 // "_approvers"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    uncover 7
+    // smart_contracts/security/access_control.algo.ts:482
+    // const statusKey = concat(Bytes(requestId), Bytes('_status'))
+    bytec 7 // "_status"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:483
+    // assert(Box<uint64>({ key: statusKey }).exists)
+    dup
+    box_len
+    bury 1
+    assert
+    // smart_contracts/security/access_control.algo.ts:485
+    // requester: Box<bytes>({ key: requesterKey }).value,
+    uncover 7
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:486
+    // targetRole: Box<uint64>({ key: targetRoleKey }).value,
+    uncover 7
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:487
+    // requestedPermissions: Box<uint64>({ key: requestedPermissionsKey }).value,
+    uncover 7
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:488
+    // reason: Box<bytes>({ key: reasonKey }).value,
+    uncover 7
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:489
+    // requestedAt: Box<uint64>({ key: requestedAtKey }).value,
+    uncover 7
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:490
+    // approvals: Box<uint64>({ key: approvalsKey }).value,
+    uncover 7
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:491
+    // approvers: Box<bytes>({ key: approversKey }).value,
+    uncover 7
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:492
+    // status: Box<uint64>({ key: statusKey }).value
+    uncover 7
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:484-493
+    // return {
+    //   requester: Box<bytes>({ key: requesterKey }).value,
+    //   targetRole: Box<uint64>({ key: targetRoleKey }).value,
+    //   requestedPermissions: Box<uint64>({ key: requestedPermissionsKey }).value,
+    //   reason: Box<bytes>({ key: reasonKey }).value,
+    //   requestedAt: Box<uint64>({ key: requestedAtKey }).value,
+    //   approvals: Box<uint64>({ key: approvalsKey }).value,
+    //   approvers: Box<bytes>({ key: approversKey }).value,
+    //   status: Box<uint64>({ key: statusKey }).value
+    // }
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.getAccessControlStats() -> uint64, uint64, uint64, uint64, uint64, uint64:
+getAccessControlStats:
+    // smart_contracts/security/access_control.algo.ts:496-497
+    // @abimethod()
+    // getAccessControlStats(): { totalUsers: uint64, totalAdmins: uint64, totalOperators: uint64, pendingRequests: uint64, emergencyOverride: boolean, lastAudit: uint64 } {
+    proto 0 6
+    intc_0 // 0
+    pushbytes ""
+    // smart_contracts/security/access_control.algo.ts:498
+    // let pendingRequests: uint64 = 0
+    intc_0 // 0
+    // smart_contracts/security/access_control.algo.ts:499
+    // let i: uint64 = 1
+    intc_1 // 1
+
+getAccessControlStats_while_top@1:
+    // smart_contracts/security/access_control.algo.ts:60
+    // permissionRequestCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 9 // "permissionRequestCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:500
+    // while (i <= this.permissionRequestCount.value) {
+    frame_dig 3
+    >=
+    // smart_contracts/security/access_control.algo.ts:500-506
+    // while (i <= this.permissionRequestCount.value) {
+    //   const statusKey = concat(Bytes(i), Bytes('_status'))
+    //   if (Box<uint64>({ key: statusKey }).exists && Box<uint64>({ key: statusKey }).value === 0) {
+    //     pendingRequests = pendingRequests + 1 as uint64
+    //   }
+    //   i = i + 1 as uint64
+    // }
+    bz getAccessControlStats_after_while@6
+    // smart_contracts/security/access_control.algo.ts:501
+    // const statusKey = concat(Bytes(i), Bytes('_status'))
+    frame_dig 3
+    itob
+    bytec 7 // "_status"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    frame_bury 0
+    // smart_contracts/security/access_control.algo.ts:502
+    // if (Box<uint64>({ key: statusKey }).exists && Box<uint64>({ key: statusKey }).value === 0) {
+    box_len
+    bury 1
+    frame_dig 2
+    frame_bury 1
+    bz getAccessControlStats_after_if_else@5
+    frame_dig 0
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_dig 2
+    frame_bury 1
+    bnz getAccessControlStats_after_if_else@5
+    // smart_contracts/security/access_control.algo.ts:503
+    // pendingRequests = pendingRequests + 1 as uint64
+    frame_dig 2
+    intc_1 // 1
+    +
+    frame_bury 1
+
+getAccessControlStats_after_if_else@5:
+    frame_dig 1
+    frame_bury 2
+    // smart_contracts/security/access_control.algo.ts:505
+    // i = i + 1 as uint64
+    frame_dig 3
+    intc_1 // 1
+    +
+    frame_bury 3
+    b getAccessControlStats_while_top@1
+
+getAccessControlStats_after_while@6:
+    // smart_contracts/security/access_control.algo.ts:47
+    // totalUsers = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 4 // "totalUsers"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:48
+    // totalAdmins = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalAdmins"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:49
+    // totalOperators = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "totalOperators"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:62
+    // emergencyOverride = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 10 // "emergencyOverride"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:70
+    // lastSecurityAudit = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 20 // "lastSecurityAudit"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:507-514
+    // return {
+    //   totalUsers: this.totalUsers.value,
+    //   totalAdmins: this.totalAdmins.value,
+    //   totalOperators: this.totalOperators.value,
+    //   pendingRequests: pendingRequests,
+    //   emergencyOverride: this.emergencyOverride.value,
+    //   lastAudit: this.lastSecurityAudit.value
+    // }
+    cover 4
+    cover 4
+    frame_dig 2
+    uncover 5
+    uncover 5
+    uncover 9
+    uncover 9
+    uncover 9
+    uncover 9
+    retsub
+
+
+// smart_contracts/security/access_control.algo.ts::AccessControl.getPermissionRequestsByUser(user: bytes) -> bytes:
+getPermissionRequestsByUser:
+    // smart_contracts/security/access_control.algo.ts:524-525
+    // @abimethod()
+    // getPermissionRequestsByUser(user: bytes): { requester: bytes, targetRole: uint64, requestedPermissions: uint64, reason: bytes, requestedAt: uint64, approvals: uint64, approvers: bytes, status: uint64 }[] {
+    proto 1 1
+    intc_0 // 0
+    dupn 3
+    // smart_contracts/security/access_control.algo.ts:526
+    // let requests: { requester: bytes, targetRole: uint64, requestedPermissions: uint64, reason: bytes, requestedAt: uint64, approvals: uint64, approvers: bytes, status: uint64 }[] = []
+    pushbytes 0x0000
+    // smart_contracts/security/access_control.algo.ts:527
+    // let i: uint64 = 1
+    intc_1 // 1
+
+getPermissionRequestsByUser_while_top@1:
+    // smart_contracts/security/access_control.algo.ts:60
+    // permissionRequestCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 9 // "permissionRequestCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/access_control.algo.ts:528
+    // while (i <= this.permissionRequestCount.value) {
+    frame_dig 5
+    >=
+    // smart_contracts/security/access_control.algo.ts:528-547
+    // while (i <= this.permissionRequestCount.value) {
+    //   const requesterKey = concat(Bytes(i), Bytes('_requester'))
+    //   const statusKey = concat(Bytes(i), Bytes('_status'))
+    //   if (Box<bytes>({ key: requesterKey }).exists && Box<bytes>({ key: requesterKey }).value === user) {
+    //     // AVM-compatible array push (simulate push by creating a new array with the new element appended)
+    //     requests = requests.concat([
+    //       {
+    //         requester: Box<bytes>({ key: requesterKey }).value,
+    //         targetRole: Box<uint64>({ key: concat(Bytes(i), Bytes('_targetRole')) }).value,
+    //         requestedPermissions: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedPermissions')) }).value,
+    //         reason: Box<bytes>({ key: concat(Bytes(i), Bytes('_reason')) }).value,
+    //         requestedAt: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedAt')) }).value,
+    //         approvals: Box<uint64>({ key: concat(Bytes(i), Bytes('_approvals')) }).value,
+    //         approvers: Box<bytes>({ key: concat(Bytes(i), Bytes('_approvers')) }).value,
+    //         status: Box<uint64>({ key: statusKey }).value
+    //       }
+    //     ])
+    //   }
+    //   i = i + 1 as uint64
+    // }
+    bz getPermissionRequestsByUser_after_while@6
+    // smart_contracts/security/access_control.algo.ts:529
+    // const requesterKey = concat(Bytes(i), Bytes('_requester'))
+    frame_dig 5
+    itob
+    dup
+    frame_bury 0
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/access_control.algo.ts:529
+    // const requesterKey = concat(Bytes(i), Bytes('_requester'))
+    bytec 12 // "_requester"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    dup
+    cover 2
+    frame_bury 1
+    // smart_contracts/security/access_control.algo.ts:530
+    // const statusKey = concat(Bytes(i), Bytes('_status'))
+    bytec 7 // "_status"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    frame_bury 3
+    // smart_contracts/security/access_control.algo.ts:531
+    // if (Box<bytes>({ key: requesterKey }).exists && Box<bytes>({ key: requesterKey }).value === user) {
+    box_len
+    bury 1
+    frame_dig 4
+    frame_bury 2
+    bz getPermissionRequestsByUser_after_if_else@5
+    frame_dig 1
+    box_get
+    assert // Box must have value
+    frame_dig -1
+    ==
+    frame_dig 4
+    frame_bury 2
+    bz getPermissionRequestsByUser_after_if_else@5
+    // smart_contracts/security/access_control.algo.ts:535
+    // requester: Box<bytes>({ key: requesterKey }).value,
+    frame_dig 1
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    frame_dig 0
+    dup
+    // smart_contracts/security/access_control.algo.ts:536
+    // targetRole: Box<uint64>({ key: concat(Bytes(i), Bytes('_targetRole')) }).value,
+    bytec 13 // "_targetRole"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:536
+    // targetRole: Box<uint64>({ key: concat(Bytes(i), Bytes('_targetRole')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/security/access_control.algo.ts:537
+    // requestedPermissions: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedPermissions')) }).value,
+    bytec 14 // "_requestedPermissions"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:537
+    // requestedPermissions: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedPermissions')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/security/access_control.algo.ts:538
+    // reason: Box<bytes>({ key: concat(Bytes(i), Bytes('_reason')) }).value,
+    bytec 25 // "_reason"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:538
+    // reason: Box<bytes>({ key: concat(Bytes(i), Bytes('_reason')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dig 3
+    // smart_contracts/security/access_control.algo.ts:539
+    // requestedAt: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedAt')) }).value,
+    bytec 26 // "_requestedAt"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:539
+    // requestedAt: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedAt')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    dig 4
+    // smart_contracts/security/access_control.algo.ts:540
+    // approvals: Box<uint64>({ key: concat(Bytes(i), Bytes('_approvals')) }).value,
+    bytec 15 // "_approvals"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:540
+    // approvals: Box<uint64>({ key: concat(Bytes(i), Bytes('_approvals')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    uncover 5
+    // smart_contracts/security/access_control.algo.ts:541
+    // approvers: Box<bytes>({ key: concat(Bytes(i), Bytes('_approvers')) }).value,
+    bytec 27 // "_approvers"
+    // smart_contracts/security/access_control.algo.ts:42
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/access_control.algo.ts:541
+    // approvers: Box<bytes>({ key: concat(Bytes(i), Bytes('_approvers')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:542
+    // status: Box<uint64>({ key: statusKey }).value
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/access_control.algo.ts:535
+    // requester: Box<bytes>({ key: requesterKey }).value,
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    // smart_contracts/security/access_control.algo.ts:536
+    // targetRole: Box<uint64>({ key: concat(Bytes(i), Bytes('_targetRole')) }).value,
+    uncover 7
+    itob
+    // smart_contracts/security/access_control.algo.ts:537
+    // requestedPermissions: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedPermissions')) }).value,
+    uncover 7
+    itob
+    // smart_contracts/security/access_control.algo.ts:538
+    // reason: Box<bytes>({ key: concat(Bytes(i), Bytes('_reason')) }).value,
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    // smart_contracts/security/access_control.algo.ts:539
+    // requestedAt: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedAt')) }).value,
+    uncover 7
+    itob
+    // smart_contracts/security/access_control.algo.ts:540
+    // approvals: Box<uint64>({ key: concat(Bytes(i), Bytes('_approvals')) }).value,
+    uncover 7
+    itob
+    // smart_contracts/security/access_control.algo.ts:541
+    // approvers: Box<bytes>({ key: concat(Bytes(i), Bytes('_approvers')) }).value,
+    dig 7
+    len
+    itob
+    extract 6 2
+    uncover 8
+    concat
+    // smart_contracts/security/access_control.algo.ts:542
+    // status: Box<uint64>({ key: statusKey }).value
+    uncover 7
+    itob
+    // smart_contracts/security/access_control.algo.ts:534-543
+    // {
+    //   requester: Box<bytes>({ key: requesterKey }).value,
+    //   targetRole: Box<uint64>({ key: concat(Bytes(i), Bytes('_targetRole')) }).value,
+    //   requestedPermissions: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedPermissions')) }).value,
+    //   reason: Box<bytes>({ key: concat(Bytes(i), Bytes('_reason')) }).value,
+    //   requestedAt: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedAt')) }).value,
+    //   approvals: Box<uint64>({ key: concat(Bytes(i), Bytes('_approvals')) }).value,
+    //   approvers: Box<bytes>({ key: concat(Bytes(i), Bytes('_approvers')) }).value,
+    //   status: Box<uint64>({ key: statusKey }).value
+    // }
+    dig 7
+    len
+    pushint 46 // 46
+    +
+    bytec 28 // 0x002e
+    uncover 8
+    concat
+    uncover 7
+    concat
+    dig 1
+    itob
+    extract 6 2
+    concat
+    dig 6
+    len
+    uncover 2
+    +
+    swap
+    uncover 5
+    concat
+    uncover 4
+    concat
+    swap
+    itob
+    extract 6 2
+    concat
+    swap
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    pushbytes 0x0002
+    swap
+    concat
+    intc_0 // 0
+    pushbytes 0x
+    intc_1 // 1
+    uncover 3
+    callsub dynamic_array_concat_dynamic_element
+    // smart_contracts/security/access_control.algo.ts:533-544
+    // requests = requests.concat([
+    //   {
+    //     requester: Box<bytes>({ key: requesterKey }).value,
+    //     targetRole: Box<uint64>({ key: concat(Bytes(i), Bytes('_targetRole')) }).value,
+    //     requestedPermissions: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedPermissions')) }).value,
+    //     reason: Box<bytes>({ key: concat(Bytes(i), Bytes('_reason')) }).value,
+    //     requestedAt: Box<uint64>({ key: concat(Bytes(i), Bytes('_requestedAt')) }).value,
+    //     approvals: Box<uint64>({ key: concat(Bytes(i), Bytes('_approvals')) }).value,
+    //     approvers: Box<bytes>({ key: concat(Bytes(i), Bytes('_approvers')) }).value,
+    //     status: Box<uint64>({ key: statusKey }).value
+    //   }
+    // ])
+    frame_dig 4
+    dup
+    intc_0 // 0
+    extract_uint16
+    swap
+    extract 2 0
+    dig 2
+    intc_0 // 0
+    extract_uint16
+    uncover 3
+    extract 2 0
+    callsub dynamic_array_concat_dynamic_element
+    frame_bury 2
+
+getPermissionRequestsByUser_after_if_else@5:
+    frame_dig 2
+    frame_bury 4
+    // smart_contracts/security/access_control.algo.ts:546
+    // i = i + 1 as uint64
+    frame_dig 5
+    intc_1 // 1
+    +
+    frame_bury 5
+    b getPermissionRequestsByUser_while_top@1
+
+getPermissionRequestsByUser_after_while@6:
+    // smart_contracts/security/access_control.algo.ts:548
+    // return requests
+    frame_dig 4
+    frame_bury 0
+    retsub

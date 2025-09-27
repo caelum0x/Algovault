@@ -49,9 +49,8 @@ const Home: React.FC<HomeProps> = () => {
           Explore Algorand on TestNet
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          This project demonstrates the core building blocks of an Algorand dApp.
-          Connect your wallet, send transactions, mint NFTs, create tokens, and try out contract interactions —
-          all from a simple interface.
+          This project demonstrates the core building blocks of an Algorand dApp. Connect your wallet, send transactions, mint NFTs, create
+          tokens, and try out contract interactions — all from a simple interface.
         </p>
       </header>
 

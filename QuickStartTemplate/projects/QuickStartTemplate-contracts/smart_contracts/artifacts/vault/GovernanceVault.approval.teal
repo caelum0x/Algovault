@@ -1,0 +1,2085 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 0 1 2 100
+    bytecblock 0x151f7c75 "governanceActive" "totalVotingPower" "_status" "admin" "_votingEndTime" "_forVotes" "_againstVotes" "_abstainVotes" "votingDuration" "quorumThreshold" "proposalThreshold" "proposalCount" "_quorumRequired" "executionDelay" "_executed" "gracePeriod" "_proposer" "_title" "_description" "_proposalType" "_targetContract" "_executionData" "_votingStartTime"
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@22
+    pushbytess 0xc1b0aabe 0xa009cab8 0xa278a8b6 0x62ce9b5b 0xf1ff28aa 0xbfb5248f 0x0b5c279a 0x4fa17c8e 0x3d046431 0x34180ed6 0x4b1b5be1 0x0e6c665d 0xe94ebdfb 0x4a6d9323 0xcf268f7f 0x2ca3f224 0x93574e61 // method "initialize(uint64,uint64,uint64,uint64,uint64,uint64)void", method "createProposal(byte[],byte[],uint64,byte[],byte[])uint64", method "vote(uint64,uint64)void", method "finalizeProposal(uint64)void", method "executeProposal(uint64)void", method "cancelProposal(uint64)void", method "delegateVoting(byte[])void", method "updateVotingPower(byte[],uint64)void", method "updateGovernanceParameters(uint64,uint64,uint64)void", method "pauseGovernance()void", method "resumeGovernance()void", method "getVotingPower(byte[])uint64", method "getProposal(uint64)(byte[],byte[],byte[],uint64,byte[],byte[],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64)", method "getVote(byte[],uint64)uint64", method "hasVoted(byte[],uint64)uint64", method "getGovernanceInfo()(uint64,uint64,uint64,uint64,uint64,uint64)", method "calculateQuorumProgress(uint64)uint64"
+    txna ApplicationArgs 0
+    match main_initialize_route@3 main_createProposal_route@4 main_vote_route@5 main_finalizeProposal_route@6 main_executeProposal_route@7 main_cancelProposal_route@8 main_delegateVoting_route@9 main_updateVotingPower_route@10 main_updateGovernanceParameters_route@11 main_pauseGovernance_route@12 main_resumeGovernance_route@13 main_getVotingPower_route@14 main_getProposal_route@15 main_getVote_route@16 main_hasVoted_route@17 main_getGovernanceInfo_route@18 main_calculateQuorumProgress_route@19
+
+main_after_if_else@26:
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    intc_0 // 0
+    return
+
+main_calculateQuorumProgress_route@19:
+    // smart_contracts/vault/governance_vault.algo.ts:275
+    // calculateQuorumProgress(proposalId: uint64): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:275
+    // calculateQuorumProgress(proposalId: uint64): uint64 {
+    callsub calculateQuorumProgress
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getGovernanceInfo_route@18:
+    // smart_contracts/vault/governance_vault.algo.ts:264
+    // getGovernanceInfo(): [uint64, uint64, uint64, uint64, uint64, uint64] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getGovernanceInfo
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_hasVoted_route@17:
+    // smart_contracts/vault/governance_vault.algo.ts:260
+    // hasVoted(voter: bytes, proposalId: uint64): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:260
+    // hasVoted(voter: bytes, proposalId: uint64): uint64 {
+    callsub hasVoted
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getVote_route@16:
+    // smart_contracts/vault/governance_vault.algo.ts:255
+    // getVote(voter: bytes, proposalId: uint64): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:255
+    // getVote(voter: bytes, proposalId: uint64): uint64 {
+    callsub getVote
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getProposal_route@15:
+    // smart_contracts/vault/governance_vault.algo.ts:234
+    // getProposal(proposalId: uint64): [bytes, bytes, bytes, uint64, bytes, bytes, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:234
+    // getProposal(proposalId: uint64): [bytes, bytes, bytes, uint64, bytes, bytes, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64] {
+    callsub getProposal
+    dig 14
+    len
+    itob
+    extract 6 2
+    uncover 15
+    concat
+    dig 14
+    len
+    itob
+    extract 6 2
+    uncover 15
+    concat
+    dig 14
+    len
+    itob
+    extract 6 2
+    uncover 15
+    concat
+    uncover 14
+    itob
+    dig 14
+    len
+    itob
+    extract 6 2
+    uncover 15
+    concat
+    dig 14
+    len
+    itob
+    extract 6 2
+    uncover 15
+    concat
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    uncover 14
+    itob
+    dig 14
+    len
+    pushint 90 // 90
+    +
+    dup
+    itob
+    extract 6 2
+    pushbytes 0x005a
+    swap
+    concat
+    dig 15
+    len
+    uncover 2
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 14
+    len
+    uncover 2
+    +
+    swap
+    uncover 13
+    concat
+    dig 1
+    itob
+    extract 6 2
+    concat
+    dig 12
+    len
+    uncover 2
+    +
+    itob
+    extract 6 2
+    concat
+    uncover 9
+    concat
+    uncover 8
+    concat
+    uncover 7
+    concat
+    uncover 6
+    concat
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getVotingPower_route@14:
+    // smart_contracts/vault/governance_vault.algo.ts:226
+    // getVotingPower(user: bytes): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/vault/governance_vault.algo.ts:226
+    // getVotingPower(user: bytes): uint64 {
+    callsub getVotingPower
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_resumeGovernance_route@13:
+    // smart_contracts/vault/governance_vault.algo.ts:218
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub resumeGovernance
+    intc_1 // 1
+    return
+
+main_pauseGovernance_route@12:
+    // smart_contracts/vault/governance_vault.algo.ts:211
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub pauseGovernance
+    intc_1 // 1
+    return
+
+main_updateGovernanceParameters_route@11:
+    // smart_contracts/vault/governance_vault.algo.ts:198
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:198
+    // @abimethod()
+    callsub updateGovernanceParameters
+    intc_1 // 1
+    return
+
+main_updateVotingPower_route@10:
+    // smart_contracts/vault/governance_vault.algo.ts:183
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:183
+    // @abimethod()
+    callsub updateVotingPower
+    intc_1 // 1
+    return
+
+main_delegateVoting_route@9:
+    // smart_contracts/vault/governance_vault.algo.ts:178
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/vault/governance_vault.algo.ts:178
+    // @abimethod()
+    callsub delegateVoting
+    intc_1 // 1
+    return
+
+main_cancelProposal_route@8:
+    // smart_contracts/vault/governance_vault.algo.ts:169
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:169
+    // @abimethod()
+    callsub cancelProposal
+    intc_1 // 1
+    return
+
+main_executeProposal_route@7:
+    // smart_contracts/vault/governance_vault.algo.ts:154
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:154
+    // @abimethod()
+    callsub executeProposal
+    intc_1 // 1
+    return
+
+main_finalizeProposal_route@6:
+    // smart_contracts/vault/governance_vault.algo.ts:134
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:134
+    // @abimethod()
+    callsub finalizeProposal
+    intc_1 // 1
+    return
+
+main_vote_route@5:
+    // smart_contracts/vault/governance_vault.algo.ts:106
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:106
+    // @abimethod()
+    callsub vote
+    intc_1 // 1
+    return
+
+main_createProposal_route@4:
+    // smart_contracts/vault/governance_vault.algo.ts:75
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    extract 2 0
+    txna ApplicationArgs 5
+    extract 2 0
+    // smart_contracts/vault/governance_vault.algo.ts:75
+    // @abimethod()
+    callsub createProposal
+    itob
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_initialize_route@3:
+    // smart_contracts/vault/governance_vault.algo.ts:52
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    btoi
+    txna ApplicationArgs 6
+    btoi
+    // smart_contracts/vault/governance_vault.algo.ts:52
+    // @abimethod()
+    callsub initialize
+    intc_1 // 1
+    return
+
+main_bare_routing@22:
+    // smart_contracts/vault/governance_vault.algo.ts:33
+    // export class GovernanceVault extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@26
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_1 // 1
+    return
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.initialize(governanceTokenId: uint64, votingDuration: uint64, quorumThreshold: uint64, proposalThreshold: uint64, executionDelay: uint64, gracePeriod: uint64) -> void:
+initialize:
+    // smart_contracts/vault/governance_vault.algo.ts:52-60
+    // @abimethod()
+    // initialize(
+    //   governanceTokenId: uint64,
+    //   votingDuration: uint64,
+    //   quorumThreshold: uint64,
+    //   proposalThreshold: uint64,
+    //   executionDelay: uint64,
+    //   gracePeriod: uint64
+    // ): void {
+    proto 6 0
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_1 // "governanceActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:61
+    // assert(this.governanceActive.value === 0 as uint64)
+    !
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:41
+    // governanceToken = GlobalState<uint64>() // Asset ID of governance token
+    pushbytes "governanceToken"
+    // smart_contracts/vault/governance_vault.algo.ts:63
+    // this.governanceToken.value = governanceTokenId
+    frame_dig -6
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:36
+    // votingDuration = GlobalState<uint64>() // Duration in seconds
+    bytec 9 // "votingDuration"
+    // smart_contracts/vault/governance_vault.algo.ts:64
+    // this.votingDuration.value = votingDuration
+    frame_dig -5
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:37
+    // quorumThreshold = GlobalState<uint64>() // Percentage of total voting power needed
+    bytec 10 // "quorumThreshold"
+    // smart_contracts/vault/governance_vault.algo.ts:65
+    // this.quorumThreshold.value = quorumThreshold
+    frame_dig -4
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:38
+    // proposalThreshold = GlobalState<uint64>() // Minimum voting power to create proposal
+    bytec 11 // "proposalThreshold"
+    // smart_contracts/vault/governance_vault.algo.ts:66
+    // this.proposalThreshold.value = proposalThreshold
+    frame_dig -3
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:49
+    // executionDelay = GlobalState<uint64>() // Delay before execution after passing
+    bytec 14 // "executionDelay"
+    // smart_contracts/vault/governance_vault.algo.ts:67
+    // this.executionDelay.value = executionDelay
+    frame_dig -2
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:50
+    // gracePeriod = GlobalState<uint64>() // Grace period for execution
+    bytec 16 // "gracePeriod"
+    // smart_contracts/vault/governance_vault.algo.ts:68
+    // this.gracePeriod.value = gracePeriod
+    frame_dig -1
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:35
+    // proposalCount = GlobalState<uint64>()
+    bytec 12 // "proposalCount"
+    // smart_contracts/vault/governance_vault.algo.ts:69
+    // this.proposalCount.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:42
+    // totalVotingPower = GlobalState<uint64>()
+    bytec_2 // "totalVotingPower"
+    // smart_contracts/vault/governance_vault.algo.ts:70
+    // this.totalVotingPower.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    bytec_1 // "governanceActive"
+    // smart_contracts/vault/governance_vault.algo.ts:71
+    // this.governanceActive.value = 1 as uint64
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:45
+    // admin = GlobalState<bytes>()
+    bytec 4 // "admin"
+    // smart_contracts/vault/governance_vault.algo.ts:72
+    // this.admin.value = Txn.sender.bytes
+    txn Sender
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.createProposal(title: bytes, description: bytes, proposalType: uint64, targetContract: bytes, executionData: bytes) -> uint64:
+createProposal:
+    // smart_contracts/vault/governance_vault.algo.ts:75-82
+    // @abimethod()
+    // createProposal(
+    //   title: bytes,
+    //   description: bytes,
+    //   proposalType: uint64,
+    //   targetContract: bytes,
+    //   executionData: bytes
+    // ): uint64 {
+    proto 5 1
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_1 // "governanceActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:83
+    // assert(this.governanceActive.value === 1 as uint64)
+    intc_1 // 1
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:84
+    // const proposerVotingPower = this.getVotingPower(Txn.sender.bytes)
+    txn Sender
+    callsub getVotingPower
+    // smart_contracts/vault/governance_vault.algo.ts:38
+    // proposalThreshold = GlobalState<uint64>() // Minimum voting power to create proposal
+    intc_0 // 0
+    bytec 11 // "proposalThreshold"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:85
+    // assert(proposerVotingPower >= this.proposalThreshold.value)
+    >=
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:35
+    // proposalCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 12 // "proposalCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:86
+    // const proposalId: uint64 = this.proposalCount.value + 1 as uint64
+    intc_1 // 1
+    +
+    // smart_contracts/vault/governance_vault.algo.ts:35
+    // proposalCount = GlobalState<uint64>()
+    bytec 12 // "proposalCount"
+    // smart_contracts/vault/governance_vault.algo.ts:87
+    // this.proposalCount.value = proposalId
+    dig 1
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    dup
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:89
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposer')) }).value = Txn.sender.bytes
+    bytec 17 // "_proposer"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:89
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposer')) }).value = Txn.sender.bytes
+    txn Sender
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:90
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_title')) }).value = title
+    bytec 18 // "_title"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:90
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_title')) }).value = title
+    dup
+    box_del
+    pop
+    frame_dig -5
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:91
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_description')) }).value = description
+    bytec 19 // "_description"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:91
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_description')) }).value = description
+    dup
+    box_del
+    pop
+    frame_dig -4
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:92
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposalType')) }).value = proposalType
+    bytec 20 // "_proposalType"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:92
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposalType')) }).value = proposalType
+    frame_dig -3
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:93
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_targetContract')) }).value = targetContract
+    bytec 21 // "_targetContract"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:93
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_targetContract')) }).value = targetContract
+    dup
+    box_del
+    pop
+    frame_dig -2
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:94
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_executionData')) }).value = executionData
+    bytec 22 // "_executionData"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:94
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_executionData')) }).value = executionData
+    dup
+    box_del
+    pop
+    frame_dig -1
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:95
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingStartTime')) }).value = Global.latestTimestamp
+    bytec 23 // "_votingStartTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:95
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingStartTime')) }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:96
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value = Global.latestTimestamp + this.votingDuration.value as uint64
+    global LatestTimestamp
+    // smart_contracts/vault/governance_vault.algo.ts:36
+    // votingDuration = GlobalState<uint64>() // Duration in seconds
+    intc_0 // 0
+    bytec 9 // "votingDuration"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/vault/governance_vault.algo.ts:96
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value = Global.latestTimestamp + this.votingDuration.value as uint64
+    bytec 5 // "_votingEndTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:96
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value = Global.latestTimestamp + this.votingDuration.value as uint64
+    cover 2
+    +
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:97
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value = 0 as uint64
+    bytec 6 // "_forVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:97
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value = 0 as uint64
+    intc_0 // 0
+    itob
+    swap
+    dig 1
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:98
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value = 0 as uint64
+    bytec 7 // "_againstVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:98
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value = 0 as uint64
+    dig 1
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:99
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value = 0 as uint64
+    bytec 8 // "_abstainVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:99
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value = 0 as uint64
+    dig 1
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:100
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value = PROPOSAL_STATUS_ACTIVE
+    bytec_3 // "_status"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:5
+    // const PROPOSAL_STATUS_ACTIVE: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/vault/governance_vault.algo.ts:100
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value = PROPOSAL_STATUS_ACTIVE
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:37
+    // quorumThreshold = GlobalState<uint64>() // Percentage of total voting power needed
+    intc_0 // 0
+    bytec 10 // "quorumThreshold"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/vault/governance_vault.algo.ts:101
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value = this.quorumThreshold.value
+    bytec 13 // "_quorumRequired"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:101
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value = this.quorumThreshold.value
+    swap
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    swap
+    // smart_contracts/vault/governance_vault.algo.ts:102
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_executed')) }).value = 0 as uint64
+    bytec 15 // "_executed"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:102
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_executed')) }).value = 0 as uint64
+    swap
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:103
+    // return proposalId
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.vote(proposalId: uint64, support: uint64) -> void:
+vote:
+    // smart_contracts/vault/governance_vault.algo.ts:106-107
+    // @abimethod()
+    // vote(proposalId: uint64, support: uint64): void {
+    proto 2 0
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_1 // "governanceActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:108
+    // assert(this.governanceActive.value === 1 as uint64)
+    intc_1 // 1
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:109
+    // assert(support <= 2)
+    frame_dig -1
+    intc_2 // 2
+    <=
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -2
+    itob
+    dupn 2
+    // smart_contracts/vault/governance_vault.algo.ts:110
+    // const status = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value
+    bytec_3 // "_status"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:110
+    // const status = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:5
+    // const PROPOSAL_STATUS_ACTIVE: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/vault/governance_vault.algo.ts:111
+    // assert(status === PROPOSAL_STATUS_ACTIVE)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:112
+    // const votingEndTime = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value
+    bytec 5 // "_votingEndTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:112
+    // const votingEndTime = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:113
+    // assert(Global.latestTimestamp <= votingEndTime)
+    global LatestTimestamp
+    >=
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:114
+    // const voter = Txn.sender.bytes
+    txn Sender
+    // smart_contracts/vault/governance_vault.algo.ts:115
+    // const votingPower = this.getVotingPower(voter)
+    dup
+    callsub getVotingPower
+    dup
+    cover 3
+    // smart_contracts/vault/governance_vault.algo.ts:116
+    // assert(votingPower > 0)
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    swap
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:118
+    // assert(!Box<uint64>({ key: voteKey(voter, proposalId) }).exists, 'Already voted on this proposal')
+    dup
+    box_len
+    bury 1
+    !
+    assert // Already voted on this proposal
+    // smart_contracts/vault/governance_vault.algo.ts:120
+    // Box<uint64>({ key: voteKey(voter, proposalId) }).value = support
+    frame_dig -1
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:122
+    // if (support === 0 as uint64) {
+    frame_dig -1
+    bnz vote_else_body@2
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    frame_dig 0
+    // smart_contracts/vault/governance_vault.algo.ts:123
+    // const againstVotesKey = concat(uint64ToBytes(proposalId), Bytes('_againstVotes'))
+    bytec 7 // "_againstVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:124
+    // Box<uint64>({ key: againstVotesKey }).value = Box<uint64>({ key: againstVotesKey }).value + votingPower as uint64
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_dig 1
+    +
+    itob
+    box_put
+    retsub
+
+vote_else_body@2:
+    // smart_contracts/vault/governance_vault.algo.ts:125
+    // } else if (support === 1 as uint64) {
+    frame_dig -1
+    intc_1 // 1
+    ==
+    bz vote_else_body@4
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    frame_dig 0
+    // smart_contracts/vault/governance_vault.algo.ts:126
+    // const forVotesKey = concat(uint64ToBytes(proposalId), Bytes('_forVotes'))
+    bytec 6 // "_forVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:127
+    // Box<uint64>({ key: forVotesKey }).value = Box<uint64>({ key: forVotesKey }).value + votingPower as uint64
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_dig 1
+    +
+    itob
+    box_put
+    retsub
+
+vote_else_body@4:
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    frame_dig 0
+    // smart_contracts/vault/governance_vault.algo.ts:129
+    // const abstainVotesKey = concat(uint64ToBytes(proposalId), Bytes('_abstainVotes'))
+    bytec 8 // "_abstainVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:130
+    // Box<uint64>({ key: abstainVotesKey }).value = Box<uint64>({ key: abstainVotesKey }).value + votingPower as uint64
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_dig 1
+    +
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.finalizeProposal(proposalId: uint64) -> void:
+finalizeProposal:
+    // smart_contracts/vault/governance_vault.algo.ts:134-135
+    // @abimethod()
+    // finalizeProposal(proposalId: uint64): void {
+    proto 1 0
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:136
+    // const statusKey = concat(uint64ToBytes(proposalId), Bytes('_status'))
+    bytec_3 // "_status"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    dup
+    cover 2
+    // smart_contracts/vault/governance_vault.algo.ts:137
+    // const status = Box<uint64>({ key: statusKey }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:5
+    // const PROPOSAL_STATUS_ACTIVE: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/vault/governance_vault.algo.ts:138
+    // assert(status === PROPOSAL_STATUS_ACTIVE)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:139
+    // const votingEndTime = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value
+    bytec 5 // "_votingEndTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:139
+    // const votingEndTime = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:140
+    // assert(Global.latestTimestamp > votingEndTime)
+    global LatestTimestamp
+    <
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:141
+    // const forVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value
+    bytec 6 // "_forVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:141
+    // const forVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value
+    box_get
+    swap
+    btoi
+    dup
+    cover 3
+    cover 3
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:142
+    // const againstVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value
+    bytec 7 // "_againstVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:142
+    // const againstVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value
+    box_get
+    swap
+    btoi
+    dup
+    cover 3
+    cover 4
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:143
+    // const abstainVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value
+    bytec 8 // "_abstainVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:143
+    // const abstainVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:144
+    // const totalVotes = forVotes + againstVotes + abstainVotes as uint64
+    uncover 3
+    uncover 3
+    +
+    +
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    swap
+    // smart_contracts/vault/governance_vault.algo.ts:145
+    // const quorumRequired = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value
+    bytec 13 // "_quorumRequired"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:145
+    // const quorumRequired = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:146
+    // const quorumMet = (totalVotes * 100 as uint64) >= (this.totalVotingPower.value * quorumRequired as uint64)
+    swap
+    intc_3 // 100
+    *
+    // smart_contracts/vault/governance_vault.algo.ts:42
+    // totalVotingPower = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalVotingPower"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:146
+    // const quorumMet = (totalVotes * 100 as uint64) >= (this.totalVotingPower.value * quorumRequired as uint64)
+    uncover 2
+    *
+    >=
+    // smart_contracts/vault/governance_vault.algo.ts:147
+    // if (quorumMet && forVotes > againstVotes) {
+    bz finalizeProposal_else_body@3
+    frame_dig 1
+    frame_dig 2
+    >
+    bz finalizeProposal_else_body@3
+    // smart_contracts/vault/governance_vault.algo.ts:6
+    // const PROPOSAL_STATUS_SUCCEEDED: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/vault/governance_vault.algo.ts:148
+    // Box<uint64>({ key: statusKey }).value = PROPOSAL_STATUS_SUCCEEDED
+    itob
+    frame_dig 0
+    swap
+    box_put
+    retsub
+
+finalizeProposal_else_body@3:
+    // smart_contracts/vault/governance_vault.algo.ts:7
+    // const PROPOSAL_STATUS_FAILED: uint64 = 3;
+    pushint 3 // 3
+    // smart_contracts/vault/governance_vault.algo.ts:150
+    // Box<uint64>({ key: statusKey }).value = PROPOSAL_STATUS_FAILED
+    itob
+    frame_dig 0
+    swap
+    box_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.executeProposal(proposalId: uint64) -> void:
+executeProposal:
+    // smart_contracts/vault/governance_vault.algo.ts:154-155
+    // @abimethod()
+    // executeProposal(proposalId: uint64): void {
+    proto 1 0
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:156
+    // const statusKey = concat(uint64ToBytes(proposalId), Bytes('_status'))
+    bytec_3 // "_status"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:157
+    // const status = Box<uint64>({ key: statusKey }).value
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:6
+    // const PROPOSAL_STATUS_SUCCEEDED: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/vault/governance_vault.algo.ts:158
+    // assert(status === PROPOSAL_STATUS_SUCCEEDED)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:159
+    // const executedKey = concat(uint64ToBytes(proposalId), Bytes('_executed'))
+    bytec 15 // "_executed"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:160
+    // assert(Box<uint64>({ key: executedKey }).value === 0 as uint64)
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    !
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    uncover 2
+    // smart_contracts/vault/governance_vault.algo.ts:161
+    // const votingEndTime = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value
+    bytec 5 // "_votingEndTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:161
+    // const votingEndTime = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:162
+    // assert(Global.latestTimestamp >= votingEndTime + this.executionDelay.value)
+    global LatestTimestamp
+    // smart_contracts/vault/governance_vault.algo.ts:49
+    // executionDelay = GlobalState<uint64>() // Delay before execution after passing
+    intc_0 // 0
+    bytec 14 // "executionDelay"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:162
+    // assert(Global.latestTimestamp >= votingEndTime + this.executionDelay.value)
+    dig 2
+    +
+    >=
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:163
+    // assert(Global.latestTimestamp <= votingEndTime + this.executionDelay.value + this.gracePeriod.value)
+    global LatestTimestamp
+    // smart_contracts/vault/governance_vault.algo.ts:49
+    // executionDelay = GlobalState<uint64>() // Delay before execution after passing
+    intc_0 // 0
+    bytec 14 // "executionDelay"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:163
+    // assert(Global.latestTimestamp <= votingEndTime + this.executionDelay.value + this.gracePeriod.value)
+    uncover 2
+    +
+    // smart_contracts/vault/governance_vault.algo.ts:50
+    // gracePeriod = GlobalState<uint64>() // Grace period for execution
+    intc_0 // 0
+    bytec 16 // "gracePeriod"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:163
+    // assert(Global.latestTimestamp <= votingEndTime + this.executionDelay.value + this.gracePeriod.value)
+    +
+    <=
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:165
+    // Box<uint64>({ key: executedKey }).value = 1 as uint64
+    intc_1 // 1
+    itob
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:8
+    // const PROPOSAL_STATUS_EXECUTED: uint64 = 4;
+    pushint 4 // 4
+    // smart_contracts/vault/governance_vault.algo.ts:166
+    // Box<uint64>({ key: statusKey }).value = PROPOSAL_STATUS_EXECUTED
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.cancelProposal(proposalId: uint64) -> void:
+cancelProposal:
+    // smart_contracts/vault/governance_vault.algo.ts:169-170
+    // @abimethod()
+    // cancelProposal(proposalId: uint64): void {
+    proto 1 0
+    // smart_contracts/vault/governance_vault.algo.ts:171
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/governance_vault.algo.ts:45
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec 4 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:171
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:172
+    // const statusKey = concat(uint64ToBytes(proposalId), Bytes('_status'))
+    bytec_3 // "_status"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:173
+    // const status = Box<uint64>({ key: statusKey }).value
+    box_get
+    swap
+    btoi
+    dup
+    uncover 2
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:5
+    // const PROPOSAL_STATUS_ACTIVE: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/vault/governance_vault.algo.ts:174
+    // assert(status === PROPOSAL_STATUS_ACTIVE || status === PROPOSAL_STATUS_SUCCEEDED)
+    ==
+    bnz cancelProposal_bool_true@2
+    frame_dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:6
+    // const PROPOSAL_STATUS_SUCCEEDED: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/vault/governance_vault.algo.ts:174
+    // assert(status === PROPOSAL_STATUS_ACTIVE || status === PROPOSAL_STATUS_SUCCEEDED)
+    ==
+    bz cancelProposal_bool_false@3
+
+cancelProposal_bool_true@2:
+    intc_1 // 1
+
+cancelProposal_bool_merge@4:
+    // smart_contracts/vault/governance_vault.algo.ts:174
+    // assert(status === PROPOSAL_STATUS_ACTIVE || status === PROPOSAL_STATUS_SUCCEEDED)
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:9
+    // const PROPOSAL_STATUS_CANCELLED: uint64 = 5;
+    pushint 5 // 5
+    // smart_contracts/vault/governance_vault.algo.ts:175
+    // Box<uint64>({ key: statusKey }).value = PROPOSAL_STATUS_CANCELLED
+    itob
+    frame_dig 0
+    swap
+    box_put
+    retsub
+
+cancelProposal_bool_false@3:
+    intc_0 // 0
+    b cancelProposal_bool_merge@4
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.delegateVoting(delegate: bytes) -> void:
+delegateVoting:
+    // smart_contracts/vault/governance_vault.algo.ts:178-179
+    // @abimethod()
+    // delegateVoting(delegate: bytes): void {
+    proto 1 0
+    // smart_contracts/vault/governance_vault.algo.ts:180
+    // Box<bytes>({ key: Txn.sender.bytes }).value = delegate
+    txn Sender
+    dup
+    box_del
+    pop
+    frame_dig -1
+    box_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.updateVotingPower(user: bytes, newPower: uint64) -> void:
+updateVotingPower:
+    // smart_contracts/vault/governance_vault.algo.ts:183-184
+    // @abimethod()
+    // updateVotingPower(user: bytes, newPower: uint64): void {
+    proto 2 0
+    // smart_contracts/vault/governance_vault.algo.ts:188
+    // const oldPower = this.getVotingPower(user)
+    frame_dig -2
+    callsub getVotingPower
+    // smart_contracts/vault/governance_vault.algo.ts:191
+    // votingPowerKey.value = newPower
+    frame_dig -1
+    itob
+    frame_dig -2
+    swap
+    box_put
+    // smart_contracts/vault/governance_vault.algo.ts:42
+    // totalVotingPower = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalVotingPower"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:194
+    // this.totalVotingPower.value = this.totalVotingPower.value - oldPower + newPower
+    swap
+    -
+    frame_dig -1
+    +
+    // smart_contracts/vault/governance_vault.algo.ts:42
+    // totalVotingPower = GlobalState<uint64>()
+    bytec_2 // "totalVotingPower"
+    // smart_contracts/vault/governance_vault.algo.ts:194
+    // this.totalVotingPower.value = this.totalVotingPower.value - oldPower + newPower
+    swap
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.updateGovernanceParameters(newVotingDuration: uint64, newQuorumThreshold: uint64, newProposalThreshold: uint64) -> void:
+updateGovernanceParameters:
+    // smart_contracts/vault/governance_vault.algo.ts:198-203
+    // @abimethod()
+    // updateGovernanceParameters(
+    //   newVotingDuration: uint64,
+    //   newQuorumThreshold: uint64,
+    //   newProposalThreshold: uint64
+    // ): void {
+    proto 3 0
+    // smart_contracts/vault/governance_vault.algo.ts:204
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/governance_vault.algo.ts:45
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec 4 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:204
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:36
+    // votingDuration = GlobalState<uint64>() // Duration in seconds
+    bytec 9 // "votingDuration"
+    // smart_contracts/vault/governance_vault.algo.ts:206
+    // this.votingDuration.value = newVotingDuration
+    frame_dig -3
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:37
+    // quorumThreshold = GlobalState<uint64>() // Percentage of total voting power needed
+    bytec 10 // "quorumThreshold"
+    // smart_contracts/vault/governance_vault.algo.ts:207
+    // this.quorumThreshold.value = newQuorumThreshold
+    frame_dig -2
+    app_global_put
+    // smart_contracts/vault/governance_vault.algo.ts:38
+    // proposalThreshold = GlobalState<uint64>() // Minimum voting power to create proposal
+    bytec 11 // "proposalThreshold"
+    // smart_contracts/vault/governance_vault.algo.ts:208
+    // this.proposalThreshold.value = newProposalThreshold
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.pauseGovernance() -> void:
+pauseGovernance:
+    // smart_contracts/vault/governance_vault.algo.ts:213
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/governance_vault.algo.ts:45
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec 4 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:213
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    bytec_1 // "governanceActive"
+    // smart_contracts/vault/governance_vault.algo.ts:215
+    // this.governanceActive.value = 0 as uint64
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.resumeGovernance() -> void:
+resumeGovernance:
+    // smart_contracts/vault/governance_vault.algo.ts:220
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/governance_vault.algo.ts:45
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec 4 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:220
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    bytec_1 // "governanceActive"
+    // smart_contracts/vault/governance_vault.algo.ts:222
+    // this.governanceActive.value = 1 as uint64
+    intc_1 // 1
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.getVotingPower(user: bytes) -> uint64:
+getVotingPower:
+    // smart_contracts/vault/governance_vault.algo.ts:226
+    // getVotingPower(user: bytes): uint64 {
+    proto 1 1
+    // smart_contracts/vault/governance_vault.algo.ts:228
+    // if (votingPowerKey.exists) {
+    frame_dig -1
+    box_len
+    bury 1
+    bz getVotingPower_after_if_else@2
+    // smart_contracts/vault/governance_vault.algo.ts:229
+    // return votingPowerKey.value
+    frame_dig -1
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    retsub
+
+getVotingPower_after_if_else@2:
+    // smart_contracts/vault/governance_vault.algo.ts:231
+    // return 0 as uint64
+    intc_0 // 0
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.getProposal(proposalId: uint64) -> bytes, bytes, bytes, uint64, bytes, bytes, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64:
+getProposal:
+    // smart_contracts/vault/governance_vault.algo.ts:234
+    // getProposal(proposalId: uint64): [bytes, bytes, bytes, uint64, bytes, bytes, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64] {
+    proto 1 15
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:237
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposer')) }).value,
+    bytec 17 // "_proposer"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:237
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposer')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:238
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_title')) }).value,
+    bytec 18 // "_title"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:238
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_title')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/vault/governance_vault.algo.ts:239
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_description')) }).value,
+    bytec 19 // "_description"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:239
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_description')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 3
+    // smart_contracts/vault/governance_vault.algo.ts:240
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposalType')) }).value,
+    bytec 20 // "_proposalType"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:240
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposalType')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 4
+    // smart_contracts/vault/governance_vault.algo.ts:241
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_targetContract')) }).value,
+    bytec 21 // "_targetContract"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:241
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_targetContract')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 5
+    // smart_contracts/vault/governance_vault.algo.ts:242
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_executionData')) }).value,
+    bytec 22 // "_executionData"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:242
+    // Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_executionData')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 6
+    // smart_contracts/vault/governance_vault.algo.ts:243
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingStartTime')) }).value,
+    bytec 23 // "_votingStartTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:243
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingStartTime')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 7
+    // smart_contracts/vault/governance_vault.algo.ts:244
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value,
+    bytec 5 // "_votingEndTime"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:244
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 8
+    // smart_contracts/vault/governance_vault.algo.ts:245
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value,
+    bytec 6 // "_forVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:245
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 9
+    // smart_contracts/vault/governance_vault.algo.ts:246
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value,
+    bytec 7 // "_againstVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:246
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 10
+    // smart_contracts/vault/governance_vault.algo.ts:247
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value,
+    bytec 8 // "_abstainVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:247
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 11
+    // smart_contracts/vault/governance_vault.algo.ts:248
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value,
+    bytec_3 // "_status"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:248
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 12
+    // smart_contracts/vault/governance_vault.algo.ts:249
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value,
+    bytec 13 // "_quorumRequired"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:249
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    uncover 13
+    // smart_contracts/vault/governance_vault.algo.ts:250
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_executed')) }).value,
+    bytec 15 // "_executed"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:250
+    // Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_executed')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:236-252
+    // return [
+    //   Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposer')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_title')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_description')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_proposalType')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_targetContract')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(proposalId), Bytes('_executionData')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingStartTime')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_votingEndTime')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_status')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_executed')) }).value,
+    //   proposalId
+    // ]
+    frame_dig -1
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.getVote(voter: bytes, proposalId: uint64) -> uint64:
+getVote:
+    // smart_contracts/vault/governance_vault.algo.ts:255
+    // getVote(voter: bytes, proposalId: uint64): uint64 {
+    proto 2 1
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    frame_dig -2
+    swap
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:257
+    // return Box<uint64>({ key: voteKey(voter, proposalId) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.hasVoted(voter: bytes, proposalId: uint64) -> uint64:
+hasVoted:
+    // smart_contracts/vault/governance_vault.algo.ts:260
+    // hasVoted(voter: bytes, proposalId: uint64): uint64 {
+    proto 2 1
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    frame_dig -2
+    swap
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:261
+    // return Box<uint64>({ key: voteKey(voter, proposalId) }).exists ? 1 as uint64 : 0 as uint64
+    box_len
+    bury 1
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.getGovernanceInfo() -> uint64, uint64, uint64, uint64, uint64, uint64:
+getGovernanceInfo:
+    // smart_contracts/vault/governance_vault.algo.ts:35
+    // proposalCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 12 // "proposalCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:36
+    // votingDuration = GlobalState<uint64>() // Duration in seconds
+    intc_0 // 0
+    bytec 9 // "votingDuration"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:37
+    // quorumThreshold = GlobalState<uint64>() // Percentage of total voting power needed
+    intc_0 // 0
+    bytec 10 // "quorumThreshold"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:38
+    // proposalThreshold = GlobalState<uint64>() // Minimum voting power to create proposal
+    intc_0 // 0
+    bytec 11 // "proposalThreshold"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:42
+    // totalVotingPower = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalVotingPower"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:46
+    // governanceActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_1 // "governanceActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:265-272
+    // return [
+    //   this.proposalCount.value,
+    //   this.votingDuration.value,
+    //   this.quorumThreshold.value,
+    //   this.proposalThreshold.value,
+    //   this.totalVotingPower.value,
+    //   this.governanceActive.value
+    // ]
+    retsub
+
+
+// smart_contracts/vault/governance_vault.algo.ts::GovernanceVault.calculateQuorumProgress(proposalId: uint64) -> uint64:
+calculateQuorumProgress:
+    // smart_contracts/vault/governance_vault.algo.ts:275
+    // calculateQuorumProgress(proposalId: uint64): uint64 {
+    proto 1 1
+    // smart_contracts/vault/governance_vault.algo.ts:22
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:276
+    // const forVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value
+    bytec 6 // "_forVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:276
+    // const forVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_forVotes')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/governance_vault.algo.ts:277
+    // const againstVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value
+    bytec 7 // "_againstVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:277
+    // const againstVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_againstVotes')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/vault/governance_vault.algo.ts:278
+    // const abstainVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value
+    bytec 8 // "_abstainVotes"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:278
+    // const abstainVotes = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_abstainVotes')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:279
+    // const totalVotes = forVotes + againstVotes + abstainVotes as uint64
+    cover 2
+    +
+    +
+    swap
+    // smart_contracts/vault/governance_vault.algo.ts:280
+    // const quorumRequired = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value
+    bytec 13 // "_quorumRequired"
+    // smart_contracts/vault/governance_vault.algo.ts:30
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/governance_vault.algo.ts:280
+    // const quorumRequired = Box<uint64>({ key: concat(uint64ToBytes(proposalId), Bytes('_quorumRequired')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/governance_vault.algo.ts:42
+    // totalVotingPower = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "totalVotingPower"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/governance_vault.algo.ts:281
+    // const requiredVotes = (this.totalVotingPower.value * quorumRequired as uint64) / 100 as uint64
+    *
+    intc_3 // 100
+    /
+    dup
+    // smart_contracts/vault/governance_vault.algo.ts:282
+    // return requiredVotes > 0 ? (totalVotes * 100 as uint64) / requiredVotes as uint64 : 0 as uint64
+    bz calculateQuorumProgress_ternary_false@2
+    frame_dig 0
+    intc_3 // 100
+    *
+    frame_dig 1
+    /
+
+calculateQuorumProgress_ternary_merge@3:
+    // smart_contracts/vault/governance_vault.algo.ts:282
+    // return requiredVotes > 0 ? (totalVotes * 100 as uint64) / requiredVotes as uint64 : 0 as uint64
+    frame_bury 0
+    retsub
+
+calculateQuorumProgress_ternary_false@2:
+    // smart_contracts/vault/governance_vault.algo.ts:282
+    // return requiredVotes > 0 ? (totalVotes * 100 as uint64) / requiredVotes as uint64 : 0 as uint64
+    intc_0 // 0
+    b calculateQuorumProgress_ternary_merge@3

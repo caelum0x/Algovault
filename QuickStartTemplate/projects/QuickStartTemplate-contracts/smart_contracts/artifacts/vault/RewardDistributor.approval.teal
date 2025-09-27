@@ -1,0 +1,1048 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 0 1 100 1000000000000
+    bytecblock "totalRewardPool" "distributionActive" "distributionRate" "admin" "lastDistribution" 0x151f7c75 "maxDistributionRate" "minDistributionRate" "totalDistributed" "distributionCount"
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@16
+    pushbytess 0x109bbeb1 0xb3b70146 0x3e6c8dd2 0x80d9e1f9 0xb65dfb6f 0xedd4103c 0x9c90259c 0xd3bd98b7 0xc3e408f3 0xed82579c 0x77ff639b // method "initialize(uint64,uint64,uint64,uint64)void", method "addRewards()void", method "distributeRewards(byte[],uint64)uint64", method "updateDistributionRate(uint64)void", method "setTargetAPY(uint64,uint64)void", method "pauseDistribution()void", method "resumeDistribution()void", method "withdrawExcessRewards(uint64)void", method "getDistributorInfo()(uint64,uint64,uint64,bool,uint64,uint64)", method "calculateProjectedRewards(uint64,uint64)uint64", method "getCurrentAPY(uint64)uint64"
+    txna ApplicationArgs 0
+    match main_initialize_route@3 main_addRewards_route@4 main_distributeRewards_route@5 main_updateDistributionRate_route@6 main_setTargetAPY_route@7 main_pauseDistribution_route@8 main_resumeDistribution_route@9 main_withdrawExcessRewards_route@10 main_getDistributorInfo_route@11 main_calculateProjectedRewards_route@12 main_getCurrentAPY_route@13
+
+main_after_if_else@20:
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    intc_0 // 0
+    return
+
+main_getCurrentAPY_route@13:
+    // smart_contracts/vault/reward_distributor.algo.ts:180
+    // getCurrentAPY(totalStaked: uint64): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:180
+    // getCurrentAPY(totalStaked: uint64): uint64 {
+    callsub getCurrentAPY
+    itob
+    bytec 5 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_calculateProjectedRewards_route@12:
+    // smart_contracts/vault/reward_distributor.algo.ts:170
+    // calculateProjectedRewards(totalStaked: uint64, timespan: uint64): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:170
+    // calculateProjectedRewards(totalStaked: uint64, timespan: uint64): uint64 {
+    callsub calculateProjectedRewards
+    itob
+    bytec 5 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getDistributorInfo_route@11:
+    // smart_contracts/vault/reward_distributor.algo.ts:159
+    // getDistributorInfo(): [uint64, uint64, uint64, boolean, uint64, uint64] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getDistributorInfo
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    pushbytes 0x00
+    intc_0 // 0
+    uncover 7
+    setbit
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec 5 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_withdrawExcessRewards_route@10:
+    // smart_contracts/vault/reward_distributor.algo.ts:146
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:146
+    // @abimethod()
+    callsub withdrawExcessRewards
+    intc_1 // 1
+    return
+
+main_resumeDistribution_route@9:
+    // smart_contracts/vault/reward_distributor.algo.ts:140
+    // resumeDistribution(): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub resumeDistribution
+    intc_1 // 1
+    return
+
+main_pauseDistribution_route@8:
+    // smart_contracts/vault/reward_distributor.algo.ts:135
+    // pauseDistribution(): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub pauseDistribution
+    intc_1 // 1
+    return
+
+main_setTargetAPY_route@7:
+    // smart_contracts/vault/reward_distributor.algo.ts:129
+    // setTargetAPY(totalStaked: uint64, targetAPY: uint64): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:129
+    // setTargetAPY(totalStaked: uint64, targetAPY: uint64): void {
+    callsub setTargetAPY
+    intc_1 // 1
+    return
+
+main_updateDistributionRate_route@6:
+    // smart_contracts/vault/reward_distributor.algo.ts:123
+    // updateDistributionRate(newRate: uint64): void {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:123
+    // updateDistributionRate(newRate: uint64): void {
+    callsub updateDistributionRate
+    intc_1 // 1
+    return
+
+main_distributeRewards_route@5:
+    // smart_contracts/vault/reward_distributor.algo.ts:57
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:57
+    // @abimethod()
+    callsub distributeRewards
+    itob
+    bytec 5 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_addRewards_route@4:
+    // smart_contracts/vault/reward_distributor.algo.ts:48
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub addRewards
+    intc_1 // 1
+    return
+
+main_initialize_route@3:
+    // smart_contracts/vault/reward_distributor.algo.ts:22
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/vault/reward_distributor.algo.ts:22
+    // @abimethod()
+    callsub initialize
+    intc_1 // 1
+    return
+
+main_bare_routing@16:
+    // smart_contracts/vault/reward_distributor.algo.ts:4
+    // export class RewardDistributor extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@20
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_1 // 1
+    return
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.initialize(initialRewardPool: uint64, baseDistributionRate: uint64, maxRate: uint64, minRate: uint64) -> void:
+initialize:
+    // smart_contracts/vault/reward_distributor.algo.ts:22-28
+    // @abimethod()
+    // initialize(
+    //   initialRewardPool: uint64,
+    //   baseDistributionRate: uint64,
+    //   maxRate: uint64,
+    //   minRate: uint64
+    // ): void {
+    proto 4 0
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_1 // "distributionActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:30
+    // assert(!this.distributionActive.value)
+    !
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    bytec_0 // "totalRewardPool"
+    // smart_contracts/vault/reward_distributor.algo.ts:32
+    // this.totalRewardPool.value = initialRewardPool
+    frame_dig -4
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    bytec_2 // "distributionRate"
+    // smart_contracts/vault/reward_distributor.algo.ts:33
+    // this.distributionRate.value = baseDistributionRate
+    frame_dig -3
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:15
+    // maxDistributionRate = GlobalState<uint64>()
+    bytec 6 // "maxDistributionRate"
+    // smart_contracts/vault/reward_distributor.algo.ts:34
+    // this.maxDistributionRate.value = maxRate
+    frame_dig -2
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:16
+    // minDistributionRate = GlobalState<uint64>()
+    bytec 7 // "minDistributionRate"
+    // smart_contracts/vault/reward_distributor.algo.ts:35
+    // this.minDistributionRate.value = minRate
+    frame_dig -1
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:8
+    // lastDistribution = GlobalState<uint64>()
+    bytec 4 // "lastDistribution"
+    // smart_contracts/vault/reward_distributor.algo.ts:36
+    // this.lastDistribution.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    bytec_1 // "distributionActive"
+    // smart_contracts/vault/reward_distributor.algo.ts:37
+    // this.distributionActive.value = true
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:12
+    // admin = GlobalState<bytes>()
+    bytec_3 // "admin"
+    // smart_contracts/vault/reward_distributor.algo.ts:38
+    // this.admin.value = Txn.sender.bytes
+    txn Sender
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:19
+    // totalDistributed = GlobalState<uint64>()
+    bytec 8 // "totalDistributed"
+    // smart_contracts/vault/reward_distributor.algo.ts:39
+    // this.totalDistributed.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:20
+    // distributionCount = GlobalState<uint64>()
+    bytec 9 // "distributionCount"
+    // smart_contracts/vault/reward_distributor.algo.ts:40
+    // this.distributionCount.value = 0
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.addRewards() -> void:
+addRewards:
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_1 // "distributionActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:50
+    // assert(this.distributionActive.value)
+    assert
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.distributeRewards(poolAddress: bytes, totalStaked: uint64) -> uint64:
+distributeRewards:
+    // smart_contracts/vault/reward_distributor.algo.ts:57-58
+    // @abimethod()
+    // distributeRewards(poolAddress: bytes, totalStaked: uint64): uint64 {
+    proto 2 1
+    pushbytes ""
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_1 // "distributionActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:59
+    // assert(this.distributionActive.value)
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:60
+    // assert(totalStaked > 0)
+    frame_dig -1
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:61
+    // assert(this.totalRewardPool.value > 0)
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:63
+    // const currentTime: uint64 = Global.latestTimestamp
+    global LatestTimestamp
+    dup
+    // smart_contracts/vault/reward_distributor.algo.ts:8
+    // lastDistribution = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 4 // "lastDistribution"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:64
+    // const timeSinceLastDistribution: uint64 = currentTime - this.lastDistribution.value
+    -
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    intc_0 // 0
+    bytec_2 // "distributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:66
+    // const baseReward: uint64 = (timeSinceLastDistribution * this.distributionRate.value * totalStaked) / 1000000000000 as uint64
+    *
+    frame_dig -1
+    *
+    intc_3 // 1000000000000
+    /
+    // smart_contracts/vault/reward_distributor.algo.ts:67
+    // const utilizationBonus: uint64 = this.calculateUtilizationBonus(totalStaked)
+    frame_dig -1
+    callsub calculateUtilizationBonus
+    // smart_contracts/vault/reward_distributor.algo.ts:68
+    // const finalReward: uint64 = (baseReward * utilizationBonus) / 100 as uint64
+    *
+    intc_2 // 100
+    /
+    dup
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:69
+    // const actualReward: uint64 = finalReward > this.totalRewardPool.value ? this.totalRewardPool.value : finalReward
+    >
+    bz distributeRewards_ternary_false@2
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    frame_bury 0
+
+distributeRewards_ternary_merge@3:
+    // smart_contracts/vault/reward_distributor.algo.ts:71
+    // if (actualReward > 0) {
+    frame_dig 0
+    bz distributeRewards_after_if_else@6
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:72
+    // this.totalRewardPool.value = this.totalRewardPool.value - actualReward
+    frame_dig 0
+    dup
+    cover 2
+    -
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    bytec_0 // "totalRewardPool"
+    // smart_contracts/vault/reward_distributor.algo.ts:72
+    // this.totalRewardPool.value = this.totalRewardPool.value - actualReward
+    swap
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:19
+    // totalDistributed = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 8 // "totalDistributed"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:73
+    // this.totalDistributed.value = this.totalDistributed.value + actualReward
+    dig 1
+    +
+    // smart_contracts/vault/reward_distributor.algo.ts:19
+    // totalDistributed = GlobalState<uint64>()
+    bytec 8 // "totalDistributed"
+    // smart_contracts/vault/reward_distributor.algo.ts:73
+    // this.totalDistributed.value = this.totalDistributed.value + actualReward
+    swap
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:20
+    // distributionCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 9 // "distributionCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:74
+    // this.distributionCount.value = this.distributionCount.value + 1
+    intc_1 // 1
+    +
+    // smart_contracts/vault/reward_distributor.algo.ts:20
+    // distributionCount = GlobalState<uint64>()
+    bytec 9 // "distributionCount"
+    // smart_contracts/vault/reward_distributor.algo.ts:74
+    // this.distributionCount.value = this.distributionCount.value + 1
+    swap
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:8
+    // lastDistribution = GlobalState<uint64>()
+    bytec 4 // "lastDistribution"
+    // smart_contracts/vault/reward_distributor.algo.ts:75
+    // this.lastDistribution.value = currentTime
+    frame_dig 1
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:78-81
+    // itxn.payment({
+    //   receiver: poolAddress,
+    //   amount: actualReward,
+    // }).submit()
+    itxn_begin
+    itxn_field Amount
+    frame_dig -2
+    itxn_field Receiver
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+distributeRewards_after_if_else@6:
+    // smart_contracts/vault/reward_distributor.algo.ts:84
+    // return actualReward
+    retsub
+
+distributeRewards_ternary_false@2:
+    frame_dig 2
+    frame_bury 0
+    b distributeRewards_ternary_merge@3
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateUtilizationBonus(totalStaked: uint64) -> uint64:
+calculateUtilizationBonus:
+    // smart_contracts/vault/reward_distributor.algo.ts:87
+    // private calculateUtilizationBonus(totalStaked: uint64): uint64 {
+    proto 1 1
+    // smart_contracts/vault/reward_distributor.algo.ts:98
+    // if (totalStaked >= threshold4) {
+    frame_dig -1
+    // smart_contracts/vault/reward_distributor.algo.ts:95
+    // const threshold4: uint64 = 1000000000 as uint64
+    pushint 1000000000 // 1000000000
+    // smart_contracts/vault/reward_distributor.algo.ts:98
+    // if (totalStaked >= threshold4) {
+    >=
+    bz calculateUtilizationBonus_after_if_else@2
+    // smart_contracts/vault/reward_distributor.algo.ts:96
+    // const bonus4: uint64 = 150 as uint64
+    pushint 150 // 150
+    // smart_contracts/vault/reward_distributor.algo.ts:99
+    // return bonus4
+    retsub
+
+calculateUtilizationBonus_after_if_else@2:
+    // smart_contracts/vault/reward_distributor.algo.ts:100
+    // } if (totalStaked >= threshold3) {
+    frame_dig -1
+    // smart_contracts/vault/reward_distributor.algo.ts:93
+    // const threshold3: uint64 = 100000000 as uint64
+    pushint 100000000 // 100000000
+    // smart_contracts/vault/reward_distributor.algo.ts:100
+    // } if (totalStaked >= threshold3) {
+    >=
+    bz calculateUtilizationBonus_after_if_else@4
+    // smart_contracts/vault/reward_distributor.algo.ts:94
+    // const bonus3: uint64 = 125 as uint64
+    pushint 125 // 125
+    // smart_contracts/vault/reward_distributor.algo.ts:101
+    // return bonus3
+    retsub
+
+calculateUtilizationBonus_after_if_else@4:
+    // smart_contracts/vault/reward_distributor.algo.ts:102
+    // } if (totalStaked >= threshold2) {
+    frame_dig -1
+    // smart_contracts/vault/reward_distributor.algo.ts:91
+    // const threshold2: uint64 = 10000000 as uint64
+    pushint 10000000 // 10000000
+    // smart_contracts/vault/reward_distributor.algo.ts:102
+    // } if (totalStaked >= threshold2) {
+    >=
+    bz calculateUtilizationBonus_after_if_else@6
+    // smart_contracts/vault/reward_distributor.algo.ts:92
+    // const bonus2: uint64 = 110 as uint64
+    pushint 110 // 110
+    // smart_contracts/vault/reward_distributor.algo.ts:103
+    // return bonus2
+    retsub
+
+calculateUtilizationBonus_after_if_else@6:
+    // smart_contracts/vault/reward_distributor.algo.ts:90
+    // const bonus1: uint64 = 100 as uint64
+    intc_2 // 100
+    // smart_contracts/vault/reward_distributor.algo.ts:106
+    // return bonus1
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.updateDistributionRate(newRate: uint64) -> void:
+updateDistributionRate:
+    // smart_contracts/vault/reward_distributor.algo.ts:123
+    // updateDistributionRate(newRate: uint64): void {
+    proto 1 0
+    // smart_contracts/vault/reward_distributor.algo.ts:124
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/reward_distributor.algo.ts:12
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_3 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:124
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:16
+    // minDistributionRate = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "minDistributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:125
+    // assert(newRate >= this.minDistributionRate.value && newRate <= this.maxDistributionRate.value)
+    frame_dig -1
+    <=
+    bz updateDistributionRate_bool_false@3
+    // smart_contracts/vault/reward_distributor.algo.ts:15
+    // maxDistributionRate = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 6 // "maxDistributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:125
+    // assert(newRate >= this.minDistributionRate.value && newRate <= this.maxDistributionRate.value)
+    frame_dig -1
+    >=
+    bz updateDistributionRate_bool_false@3
+    intc_1 // 1
+
+updateDistributionRate_bool_merge@4:
+    // smart_contracts/vault/reward_distributor.algo.ts:125
+    // assert(newRate >= this.minDistributionRate.value && newRate <= this.maxDistributionRate.value)
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    bytec_2 // "distributionRate"
+    // smart_contracts/vault/reward_distributor.algo.ts:126
+    // this.distributionRate.value = newRate
+    frame_dig -1
+    app_global_put
+    retsub
+
+updateDistributionRate_bool_false@3:
+    intc_0 // 0
+    b updateDistributionRate_bool_merge@4
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.setTargetAPY(totalStaked: uint64, targetAPY: uint64) -> void:
+setTargetAPY:
+    // smart_contracts/vault/reward_distributor.algo.ts:129
+    // setTargetAPY(totalStaked: uint64, targetAPY: uint64): void {
+    proto 2 0
+    // smart_contracts/vault/reward_distributor.algo.ts:130
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/reward_distributor.algo.ts:12
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_3 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:130
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:111
+    // const optimalRate: uint64 = (targetAPY * 1000000000000 as uint64) / (secondsPerYear * 100 as uint64)
+    frame_dig -1
+    intc_3 // 1000000000000
+    *
+    pushint 3153600000 // 3153600000
+    /
+    dup
+    // smart_contracts/vault/reward_distributor.algo.ts:15
+    // maxDistributionRate = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 6 // "maxDistributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:113
+    // if (optimalRate > this.maxDistributionRate.value) {
+    >
+    bz setTargetAPY_after_if_else@3
+    // smart_contracts/vault/reward_distributor.algo.ts:15
+    // maxDistributionRate = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 6 // "maxDistributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    frame_bury 0
+
+setTargetAPY_after_inlined_smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateOptimalRate@6:
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    bytec_2 // "distributionRate"
+    // smart_contracts/vault/reward_distributor.algo.ts:132
+    // this.distributionRate.value = optimalRate
+    frame_dig 0
+    app_global_put
+    retsub
+
+setTargetAPY_after_if_else@3:
+    // smart_contracts/vault/reward_distributor.algo.ts:16
+    // minDistributionRate = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "minDistributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:116
+    // if (optimalRate < this.minDistributionRate.value) {
+    frame_dig 0
+    >
+    bz setTargetAPY_after_inlined_smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateOptimalRate@6
+    // smart_contracts/vault/reward_distributor.algo.ts:16
+    // minDistributionRate = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "minDistributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    frame_bury 0
+    // smart_contracts/vault/reward_distributor.algo.ts:131
+    // const optimalRate = this.calculateOptimalRate(totalStaked, targetAPY)
+    b setTargetAPY_after_inlined_smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateOptimalRate@6
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.pauseDistribution() -> void:
+pauseDistribution:
+    // smart_contracts/vault/reward_distributor.algo.ts:136
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/reward_distributor.algo.ts:12
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_3 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:136
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    bytec_1 // "distributionActive"
+    // smart_contracts/vault/reward_distributor.algo.ts:137
+    // this.distributionActive.value = false
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.resumeDistribution() -> void:
+resumeDistribution:
+    // smart_contracts/vault/reward_distributor.algo.ts:141
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/reward_distributor.algo.ts:12
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_3 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:141
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    bytec_1 // "distributionActive"
+    // smart_contracts/vault/reward_distributor.algo.ts:142
+    // this.distributionActive.value = true
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:8
+    // lastDistribution = GlobalState<uint64>()
+    bytec 4 // "lastDistribution"
+    // smart_contracts/vault/reward_distributor.algo.ts:143
+    // this.lastDistribution.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.withdrawExcessRewards(amount: uint64) -> void:
+withdrawExcessRewards:
+    // smart_contracts/vault/reward_distributor.algo.ts:146-147
+    // @abimethod()
+    // withdrawExcessRewards(amount: uint64): void {
+    proto 1 0
+    // smart_contracts/vault/reward_distributor.algo.ts:148
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/vault/reward_distributor.algo.ts:12
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_3 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:148
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:149
+    // assert(amount <= this.totalRewardPool.value)
+    frame_dig -1
+    >=
+    assert
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:150
+    // this.totalRewardPool.value = this.totalRewardPool.value - amount
+    frame_dig -1
+    -
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    bytec_0 // "totalRewardPool"
+    // smart_contracts/vault/reward_distributor.algo.ts:150
+    // this.totalRewardPool.value = this.totalRewardPool.value - amount
+    swap
+    app_global_put
+    // smart_contracts/vault/reward_distributor.algo.ts:153-156
+    // itxn.payment({
+    //   receiver: Txn.sender,
+    //   amount: amount,
+    // }).submit()
+    itxn_begin
+    // smart_contracts/vault/reward_distributor.algo.ts:154
+    // receiver: Txn.sender,
+    txn Sender
+    frame_dig -1
+    itxn_field Amount
+    itxn_field Receiver
+    // smart_contracts/vault/reward_distributor.algo.ts:153-156
+    // itxn.payment({
+    //   receiver: Txn.sender,
+    //   amount: amount,
+    // }).submit()
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.getDistributorInfo() -> uint64, uint64, uint64, uint64, uint64, uint64:
+getDistributorInfo:
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    intc_0 // 0
+    bytec_2 // "distributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:8
+    // lastDistribution = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 4 // "lastDistribution"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_1 // "distributionActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:19
+    // totalDistributed = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 8 // "totalDistributed"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:20
+    // distributionCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 9 // "distributionCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:160-167
+    // return [
+    //   this.totalRewardPool.value,
+    //   this.distributionRate.value,
+    //   this.lastDistribution.value,
+    //   this.distributionActive.value,
+    //   this.totalDistributed.value,
+    //   this.distributionCount.value,
+    // ]
+    retsub
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateProjectedRewards(totalStaked: uint64, timespan: uint64) -> uint64:
+calculateProjectedRewards:
+    // smart_contracts/vault/reward_distributor.algo.ts:170
+    // calculateProjectedRewards(totalStaked: uint64, timespan: uint64): uint64 {
+    proto 2 1
+    pushbytes ""
+    // smart_contracts/vault/reward_distributor.algo.ts:9
+    // distributionActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_1 // "distributionActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:171
+    // if (!this.distributionActive.value || totalStaked === 0) {
+    bz calculateProjectedRewards_if_body@2
+    frame_dig -2
+    bnz calculateProjectedRewards_after_if_else@3
+
+calculateProjectedRewards_if_body@2:
+    // smart_contracts/vault/reward_distributor.algo.ts:172
+    // return 0 as uint64
+    intc_0 // 0
+    swap
+    retsub
+
+calculateProjectedRewards_after_if_else@3:
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    intc_0 // 0
+    bytec_2 // "distributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:174
+    // const baseReward: uint64 = (timespan * this.distributionRate.value * totalStaked) / 1_000_000_000_000 as uint64
+    frame_dig -1
+    *
+    frame_dig -2
+    *
+    intc_3 // 1000000000000
+    /
+    // smart_contracts/vault/reward_distributor.algo.ts:175
+    // const utilizationBonus: uint64 = this.calculateUtilizationBonus(totalStaked)
+    frame_dig -2
+    callsub calculateUtilizationBonus
+    // smart_contracts/vault/reward_distributor.algo.ts:176
+    // const projectedReward: uint64 = (baseReward * utilizationBonus) / 100 as uint64
+    *
+    intc_2 // 100
+    /
+    dup
+    frame_bury 0
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:177
+    // return projectedReward > this.totalRewardPool.value ? this.totalRewardPool.value : projectedReward
+    >
+    bz calculateProjectedRewards_ternary_false@5
+    // smart_contracts/vault/reward_distributor.algo.ts:6
+    // totalRewardPool = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalRewardPool"
+    app_global_get_ex
+    assert // check GlobalState exists
+
+calculateProjectedRewards_ternary_merge@6:
+    // smart_contracts/vault/reward_distributor.algo.ts:177
+    // return projectedReward > this.totalRewardPool.value ? this.totalRewardPool.value : projectedReward
+    swap
+    retsub
+
+calculateProjectedRewards_ternary_false@5:
+    frame_dig 0
+    b calculateProjectedRewards_ternary_merge@6
+
+
+// smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.getCurrentAPY(totalStaked: uint64) -> uint64:
+getCurrentAPY:
+    // smart_contracts/vault/reward_distributor.algo.ts:180
+    // getCurrentAPY(totalStaked: uint64): uint64 {
+    proto 1 1
+    // smart_contracts/vault/reward_distributor.algo.ts:181
+    // if (totalStaked === 0) {
+    frame_dig -1
+    bnz getCurrentAPY_after_if_else@2
+    // smart_contracts/vault/reward_distributor.algo.ts:182
+    // return 0 as uint64
+    intc_0 // 0
+    retsub
+
+getCurrentAPY_after_if_else@2:
+    // smart_contracts/vault/reward_distributor.algo.ts:185
+    // const utilizationBonus: uint64 = this.calculateUtilizationBonus(totalStaked)
+    frame_dig -1
+    callsub calculateUtilizationBonus
+    // smart_contracts/vault/reward_distributor.algo.ts:7
+    // distributionRate = GlobalState<uint64>() // Base distribution rate
+    intc_0 // 0
+    bytec_2 // "distributionRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/reward_distributor.algo.ts:186
+    // const effectiveRate: uint64 = (this.distributionRate.value * utilizationBonus) / 100 as uint64
+    *
+    intc_2 // 100
+    /
+    // smart_contracts/vault/reward_distributor.algo.ts:184
+    // const secondsPerYear: uint64 = 31_536_000 as uint64
+    pushint 31536000 // 31536000
+    // smart_contracts/vault/reward_distributor.algo.ts:187
+    // const annualRewards: uint64 = (effectiveRate * secondsPerYear * totalStaked) / 1_000_000_000_000 as uint64
+    *
+    frame_dig -1
+    *
+    intc_3 // 1000000000000
+    /
+    // smart_contracts/vault/reward_distributor.algo.ts:188
+    // return (annualRewards * 100 as uint64) / totalStaked as uint64
+    intc_2 // 100
+    *
+    frame_dig -1
+    /
+    retsub

@@ -1,0 +1,5190 @@
+{
+  "version": 3,
+  "sources": [
+    "/Users/arhansubasi/Algorand-dApp-Quick-Start-Template-TypeScript/QuickStartTemplate/projects/QuickStartTemplate-contracts/smart_contracts/vault/reward_distributor.algo.ts"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAGA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;AAgLE;;AAAA;AAAA;AAAA;;AAAA;AAhLF;;;AAAA;AAgLE;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAVA;;AAAA;AAAA;AAAA;;AAAA;AAtKF;;;AAAA;AAAA;;;AAAA;AAsKE;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAXA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAbC;;AAAA;AAAA;AAAA;;AAAA;AA9IH;;;AAAA;AA8IG;;;AAAA;;AAND;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AALA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AANA;;AAAA;AAAA;AAAA;;AAAA;AA7HF;;;AAAA;AAAA;;;AAAA;AA6HE;;;AAAA;;AANA;;AAAA;AAAA;AAAA;;AAAA;AAvHF;;;AAAA;AAuHE;;;AAAA;;AAlEC;;AAAA;AAAA;AAAA;;AAAA;AArDH;;;AAAA;;;AAAA;;;AAAA;AAqDG;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;AATA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;AA1BA;;AAAA;AAAA;AAAA;;AAAA;AAlBH;;;AAAA;AAAA;;;AAAA;AAAA;;;AAAA;AAAA;;;AAAA;AAkBG;;;AAAA;;AAlBH;;AAAA;;;AAAA;;AAAA;AAAA;AAAA;;AAkBE;;;AAbA;AAAA;AAAA;AAAA;AAqBS;AAAP;AAxBF;AA0BE;;AAAA;AAzBF;AA0BE;;AAAA;AAlBF;;AAmBE;;AAAA;AAlBF;;AAmBE;;AAAA;AA3BF;;AA4BuC;;AAArC;AA3BF;AA4BkC;AAAhC;AAzBF;AA0ByB;;AAAvB;AAnBF;;AAoBgC;AAA9B;AAnBF;;AAoBiC;AAA/B;;AA/BF;AAAA;AAAA;AAAA;AAyCE;;AAOF;;;;;AAhDA;AAAA;AAAA;AAAA;AAkDE;AACA;;AAAA;AAtDF;AAAA;AAAA;AAAA;AAuDE;AAEmC;;AAA7B;AAvDR;AAAA;;AAAA;AAAA;AAwD4C;AAzD5C;AAAA;AAAA;AAAA;AA2D8B;AAAA;;AAAA;AAAyE;AAA1E;AACrB;;AAA2B;;;AACJ;AAAiC;AAAlC;AAAtB;AA9DR;AAAA;AAAA;AAAA;AA+D+B;AAAA;;;AA/D/B;AAAA;AAAA;AAAA;;;AAiEE;;AAAA;;;AAjEF;AAAA;AAAA;AAAA;AAkEiC;;AAAA;AAAA;;AAAA;AAlEjC;AAkEI;AAAA;AArDJ;AAAA;;AAAA;AAAA;AAsDkC;;AAAA;AAtDlC;;AAsDI;AAAA;AArDJ;AAAA;;AAAA;AAAA;AAsDkE;AAA/B;AAtDnC;;AAsDI;AAAA;AAlEJ;;AAmEI;;AAAA;AAGA;;;;;;;AAAA;;;AAAA;;;AAAA;AAMF;;;;;;;;AAGF;;;AAWM;;AAHuB;;;;;;AAGvB;AAAJ;;;AAFuB;;;AAGrB;AACI;;AAPqB;;;;;AAOrB;AAAJ;;;AANqB;;AAOrB;AACI;;AAXqB;;;;;AAWrB;AAAJ;;;AAVqB;;AAWrB;AAbqB;AAgBvB;AAiBF;;;AACa;;AAhHb;AAAA;AAAA;AAAA;AAgHS;AAAP;AA5GF;AAAA;;AAAA;AAAA;AA6GS;;AAAA;AAAA;;;AA9GT;AAAA;;AAAA;AAAA;AA8GsD;;AAAA;AAA7C;;;;AAAP;AAtHF;AAuHE;;AAAA;;;;;;AAGF;;;AACa;;AAtHb;AAAA;AAAA;AAAA;AAsHS;AAAP;AAnB6B;;AAAY;AAAZ;AAAwC;;;;;;AAAzC;AAAtB;AAhGR;AAAA;;AAAA;AAAA;AAkGM;AAAJ;;;AAlGF;AAAA;;AAAA;AAAA;;;AARA;AA6HE;;AAAA;;AApHF;AAAA;;AAAA;AAAA;AAoGM;;AAAA;AAAJ;;;AApGF;AAAA;;AAAA;AAAA;;;AAmHsB;;;AAKT;;AA5Hb;AAAA;AAAA;AAAA;AA4HS;AAAP;AA/HF;AAgIkC;AAAhC;;AAIW;;AAjIb;AAAA;AAAA;AAAA;AAiIS;AAAP;AApIF;AAqIkC;AAAhC;AAtIF;;AAuIuC;;AAArC;;AAGF;;;AAEa;;AAxIb;AAAA;AAAA;AAAA;AAwIS;AAAP;AA9IF;AAAA;AAAA;AAAA;AA+IS;;AAAA;AAAP;AA/IF;AAAA;AAAA;AAAA;AAgJ+B;;AAAA;AAhJ/B;AAgJE;AAAA;AAGA;AACgB;;;;;;;;AADhB;;;AAAA;;;AAAA;;AAnJF;AAAA;AAAA;AAAA;AACA;AAAA;AAAA;AAAA;AACA;AAAA;;AAAA;AAAA;AACA;AAAA;AAAA;AAAA;AAUA;AAAA;;AAAA;AAAA;AACA;AAAA;;AAAA;AAAA;AA4IE;AAUF;;;;;AAjKA;AAAA;AAAA;AAAA;AAkKM;;;AAAA;;AAAA;;;AACK;AAAP;AAAA;AArKJ;AAAA;AAAA;AAAA;AAuK8B;;AAAA;AAAA;;AAAA;AAAwD;AAAzD;AACrB;;AAA2B;;;AACA;AAAiC;AAAlC;AAA1B;AAAA;;AA1KR;AAAA;AAAA;AAAA;AA2KS;AAAA;;;AA3KT;AAAA;AAAA;AAAA;AA2KE;AAAA;;;;;;AAGF;;;AACE;;AAAA;;;AACS;AAAP;AAGI;;AAA2B;;;AAlLnC;AAAA;AAAA;AAAA;AAmLiC;AAAkD;AAAnD;AAFC;;;;;AAGA;AAAA;;AAAA;AAAgD;AAAjD;AACN;AAAhB;AAAD;;AAAA;AAAP",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "@algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 0 1 100 1000000000000"
+    },
+    "12": {
+      "op": "bytecblock \"totalRewardPool\" \"distributionActive\" \"distributionRate\" \"admin\" \"lastDistribution\" 0x151f7c75 \"maxDistributionRate\" \"minDistributionRate\" \"totalDistributed\" \"distributionCount\""
+    },
+    "169": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "171": {
+      "op": "bz main_bare_routing@16",
+      "stack_out": []
+    },
+    "174": {
+      "op": "pushbytess 0x109bbeb1 0xb3b70146 0x3e6c8dd2 0x80d9e1f9 0xb65dfb6f 0xedd4103c 0x9c90259c 0xd3bd98b7 0xc3e408f3 0xed82579c 0x77ff639b // method \"initialize(uint64,uint64,uint64,uint64)void\", method \"addRewards()void\", method \"distributeRewards(byte[],uint64)uint64\", method \"updateDistributionRate(uint64)void\", method \"setTargetAPY(uint64,uint64)void\", method \"pauseDistribution()void\", method \"resumeDistribution()void\", method \"withdrawExcessRewards(uint64)void\", method \"getDistributorInfo()(uint64,uint64,uint64,bool,uint64,uint64)\", method \"calculateProjectedRewards(uint64,uint64)uint64\", method \"getCurrentAPY(uint64)uint64\"",
+      "defined_out": [
+        "Method(addRewards()void)",
+        "Method(calculateProjectedRewards(uint64,uint64)uint64)",
+        "Method(distributeRewards(byte[],uint64)uint64)",
+        "Method(getCurrentAPY(uint64)uint64)",
+        "Method(getDistributorInfo()(uint64,uint64,uint64,bool,uint64,uint64))",
+        "Method(initialize(uint64,uint64,uint64,uint64)void)",
+        "Method(pauseDistribution()void)",
+        "Method(resumeDistribution()void)",
+        "Method(setTargetAPY(uint64,uint64)void)",
+        "Method(updateDistributionRate(uint64)void)",
+        "Method(withdrawExcessRewards(uint64)void)"
+      ],
+      "stack_out": [
+        "Method(initialize(uint64,uint64,uint64,uint64)void)",
+        "Method(addRewards()void)",
+        "Method(distributeRewards(byte[],uint64)uint64)",
+        "Method(updateDistributionRate(uint64)void)",
+        "Method(setTargetAPY(uint64,uint64)void)",
+        "Method(pauseDistribution()void)",
+        "Method(resumeDistribution()void)",
+        "Method(withdrawExcessRewards(uint64)void)",
+        "Method(getDistributorInfo()(uint64,uint64,uint64,bool,uint64,uint64))",
+        "Method(calculateProjectedRewards(uint64,uint64)uint64)",
+        "Method(getCurrentAPY(uint64)uint64)"
+      ]
+    },
+    "231": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(addRewards()void)",
+        "Method(calculateProjectedRewards(uint64,uint64)uint64)",
+        "Method(distributeRewards(byte[],uint64)uint64)",
+        "Method(getCurrentAPY(uint64)uint64)",
+        "Method(getDistributorInfo()(uint64,uint64,uint64,bool,uint64,uint64))",
+        "Method(initialize(uint64,uint64,uint64,uint64)void)",
+        "Method(pauseDistribution()void)",
+        "Method(resumeDistribution()void)",
+        "Method(setTargetAPY(uint64,uint64)void)",
+        "Method(updateDistributionRate(uint64)void)",
+        "Method(withdrawExcessRewards(uint64)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(initialize(uint64,uint64,uint64,uint64)void)",
+        "Method(addRewards()void)",
+        "Method(distributeRewards(byte[],uint64)uint64)",
+        "Method(updateDistributionRate(uint64)void)",
+        "Method(setTargetAPY(uint64,uint64)void)",
+        "Method(pauseDistribution()void)",
+        "Method(resumeDistribution()void)",
+        "Method(withdrawExcessRewards(uint64)void)",
+        "Method(getDistributorInfo()(uint64,uint64,uint64,bool,uint64,uint64))",
+        "Method(calculateProjectedRewards(uint64,uint64)uint64)",
+        "Method(getCurrentAPY(uint64)uint64)",
+        "tmp%2#0"
+      ]
+    },
+    "234": {
+      "op": "match main_initialize_route@3 main_addRewards_route@4 main_distributeRewards_route@5 main_updateDistributionRate_route@6 main_setTargetAPY_route@7 main_pauseDistribution_route@8 main_resumeDistribution_route@9 main_withdrawExcessRewards_route@10 main_getDistributorInfo_route@11 main_calculateProjectedRewards_route@12 main_getCurrentAPY_route@13",
+      "stack_out": []
+    },
+    "258": {
+      "block": "main_after_if_else@20",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "259": {
+      "op": "return",
+      "stack_out": []
+    },
+    "260": {
+      "block": "main_getCurrentAPY_route@13",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%59#0"
+      ],
+      "stack_out": [
+        "tmp%59#0"
+      ]
+    },
+    "262": {
+      "op": "!",
+      "defined_out": [
+        "tmp%60#0"
+      ],
+      "stack_out": [
+        "tmp%60#0"
+      ]
+    },
+    "263": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "264": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%61#0"
+      ],
+      "stack_out": [
+        "tmp%61#0"
+      ]
+    },
+    "266": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "267": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%11#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%11#0"
+      ]
+    },
+    "270": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%63#0"
+      ],
+      "stack_out": [
+        "tmp%63#0"
+      ]
+    },
+    "271": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.getCurrentAPY",
+      "op": "callsub getCurrentAPY",
+      "defined_out": [
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0"
+      ]
+    },
+    "274": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%7#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%7#0"
+      ]
+    },
+    "275": {
+      "op": "bytec 5 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%7#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%7#0",
+        "0x151f7c75"
+      ]
+    },
+    "277": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%7#0"
+      ]
+    },
+    "278": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%64#0"
+      ],
+      "stack_out": [
+        "tmp%64#0"
+      ]
+    },
+    "279": {
+      "op": "log",
+      "stack_out": []
+    },
+    "280": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "281": {
+      "op": "return",
+      "stack_out": []
+    },
+    "282": {
+      "block": "main_calculateProjectedRewards_route@12",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%52#0"
+      ],
+      "stack_out": [
+        "tmp%52#0"
+      ]
+    },
+    "284": {
+      "op": "!",
+      "defined_out": [
+        "tmp%53#0"
+      ],
+      "stack_out": [
+        "tmp%53#0"
+      ]
+    },
+    "285": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "286": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%54#0"
+      ],
+      "stack_out": [
+        "tmp%54#0"
+      ]
+    },
+    "288": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "289": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%9#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%9#0"
+      ]
+    },
+    "292": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%56#0"
+      ],
+      "stack_out": [
+        "tmp%56#0"
+      ]
+    },
+    "293": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[8]%10#0",
+        "tmp%56#0"
+      ],
+      "stack_out": [
+        "tmp%56#0",
+        "reinterpret_bytes[8]%10#0"
+      ]
+    },
+    "296": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%56#0",
+        "tmp%57#0"
+      ],
+      "stack_out": [
+        "tmp%56#0",
+        "tmp%57#0"
+      ]
+    },
+    "297": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateProjectedRewards",
+      "op": "callsub calculateProjectedRewards",
+      "defined_out": [
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0"
+      ]
+    },
+    "300": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%6#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%6#0"
+      ]
+    },
+    "301": {
+      "op": "bytec 5 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%6#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%6#0",
+        "0x151f7c75"
+      ]
+    },
+    "303": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%6#0"
+      ]
+    },
+    "304": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%58#0"
+      ],
+      "stack_out": [
+        "tmp%58#0"
+      ]
+    },
+    "305": {
+      "op": "log",
+      "stack_out": []
+    },
+    "306": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "307": {
+      "op": "return",
+      "stack_out": []
+    },
+    "308": {
+      "block": "main_getDistributorInfo_route@11",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%47#0"
+      ],
+      "stack_out": [
+        "tmp%47#0"
+      ]
+    },
+    "310": {
+      "op": "!",
+      "defined_out": [
+        "tmp%48#0"
+      ],
+      "stack_out": [
+        "tmp%48#0"
+      ]
+    },
+    "311": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "312": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%49#0"
+      ],
+      "stack_out": [
+        "tmp%49#0"
+      ]
+    },
+    "314": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "315": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.getDistributorInfo",
+      "op": "callsub getDistributorInfo",
+      "defined_out": [
+        "elements_to_encode%0#0",
+        "elements_to_encode%1#0",
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%0#0",
+        "elements_to_encode%1#0",
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0"
+      ]
+    },
+    "318": {
+      "op": "uncover 5",
+      "stack_out": [
+        "elements_to_encode%1#0",
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "elements_to_encode%0#0"
+      ]
+    },
+    "320": {
+      "op": "itob",
+      "defined_out": [
+        "elements_to_encode%1#0",
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%1#0",
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0"
+      ]
+    },
+    "321": {
+      "op": "uncover 5",
+      "stack_out": [
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "elements_to_encode%1#0"
+      ]
+    },
+    "323": {
+      "op": "itob",
+      "defined_out": [
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%2#0",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0"
+      ]
+    },
+    "324": {
+      "op": "uncover 5",
+      "stack_out": [
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "elements_to_encode%2#0"
+      ]
+    },
+    "326": {
+      "op": "itob",
+      "defined_out": [
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0"
+      ]
+    },
+    "327": {
+      "op": "pushbytes 0x00",
+      "defined_out": [
+        "0x00",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "0x00"
+      ]
+    },
+    "330": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "0x00",
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%3#0",
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "0x00",
+        "0"
+      ]
+    },
+    "331": {
+      "op": "uncover 7",
+      "stack_out": [
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "0x00",
+        "0",
+        "elements_to_encode%3#0"
+      ]
+    },
+    "333": {
+      "op": "setbit",
+      "defined_out": [
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%4#0",
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0"
+      ]
+    },
+    "334": {
+      "op": "uncover 5",
+      "stack_out": [
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "elements_to_encode%4#0"
+      ]
+    },
+    "336": {
+      "op": "itob",
+      "defined_out": [
+        "elements_to_encode%5#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "val_as_bytes%4#0"
+      ],
+      "stack_out": [
+        "elements_to_encode%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0"
+      ]
+    },
+    "337": {
+      "op": "uncover 5",
+      "stack_out": [
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "elements_to_encode%5#0"
+      ]
+    },
+    "339": {
+      "op": "itob",
+      "defined_out": [
+        "encoded_bool%0#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0"
+      ]
+    },
+    "340": {
+      "op": "uncover 5",
+      "stack_out": [
+        "val_as_bytes%2#0",
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "val_as_bytes%1#0"
+      ]
+    },
+    "342": {
+      "op": "uncover 5",
+      "stack_out": [
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "val_as_bytes%1#0",
+        "val_as_bytes%2#0"
+      ]
+    },
+    "344": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_bool%0#0",
+        "encoded_tuple_buffer%2#0",
+        "val_as_bytes%3#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%3#0",
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%2#0"
+      ]
+    },
+    "345": {
+      "op": "uncover 4",
+      "stack_out": [
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%2#0",
+        "val_as_bytes%3#0"
+      ]
+    },
+    "347": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_bool%0#0",
+        "encoded_tuple_buffer%3#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%3#0"
+      ]
+    },
+    "348": {
+      "op": "uncover 3",
+      "stack_out": [
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%3#0",
+        "encoded_bool%0#0"
+      ]
+    },
+    "350": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_tuple_buffer%4#0",
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%4#0",
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%4#0"
+      ]
+    },
+    "351": {
+      "op": "uncover 2",
+      "stack_out": [
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%4#0",
+        "val_as_bytes%4#0"
+      ]
+    },
+    "353": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_tuple_buffer%5#0",
+        "val_as_bytes%5#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%5#0",
+        "encoded_tuple_buffer%5#0"
+      ]
+    },
+    "354": {
+      "op": "swap",
+      "stack_out": [
+        "encoded_tuple_buffer%5#0",
+        "val_as_bytes%5#0"
+      ]
+    },
+    "355": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_tuple_buffer%6#0"
+      ],
+      "stack_out": [
+        "encoded_tuple_buffer%6#0"
+      ]
+    },
+    "356": {
+      "op": "bytec 5 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_tuple_buffer%6#0"
+      ],
+      "stack_out": [
+        "encoded_tuple_buffer%6#0",
+        "0x151f7c75"
+      ]
+    },
+    "358": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_tuple_buffer%6#0"
+      ]
+    },
+    "359": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%51#0"
+      ],
+      "stack_out": [
+        "tmp%51#0"
+      ]
+    },
+    "360": {
+      "op": "log",
+      "stack_out": []
+    },
+    "361": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "362": {
+      "op": "return",
+      "stack_out": []
+    },
+    "363": {
+      "block": "main_withdrawExcessRewards_route@10",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%42#0"
+      ],
+      "stack_out": [
+        "tmp%42#0"
+      ]
+    },
+    "365": {
+      "op": "!",
+      "defined_out": [
+        "tmp%43#0"
+      ],
+      "stack_out": [
+        "tmp%43#0"
+      ]
+    },
+    "366": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "367": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%44#0"
+      ],
+      "stack_out": [
+        "tmp%44#0"
+      ]
+    },
+    "369": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "370": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%8#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%8#0"
+      ]
+    },
+    "373": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "tmp%46#0"
+      ]
+    },
+    "374": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.withdrawExcessRewards",
+      "op": "callsub withdrawExcessRewards",
+      "stack_out": []
+    },
+    "377": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "378": {
+      "op": "return",
+      "stack_out": []
+    },
+    "379": {
+      "block": "main_resumeDistribution_route@9",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "381": {
+      "op": "!",
+      "defined_out": [
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "tmp%39#0"
+      ]
+    },
+    "382": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "383": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%40#0"
+      ]
+    },
+    "385": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "386": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.resumeDistribution",
+      "op": "callsub resumeDistribution"
+    },
+    "389": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "390": {
+      "op": "return",
+      "stack_out": []
+    },
+    "391": {
+      "block": "main_pauseDistribution_route@8",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%34#0"
+      ],
+      "stack_out": [
+        "tmp%34#0"
+      ]
+    },
+    "393": {
+      "op": "!",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "394": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "395": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "tmp%36#0"
+      ]
+    },
+    "397": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "398": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.pauseDistribution",
+      "op": "callsub pauseDistribution"
+    },
+    "401": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "402": {
+      "op": "return",
+      "stack_out": []
+    },
+    "403": {
+      "block": "main_setTargetAPY_route@7",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%28#0"
+      ]
+    },
+    "405": {
+      "op": "!",
+      "defined_out": [
+        "tmp%29#0"
+      ],
+      "stack_out": [
+        "tmp%29#0"
+      ]
+    },
+    "406": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "407": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%30#0"
+      ]
+    },
+    "409": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "410": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%6#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%6#0"
+      ]
+    },
+    "413": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0"
+      ]
+    },
+    "414": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[8]%7#0",
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0",
+        "reinterpret_bytes[8]%7#0"
+      ]
+    },
+    "417": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%32#0",
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "tmp%32#0",
+        "tmp%33#0"
+      ]
+    },
+    "418": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.setTargetAPY",
+      "op": "callsub setTargetAPY",
+      "stack_out": []
+    },
+    "421": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "422": {
+      "op": "return",
+      "stack_out": []
+    },
+    "423": {
+      "block": "main_updateDistributionRate_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%23#0"
+      ]
+    },
+    "425": {
+      "op": "!",
+      "defined_out": [
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0"
+      ]
+    },
+    "426": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "427": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "429": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "430": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%5#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%5#0"
+      ]
+    },
+    "433": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "tmp%27#0"
+      ]
+    },
+    "434": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.updateDistributionRate",
+      "op": "callsub updateDistributionRate",
+      "stack_out": []
+    },
+    "437": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "438": {
+      "op": "return",
+      "stack_out": []
+    },
+    "439": {
+      "block": "main_distributeRewards_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "441": {
+      "op": "!",
+      "defined_out": [
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "tmp%16#0"
+      ]
+    },
+    "442": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "443": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%17#0"
+      ]
+    },
+    "445": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "446": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "tmp%19#0"
+      ]
+    },
+    "449": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "452": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[8]%4#0",
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0",
+        "reinterpret_bytes[8]%4#0"
+      ]
+    },
+    "455": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%20#0",
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%20#0",
+        "tmp%21#0"
+      ]
+    },
+    "456": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.distributeRewards",
+      "op": "callsub distributeRewards",
+      "defined_out": [
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0"
+      ]
+    },
+    "459": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0"
+      ]
+    },
+    "460": {
+      "op": "bytec 5 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "462": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ]
+    },
+    "463": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%22#0"
+      ]
+    },
+    "464": {
+      "op": "log",
+      "stack_out": []
+    },
+    "465": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "466": {
+      "op": "return",
+      "stack_out": []
+    },
+    "467": {
+      "block": "main_addRewards_route@4",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "469": {
+      "op": "!",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "470": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "471": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%13#0"
+      ],
+      "stack_out": [
+        "tmp%13#0"
+      ]
+    },
+    "473": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "474": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.addRewards",
+      "op": "callsub addRewards"
+    },
+    "477": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "478": {
+      "op": "return",
+      "stack_out": []
+    },
+    "479": {
+      "block": "main_initialize_route@3",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "481": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "482": {
+      "error": "OnCompletion is not NoOp",
+      "op": "assert // OnCompletion is not NoOp",
+      "stack_out": []
+    },
+    "483": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "485": {
+      "error": "can only call when not creating",
+      "op": "assert // can only call when not creating",
+      "stack_out": []
+    },
+    "486": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "reinterpret_bytes[8]%0#0"
+      ],
+      "stack_out": [
+        "reinterpret_bytes[8]%0#0"
+      ]
+    },
+    "489": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "490": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "reinterpret_bytes[8]%1#0",
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "reinterpret_bytes[8]%1#0"
+      ]
+    },
+    "493": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0"
+      ]
+    },
+    "494": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "reinterpret_bytes[8]%2#0",
+        "tmp%7#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "reinterpret_bytes[8]%2#0"
+      ]
+    },
+    "497": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ]
+    },
+    "498": {
+      "op": "txna ApplicationArgs 4",
+      "defined_out": [
+        "reinterpret_bytes[8]%3#0",
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0",
+        "reinterpret_bytes[8]%3#0"
+      ]
+    },
+    "501": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%10#0",
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0",
+        "tmp%10#0"
+      ]
+    },
+    "502": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.initialize",
+      "op": "callsub initialize",
+      "stack_out": []
+    },
+    "505": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "506": {
+      "op": "return",
+      "stack_out": []
+    },
+    "507": {
+      "block": "main_bare_routing@16",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%65#0"
+      ],
+      "stack_out": [
+        "tmp%65#0"
+      ]
+    },
+    "509": {
+      "op": "bnz main_after_if_else@20",
+      "stack_out": []
+    },
+    "512": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%66#0"
+      ],
+      "stack_out": [
+        "tmp%66#0"
+      ]
+    },
+    "514": {
+      "op": "!",
+      "defined_out": [
+        "tmp%67#0"
+      ],
+      "stack_out": [
+        "tmp%67#0"
+      ]
+    },
+    "515": {
+      "error": "can only call when creating",
+      "op": "assert // can only call when creating",
+      "stack_out": []
+    },
+    "516": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "517": {
+      "op": "return",
+      "stack_out": []
+    },
+    "518": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.initialize",
+      "params": {
+        "initialRewardPool#0": "uint64",
+        "baseDistributionRate#0": "uint64",
+        "maxRate#0": "uint64",
+        "minRate#0": "uint64"
+      },
+      "block": "initialize",
+      "stack_in": [],
+      "op": "proto 4 0"
+    },
+    "521": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "522": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"distributionActive\""
+      ]
+    },
+    "523": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "524": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "525": {
+      "op": "!",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "526": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "527": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "defined_out": [
+        "\"totalRewardPool\""
+      ],
+      "stack_out": [
+        "\"totalRewardPool\""
+      ]
+    },
+    "528": {
+      "op": "frame_dig -4",
+      "defined_out": [
+        "\"totalRewardPool\"",
+        "initialRewardPool#0 (copy)"
+      ],
+      "stack_out": [
+        "\"totalRewardPool\"",
+        "initialRewardPool#0 (copy)"
+      ]
+    },
+    "530": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "531": {
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\""
+      ],
+      "stack_out": [
+        "\"distributionRate\""
+      ]
+    },
+    "532": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "\"distributionRate\"",
+        "baseDistributionRate#0 (copy)"
+      ],
+      "stack_out": [
+        "\"distributionRate\"",
+        "baseDistributionRate#0 (copy)"
+      ]
+    },
+    "534": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "535": {
+      "op": "bytec 6 // \"maxDistributionRate\"",
+      "defined_out": [
+        "\"maxDistributionRate\""
+      ],
+      "stack_out": [
+        "\"maxDistributionRate\""
+      ]
+    },
+    "537": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"maxDistributionRate\"",
+        "maxRate#0 (copy)"
+      ],
+      "stack_out": [
+        "\"maxDistributionRate\"",
+        "maxRate#0 (copy)"
+      ]
+    },
+    "539": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "540": {
+      "op": "bytec 7 // \"minDistributionRate\"",
+      "defined_out": [
+        "\"minDistributionRate\""
+      ],
+      "stack_out": [
+        "\"minDistributionRate\""
+      ]
+    },
+    "542": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"minDistributionRate\"",
+        "minRate#0 (copy)"
+      ],
+      "stack_out": [
+        "\"minDistributionRate\"",
+        "minRate#0 (copy)"
+      ]
+    },
+    "544": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "545": {
+      "op": "bytec 4 // \"lastDistribution\"",
+      "defined_out": [
+        "\"lastDistribution\""
+      ],
+      "stack_out": [
+        "\"lastDistribution\""
+      ]
+    },
+    "547": {
+      "op": "global LatestTimestamp",
+      "defined_out": [
+        "\"lastDistribution\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "\"lastDistribution\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "549": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "550": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "stack_out": [
+        "\"distributionActive\""
+      ]
+    },
+    "551": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"distributionActive\"",
+        "1"
+      ],
+      "stack_out": [
+        "\"distributionActive\"",
+        "1"
+      ]
+    },
+    "552": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "553": {
+      "op": "bytec_3 // \"admin\"",
+      "defined_out": [
+        "\"admin\""
+      ],
+      "stack_out": [
+        "\"admin\""
+      ]
+    },
+    "554": {
+      "op": "txn Sender",
+      "defined_out": [
+        "\"admin\"",
+        "new_state_value%1#0"
+      ],
+      "stack_out": [
+        "\"admin\"",
+        "new_state_value%1#0"
+      ]
+    },
+    "556": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "557": {
+      "op": "bytec 8 // \"totalDistributed\"",
+      "defined_out": [
+        "\"totalDistributed\""
+      ],
+      "stack_out": [
+        "\"totalDistributed\""
+      ]
+    },
+    "559": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"totalDistributed\"",
+        "0"
+      ]
+    },
+    "560": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "561": {
+      "op": "bytec 9 // \"distributionCount\"",
+      "defined_out": [
+        "\"distributionCount\""
+      ],
+      "stack_out": [
+        "\"distributionCount\""
+      ]
+    },
+    "563": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"distributionCount\"",
+        "0"
+      ]
+    },
+    "564": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "565": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "566": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.addRewards",
+      "params": {},
+      "block": "addRewards",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "567": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"distributionActive\""
+      ]
+    },
+    "568": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "569": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "570": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "571": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "572": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.distributeRewards",
+      "params": {
+        "poolAddress#0": "bytes",
+        "totalStaked#0": "uint64"
+      },
+      "block": "distributeRewards",
+      "stack_in": [],
+      "op": "proto 2 1"
+    },
+    "575": {
+      "op": "pushbytes \"\"",
+      "stack_out": [
+        "actualReward#0"
+      ]
+    },
+    "577": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "0"
+      ]
+    },
+    "578": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\"",
+        "0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "0",
+        "\"distributionActive\""
+      ]
+    },
+    "579": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "580": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "581": {
+      "op": "assert",
+      "stack_out": [
+        "actualReward#0"
+      ]
+    },
+    "582": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "584": {
+      "op": "assert",
+      "stack_out": [
+        "actualReward#0"
+      ]
+    },
+    "585": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "0"
+      ]
+    },
+    "586": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "defined_out": [
+        "\"totalRewardPool\"",
+        "0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "587": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "588": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "589": {
+      "op": "assert",
+      "stack_out": [
+        "actualReward#0"
+      ]
+    },
+    "590": {
+      "op": "global LatestTimestamp"
+    },
+    "592": {
+      "op": "dup"
+    },
+    "593": {
+      "op": "intc_0 // 0"
+    },
+    "594": {
+      "op": "bytec 4 // \"lastDistribution\"",
+      "defined_out": [
+        "\"lastDistribution\"",
+        "0",
+        "currentTime#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "currentTime#0",
+        "0",
+        "\"lastDistribution\""
+      ]
+    },
+    "596": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "currentTime#0",
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "currentTime#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "597": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "currentTime#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "598": {
+      "op": "-",
+      "defined_out": [
+        "currentTime#0",
+        "timeSinceLastDistribution#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "timeSinceLastDistribution#0"
+      ]
+    },
+    "599": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "timeSinceLastDistribution#0",
+        "0"
+      ]
+    },
+    "600": {
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\"",
+        "0",
+        "currentTime#0",
+        "timeSinceLastDistribution#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "timeSinceLastDistribution#0",
+        "0",
+        "\"distributionRate\""
+      ]
+    },
+    "601": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "currentTime#0",
+        "maybe_exists%3#0",
+        "maybe_value%3#0",
+        "timeSinceLastDistribution#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "timeSinceLastDistribution#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "602": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "timeSinceLastDistribution#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "603": {
+      "op": "*",
+      "defined_out": [
+        "currentTime#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "tmp%2#0"
+      ]
+    },
+    "604": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "tmp%2#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "606": {
+      "op": "*",
+      "defined_out": [
+        "currentTime#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "tmp%3#0"
+      ]
+    },
+    "607": {
+      "op": "intc_3 // 1000000000000",
+      "defined_out": [
+        "1000000000000",
+        "currentTime#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "tmp%3#0",
+        "1000000000000"
+      ]
+    },
+    "608": {
+      "op": "/",
+      "defined_out": [
+        "baseReward#0",
+        "currentTime#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "baseReward#0"
+      ]
+    },
+    "609": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "baseReward#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "611": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateUtilizationBonus",
+      "op": "callsub calculateUtilizationBonus",
+      "defined_out": [
+        "baseReward#0",
+        "currentTime#0",
+        "utilizationBonus#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "baseReward#0",
+        "utilizationBonus#0"
+      ]
+    },
+    "614": {
+      "op": "*",
+      "defined_out": [
+        "currentTime#0",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "tmp%4#0"
+      ]
+    },
+    "615": {
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100",
+        "currentTime#0",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "tmp%4#0",
+        "100"
+      ]
+    },
+    "616": {
+      "op": "/",
+      "defined_out": [
+        "currentTime#0",
+        "finalReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "617": {
+      "op": "dup",
+      "defined_out": [
+        "currentTime#0",
+        "finalReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "finalReward#0"
+      ]
+    },
+    "618": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "finalReward#0",
+        "0"
+      ]
+    },
+    "619": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "finalReward#0",
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "620": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_exists%4#0",
+        "maybe_value%4#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "finalReward#0",
+        "maybe_value%4#0",
+        "maybe_exists%4#0"
+      ]
+    },
+    "621": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "finalReward#0",
+        "maybe_value%4#0"
+      ]
+    },
+    "622": {
+      "op": ">",
+      "defined_out": [
+        "currentTime#0",
+        "finalReward#0",
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "tmp%5#0"
+      ]
+    },
+    "623": {
+      "op": "bz distributeRewards_ternary_false@2",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "626": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "0"
+      ]
+    },
+    "627": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "628": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_exists%5#0",
+        "maybe_value%5#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_value%5#0",
+        "maybe_exists%5#0"
+      ]
+    },
+    "629": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "defined_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "630": {
+      "op": "frame_bury 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "632": {
+      "block": "distributeRewards_ternary_merge@3",
+      "stack_in": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ],
+      "op": "frame_dig 0",
+      "defined_out": [
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "634": {
+      "op": "bz distributeRewards_after_if_else@6",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "637": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "0"
+      ]
+    },
+    "638": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "defined_out": [
+        "\"totalRewardPool\"",
+        "0",
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "639": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "actualReward#0",
+        "maybe_exists%6#0",
+        "maybe_value%6#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_value%6#0",
+        "maybe_exists%6#0"
+      ]
+    },
+    "640": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_value%6#0"
+      ]
+    },
+    "641": {
+      "op": "frame_dig 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_value%6#0",
+        "actualReward#0"
+      ]
+    },
+    "643": {
+      "op": "dup",
+      "defined_out": [
+        "actualReward#0",
+        "actualReward#0 (copy)",
+        "maybe_value%6#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "maybe_value%6#0",
+        "actualReward#0 (copy)",
+        "actualReward#0 (copy)"
+      ]
+    },
+    "644": {
+      "op": "cover 2",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%6#0",
+        "actualReward#0 (copy)"
+      ]
+    },
+    "646": {
+      "op": "-",
+      "defined_out": [
+        "actualReward#0",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "new_state_value%0#0"
+      ]
+    },
+    "647": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "new_state_value%0#0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "648": {
+      "op": "swap",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "\"totalRewardPool\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "649": {
+      "op": "app_global_put",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "650": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "0"
+      ]
+    },
+    "651": {
+      "op": "bytec 8 // \"totalDistributed\"",
+      "defined_out": [
+        "\"totalDistributed\"",
+        "0",
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "0",
+        "\"totalDistributed\""
+      ]
+    },
+    "653": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "actualReward#0",
+        "maybe_exists%7#0",
+        "maybe_value%7#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%7#0",
+        "maybe_exists%7#0"
+      ]
+    },
+    "654": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%7#0"
+      ]
+    },
+    "655": {
+      "op": "dig 1",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%7#0",
+        "actualReward#0 (copy)"
+      ]
+    },
+    "657": {
+      "op": "+",
+      "defined_out": [
+        "actualReward#0",
+        "new_state_value%1#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "new_state_value%1#0"
+      ]
+    },
+    "658": {
+      "op": "bytec 8 // \"totalDistributed\"",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "new_state_value%1#0",
+        "\"totalDistributed\""
+      ]
+    },
+    "660": {
+      "op": "swap",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "\"totalDistributed\"",
+        "new_state_value%1#0"
+      ]
+    },
+    "661": {
+      "op": "app_global_put",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "662": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "0"
+      ]
+    },
+    "663": {
+      "op": "bytec 9 // \"distributionCount\"",
+      "defined_out": [
+        "\"distributionCount\"",
+        "0",
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "0",
+        "\"distributionCount\""
+      ]
+    },
+    "665": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "actualReward#0",
+        "maybe_exists%8#0",
+        "maybe_value%8#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%8#0",
+        "maybe_exists%8#0"
+      ]
+    },
+    "666": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%8#0"
+      ]
+    },
+    "667": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1",
+        "actualReward#0",
+        "maybe_value%8#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "maybe_value%8#0",
+        "1"
+      ]
+    },
+    "668": {
+      "op": "+",
+      "defined_out": [
+        "actualReward#0",
+        "new_state_value%2#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "new_state_value%2#0"
+      ]
+    },
+    "669": {
+      "op": "bytec 9 // \"distributionCount\"",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "new_state_value%2#0",
+        "\"distributionCount\""
+      ]
+    },
+    "671": {
+      "op": "swap",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "\"distributionCount\"",
+        "new_state_value%2#0"
+      ]
+    },
+    "672": {
+      "op": "app_global_put",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "673": {
+      "op": "bytec 4 // \"lastDistribution\"",
+      "defined_out": [
+        "\"lastDistribution\"",
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "\"lastDistribution\""
+      ]
+    },
+    "675": {
+      "op": "frame_dig 1",
+      "defined_out": [
+        "\"lastDistribution\"",
+        "actualReward#0",
+        "currentTime#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0",
+        "\"lastDistribution\"",
+        "currentTime#0"
+      ]
+    },
+    "677": {
+      "op": "app_global_put",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "678": {
+      "op": "itxn_begin"
+    },
+    "679": {
+      "op": "itxn_field Amount",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "681": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "poolAddress#0 (copy)"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "poolAddress#0 (copy)"
+      ]
+    },
+    "683": {
+      "op": "itxn_field Receiver",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "685": {
+      "op": "intc_1 // 1",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "1"
+      ]
+    },
+    "686": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "688": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "0"
+      ]
+    },
+    "689": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "691": {
+      "op": "itxn_submit"
+    },
+    "692": {
+      "block": "distributeRewards_after_if_else@6",
+      "stack_in": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ],
+      "retsub": true,
+      "op": "retsub",
+      "defined_out": [
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "693": {
+      "block": "distributeRewards_ternary_false@2",
+      "stack_in": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ],
+      "op": "frame_dig 2",
+      "defined_out": [
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0",
+        "actualReward#0"
+      ]
+    },
+    "695": {
+      "op": "frame_bury 0",
+      "defined_out": [
+        "actualReward#0"
+      ],
+      "stack_out": [
+        "actualReward#0",
+        "currentTime#0",
+        "finalReward#0"
+      ]
+    },
+    "697": {
+      "op": "b distributeRewards_ternary_merge@3"
+    },
+    "700": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateUtilizationBonus",
+      "params": {
+        "totalStaked#0": "uint64"
+      },
+      "block": "calculateUtilizationBonus",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "703": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "705": {
+      "op": "pushint 1000000000 // 1000000000",
+      "defined_out": [
+        "1000000000",
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)",
+        "1000000000"
+      ]
+    },
+    "711": {
+      "op": ">=",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "712": {
+      "op": "bz calculateUtilizationBonus_after_if_else@2",
+      "stack_out": []
+    },
+    "715": {
+      "op": "pushint 150 // 150",
+      "defined_out": [
+        "150"
+      ],
+      "stack_out": [
+        "150"
+      ]
+    },
+    "718": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "719": {
+      "block": "calculateUtilizationBonus_after_if_else@2",
+      "stack_in": [],
+      "op": "frame_dig -1",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "721": {
+      "op": "pushint 100000000 // 100000000",
+      "defined_out": [
+        "100000000",
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)",
+        "100000000"
+      ]
+    },
+    "726": {
+      "op": ">=",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "727": {
+      "op": "bz calculateUtilizationBonus_after_if_else@4",
+      "stack_out": []
+    },
+    "730": {
+      "op": "pushint 125 // 125",
+      "defined_out": [
+        "125"
+      ],
+      "stack_out": [
+        "125"
+      ]
+    },
+    "732": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "733": {
+      "block": "calculateUtilizationBonus_after_if_else@4",
+      "stack_in": [],
+      "op": "frame_dig -1",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "735": {
+      "op": "pushint 10000000 // 10000000",
+      "defined_out": [
+        "10000000",
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)",
+        "10000000"
+      ]
+    },
+    "740": {
+      "op": ">=",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "741": {
+      "op": "bz calculateUtilizationBonus_after_if_else@6",
+      "stack_out": []
+    },
+    "744": {
+      "op": "pushint 110 // 110",
+      "defined_out": [
+        "110"
+      ],
+      "stack_out": [
+        "110"
+      ]
+    },
+    "746": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "747": {
+      "block": "calculateUtilizationBonus_after_if_else@6",
+      "stack_in": [],
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100"
+      ],
+      "stack_out": [
+        "100"
+      ]
+    },
+    "748": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "749": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.updateDistributionRate",
+      "params": {
+        "newRate#0": "uint64"
+      },
+      "block": "updateDistributionRate",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "752": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "754": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "755": {
+      "op": "bytec_3 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "756": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "757": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "758": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "759": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "760": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "761": {
+      "op": "bytec 7 // \"minDistributionRate\"",
+      "defined_out": [
+        "\"minDistributionRate\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"minDistributionRate\""
+      ]
+    },
+    "763": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "764": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%1#0"
+      ]
+    },
+    "765": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "maybe_value%1#0",
+        "newRate#0 (copy)"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "newRate#0 (copy)"
+      ]
+    },
+    "767": {
+      "op": "<=",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "768": {
+      "op": "bz updateDistributionRate_bool_false@3",
+      "stack_out": []
+    },
+    "771": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "772": {
+      "op": "bytec 6 // \"maxDistributionRate\"",
+      "defined_out": [
+        "\"maxDistributionRate\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"maxDistributionRate\""
+      ]
+    },
+    "774": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "775": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%2#0"
+      ]
+    },
+    "776": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "maybe_value%2#0",
+        "newRate#0 (copy)"
+      ]
+    },
+    "778": {
+      "op": ">=",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "779": {
+      "op": "bz updateDistributionRate_bool_false@3",
+      "stack_out": []
+    },
+    "782": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "and_result%0#0"
+      ],
+      "stack_out": [
+        "and_result%0#0"
+      ]
+    },
+    "783": {
+      "block": "updateDistributionRate_bool_merge@4",
+      "stack_in": [
+        "and_result%0#0"
+      ],
+      "op": "assert",
+      "defined_out": [],
+      "stack_out": []
+    },
+    "784": {
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\""
+      ],
+      "stack_out": [
+        "\"distributionRate\""
+      ]
+    },
+    "785": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"distributionRate\"",
+        "newRate#0 (copy)"
+      ],
+      "stack_out": [
+        "\"distributionRate\"",
+        "newRate#0 (copy)"
+      ]
+    },
+    "787": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "788": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "789": {
+      "block": "updateDistributionRate_bool_false@3",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "and_result%0#0"
+      ],
+      "stack_out": [
+        "and_result%0#0"
+      ]
+    },
+    "790": {
+      "op": "b updateDistributionRate_bool_merge@4"
+    },
+    "793": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.setTargetAPY",
+      "params": {
+        "totalStaked#0": "uint64",
+        "targetAPY#0": "uint64"
+      },
+      "block": "setTargetAPY",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "796": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "798": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "799": {
+      "op": "bytec_3 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "800": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "801": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "802": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "803": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "804": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "targetAPY#0 (copy)"
+      ],
+      "stack_out": [
+        "targetAPY#0 (copy)"
+      ]
+    },
+    "806": {
+      "op": "intc_3 // 1000000000000",
+      "defined_out": [
+        "1000000000000",
+        "targetAPY#0 (copy)"
+      ],
+      "stack_out": [
+        "targetAPY#0 (copy)",
+        "1000000000000"
+      ]
+    },
+    "807": {
+      "op": "*",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "808": {
+      "op": "pushint 3153600000 // 3153600000",
+      "defined_out": [
+        "3153600000",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1",
+        "3153600000"
+      ]
+    },
+    "814": {
+      "op": "/",
+      "defined_out": [
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0"
+      ]
+    },
+    "815": {
+      "op": "dup",
+      "defined_out": [
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0"
+      ]
+    },
+    "816": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0",
+        "0"
+      ]
+    },
+    "817": {
+      "op": "bytec 6 // \"maxDistributionRate\"",
+      "defined_out": [
+        "\"maxDistributionRate\"",
+        "0",
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0",
+        "0",
+        "\"maxDistributionRate\""
+      ]
+    },
+    "819": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#1",
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0",
+        "maybe_value%0#1",
+        "maybe_exists%0#0"
+      ]
+    },
+    "820": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0",
+        "maybe_value%0#1"
+      ]
+    },
+    "821": {
+      "op": ">",
+      "stack_out": [
+        "optimalRate#0",
+        "tmp%1#0"
+      ]
+    },
+    "822": {
+      "op": "bz setTargetAPY_after_if_else@3",
+      "stack_out": [
+        "optimalRate#0"
+      ]
+    },
+    "825": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "optimalRate#0",
+        "0"
+      ]
+    },
+    "826": {
+      "op": "bytec 6 // \"maxDistributionRate\"",
+      "stack_out": [
+        "optimalRate#0",
+        "0",
+        "\"maxDistributionRate\""
+      ]
+    },
+    "828": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0",
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "829": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0"
+      ]
+    },
+    "830": {
+      "op": "frame_bury 0",
+      "stack_out": [
+        "optimalRate#0"
+      ]
+    },
+    "832": {
+      "block": "setTargetAPY_after_inlined_smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateOptimalRate@6",
+      "stack_in": [
+        "optimalRate#0"
+      ],
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\""
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "\"distributionRate\""
+      ]
+    },
+    "833": {
+      "op": "frame_dig 0",
+      "defined_out": [
+        "\"distributionRate\"",
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "\"distributionRate\"",
+        "optimalRate#0"
+      ]
+    },
+    "835": {
+      "op": "app_global_put",
+      "stack_out": [
+        "optimalRate#0"
+      ]
+    },
+    "836": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "837": {
+      "block": "setTargetAPY_after_if_else@3",
+      "stack_in": [
+        "optimalRate#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "0"
+      ]
+    },
+    "838": {
+      "op": "bytec 7 // \"minDistributionRate\"",
+      "defined_out": [
+        "\"minDistributionRate\"",
+        "0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "0",
+        "\"minDistributionRate\""
+      ]
+    },
+    "840": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "841": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "optimalRate#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "842": {
+      "op": "frame_dig 0",
+      "defined_out": [
+        "maybe_value%2#0",
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "maybe_value%2#0",
+        "optimalRate#0"
+      ]
+    },
+    "844": {
+      "op": ">",
+      "defined_out": [
+        "optimalRate#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "tmp%2#0"
+      ]
+    },
+    "845": {
+      "op": "bz setTargetAPY_after_inlined_smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateOptimalRate@6",
+      "stack_out": [
+        "optimalRate#0"
+      ]
+    },
+    "848": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "optimalRate#0",
+        "0"
+      ]
+    },
+    "849": {
+      "op": "bytec 7 // \"minDistributionRate\"",
+      "stack_out": [
+        "optimalRate#0",
+        "0",
+        "\"minDistributionRate\""
+      ]
+    },
+    "851": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0",
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "852": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "optimalRate#0",
+        "optimalRate#0"
+      ]
+    },
+    "853": {
+      "op": "frame_bury 0",
+      "defined_out": [
+        "optimalRate#0"
+      ],
+      "stack_out": [
+        "optimalRate#0"
+      ]
+    },
+    "855": {
+      "op": "b setTargetAPY_after_inlined_smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateOptimalRate@6"
+    },
+    "858": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.pauseDistribution",
+      "params": {},
+      "block": "pauseDistribution",
+      "stack_in": [],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "860": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "861": {
+      "op": "bytec_3 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "862": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "863": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "864": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "865": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "866": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\""
+      ],
+      "stack_out": [
+        "\"distributionActive\""
+      ]
+    },
+    "867": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "\"distributionActive\"",
+        "0"
+      ]
+    },
+    "868": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "869": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "870": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.resumeDistribution",
+      "params": {},
+      "block": "resumeDistribution",
+      "stack_in": [],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "872": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "873": {
+      "op": "bytec_3 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "874": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "875": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "876": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "877": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "878": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\""
+      ],
+      "stack_out": [
+        "\"distributionActive\""
+      ]
+    },
+    "879": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "\"distributionActive\"",
+        "1"
+      ],
+      "stack_out": [
+        "\"distributionActive\"",
+        "1"
+      ]
+    },
+    "880": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "881": {
+      "op": "bytec 4 // \"lastDistribution\"",
+      "defined_out": [
+        "\"lastDistribution\""
+      ],
+      "stack_out": [
+        "\"lastDistribution\""
+      ]
+    },
+    "883": {
+      "op": "global LatestTimestamp",
+      "defined_out": [
+        "\"lastDistribution\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "\"lastDistribution\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "885": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "886": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "887": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.withdrawExcessRewards",
+      "params": {
+        "amount#0": "uint64"
+      },
+      "block": "withdrawExcessRewards",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "890": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "892": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "893": {
+      "op": "bytec_3 // \"admin\"",
+      "defined_out": [
+        "\"admin\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"admin\""
+      ]
+    },
+    "894": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "895": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "896": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "897": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "898": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "899": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "defined_out": [
+        "\"totalRewardPool\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "900": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "901": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%1#0"
+      ]
+    },
+    "902": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%1#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "904": {
+      "op": ">=",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "905": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "906": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "907": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "stack_out": [
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "908": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "909": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%2#0"
+      ]
+    },
+    "910": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "maybe_value%2#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "912": {
+      "op": "-",
+      "defined_out": [
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "new_state_value%0#0"
+      ]
+    },
+    "913": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "stack_out": [
+        "new_state_value%0#0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "914": {
+      "op": "swap",
+      "stack_out": [
+        "\"totalRewardPool\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "915": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "916": {
+      "op": "itxn_begin"
+    },
+    "917": {
+      "op": "txn Sender",
+      "defined_out": [
+        "inner_txn_params%0%%param_Receiver_idx_0#0"
+      ],
+      "stack_out": [
+        "inner_txn_params%0%%param_Receiver_idx_0#0"
+      ]
+    },
+    "919": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "inner_txn_params%0%%param_Receiver_idx_0#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "921": {
+      "op": "itxn_field Amount",
+      "stack_out": [
+        "inner_txn_params%0%%param_Receiver_idx_0#0"
+      ]
+    },
+    "923": {
+      "op": "itxn_field Receiver",
+      "stack_out": []
+    },
+    "925": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "926": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "928": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "929": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "931": {
+      "op": "itxn_submit"
+    },
+    "932": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "933": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.getDistributorInfo",
+      "params": {},
+      "block": "getDistributorInfo",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "934": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "defined_out": [
+        "\"totalRewardPool\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "935": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "936": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "937": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "0"
+      ]
+    },
+    "938": {
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\"",
+        "0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "0",
+        "\"distributionRate\""
+      ]
+    },
+    "939": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "940": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "941": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "942": {
+      "op": "bytec 4 // \"lastDistribution\"",
+      "defined_out": [
+        "\"lastDistribution\"",
+        "0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"lastDistribution\""
+      ]
+    },
+    "944": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "945": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "946": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "0"
+      ]
+    },
+    "947": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\"",
+        "0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "0",
+        "\"distributionActive\""
+      ]
+    },
+    "948": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "949": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "950": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "0"
+      ]
+    },
+    "951": {
+      "op": "bytec 8 // \"totalDistributed\"",
+      "defined_out": [
+        "\"totalDistributed\"",
+        "0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "0",
+        "\"totalDistributed\""
+      ]
+    },
+    "953": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%4#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_exists%4#0"
+      ]
+    },
+    "954": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ]
+    },
+    "955": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "0"
+      ]
+    },
+    "956": {
+      "op": "bytec 9 // \"distributionCount\"",
+      "defined_out": [
+        "\"distributionCount\"",
+        "0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "0",
+        "\"distributionCount\""
+      ]
+    },
+    "958": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%5#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_value%5#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_value%5#0",
+        "maybe_exists%5#0"
+      ]
+    },
+    "959": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_value%5#0"
+      ]
+    },
+    "960": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "961": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateProjectedRewards",
+      "params": {
+        "totalStaked#0": "uint64",
+        "timespan#0": "uint64"
+      },
+      "block": "calculateProjectedRewards",
+      "stack_in": [],
+      "op": "proto 2 1"
+    },
+    "964": {
+      "op": "pushbytes \"\"",
+      "stack_out": [
+        "projectedReward#0"
+      ]
+    },
+    "966": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "0"
+      ]
+    },
+    "967": {
+      "op": "bytec_1 // \"distributionActive\"",
+      "defined_out": [
+        "\"distributionActive\"",
+        "0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "0",
+        "\"distributionActive\""
+      ]
+    },
+    "968": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "969": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "projectedReward#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "970": {
+      "op": "bz calculateProjectedRewards_if_body@2",
+      "stack_out": [
+        "projectedReward#0"
+      ]
+    },
+    "973": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "975": {
+      "op": "bnz calculateProjectedRewards_after_if_else@3",
+      "stack_out": [
+        "projectedReward#0"
+      ]
+    },
+    "978": {
+      "block": "calculateProjectedRewards_if_body@2",
+      "stack_in": [
+        "projectedReward#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "0"
+      ]
+    },
+    "979": {
+      "op": "swap"
+    },
+    "980": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "981": {
+      "block": "calculateProjectedRewards_after_if_else@3",
+      "stack_in": [
+        "projectedReward#0"
+      ],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "0"
+      ]
+    },
+    "982": {
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\"",
+        "0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "0",
+        "\"distributionRate\""
+      ]
+    },
+    "983": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "984": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "projectedReward#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "985": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "maybe_value%1#0",
+        "timespan#0 (copy)"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "maybe_value%1#0",
+        "timespan#0 (copy)"
+      ]
+    },
+    "987": {
+      "op": "*",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%1#0"
+      ]
+    },
+    "988": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "tmp%1#0",
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%1#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "990": {
+      "op": "*",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%2#0"
+      ]
+    },
+    "991": {
+      "op": "intc_3 // 1000000000000",
+      "defined_out": [
+        "1000000000000",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%2#0",
+        "1000000000000"
+      ]
+    },
+    "992": {
+      "op": "/",
+      "defined_out": [
+        "baseReward#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "baseReward#0"
+      ]
+    },
+    "993": {
+      "op": "frame_dig -2",
+      "stack_out": [
+        "projectedReward#0",
+        "baseReward#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "995": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateUtilizationBonus",
+      "op": "callsub calculateUtilizationBonus",
+      "defined_out": [
+        "baseReward#0",
+        "utilizationBonus#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "baseReward#0",
+        "utilizationBonus#0"
+      ]
+    },
+    "998": {
+      "op": "*",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%3#0"
+      ]
+    },
+    "999": {
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%3#0",
+        "100"
+      ]
+    },
+    "1000": {
+      "op": "/",
+      "defined_out": [
+        "projectedReward#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0"
+      ]
+    },
+    "1001": {
+      "op": "dup",
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0",
+        "projectedReward#0"
+      ]
+    },
+    "1002": {
+      "op": "frame_bury 0",
+      "defined_out": [
+        "projectedReward#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0"
+      ]
+    },
+    "1004": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0",
+        "0"
+      ]
+    },
+    "1005": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "defined_out": [
+        "\"totalRewardPool\"",
+        "0",
+        "projectedReward#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0",
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "1006": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0",
+        "projectedReward#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "1007": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "projectedReward#0",
+        "projectedReward#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "1008": {
+      "op": ">",
+      "defined_out": [
+        "projectedReward#0",
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "tmp%4#0"
+      ]
+    },
+    "1009": {
+      "op": "bz calculateProjectedRewards_ternary_false@5",
+      "stack_out": [
+        "projectedReward#0"
+      ]
+    },
+    "1012": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "projectedReward#0",
+        "0"
+      ]
+    },
+    "1013": {
+      "op": "bytec_0 // \"totalRewardPool\"",
+      "stack_out": [
+        "projectedReward#0",
+        "0",
+        "\"totalRewardPool\""
+      ]
+    },
+    "1014": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0",
+        "projectedReward#0"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "1015": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "defined_out": [
+        "projectedReward#0",
+        "ternary_result%0#2"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "ternary_result%0#2"
+      ]
+    },
+    "1016": {
+      "block": "calculateProjectedRewards_ternary_merge@6",
+      "stack_in": [
+        "projectedReward#0",
+        "ternary_result%0#2"
+      ],
+      "op": "swap",
+      "defined_out": [
+        "ternary_result%0#2"
+      ]
+    },
+    "1017": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "1018": {
+      "block": "calculateProjectedRewards_ternary_false@5",
+      "stack_in": [
+        "projectedReward#0"
+      ],
+      "op": "frame_dig 0",
+      "defined_out": [
+        "ternary_result%0#2"
+      ],
+      "stack_out": [
+        "projectedReward#0",
+        "ternary_result%0#2"
+      ]
+    },
+    "1020": {
+      "op": "b calculateProjectedRewards_ternary_merge@6"
+    },
+    "1023": {
+      "subroutine": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.getCurrentAPY",
+      "params": {
+        "totalStaked#0": "uint64"
+      },
+      "block": "getCurrentAPY",
+      "stack_in": [],
+      "op": "proto 1 1"
+    },
+    "1026": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "1028": {
+      "op": "bnz getCurrentAPY_after_if_else@2",
+      "stack_out": []
+    },
+    "1031": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "1032": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "1033": {
+      "block": "getCurrentAPY_after_if_else@2",
+      "stack_in": [],
+      "op": "frame_dig -1",
+      "defined_out": [
+        "totalStaked#0 (copy)"
+      ],
+      "stack_out": [
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "1035": {
+      "callsub": "smart_contracts/vault/reward_distributor.algo.ts::RewardDistributor.calculateUtilizationBonus",
+      "op": "callsub calculateUtilizationBonus",
+      "defined_out": [
+        "utilizationBonus#0"
+      ],
+      "stack_out": [
+        "utilizationBonus#0"
+      ]
+    },
+    "1038": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "utilizationBonus#0"
+      ],
+      "stack_out": [
+        "utilizationBonus#0",
+        "0"
+      ]
+    },
+    "1039": {
+      "op": "bytec_2 // \"distributionRate\"",
+      "defined_out": [
+        "\"distributionRate\"",
+        "0",
+        "utilizationBonus#0"
+      ],
+      "stack_out": [
+        "utilizationBonus#0",
+        "0",
+        "\"distributionRate\""
+      ]
+    },
+    "1040": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "utilizationBonus#0"
+      ],
+      "stack_out": [
+        "utilizationBonus#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "1041": {
+      "error": "check GlobalState exists",
+      "op": "assert // check GlobalState exists",
+      "stack_out": [
+        "utilizationBonus#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "1042": {
+      "op": "*",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "1043": {
+      "op": "intc_2 // 100",
+      "defined_out": [
+        "100",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0",
+        "100"
+      ]
+    },
+    "1044": {
+      "op": "/",
+      "defined_out": [
+        "effectiveRate#0"
+      ],
+      "stack_out": [
+        "effectiveRate#0"
+      ]
+    },
+    "1045": {
+      "op": "pushint 31536000 // 31536000",
+      "defined_out": [
+        "31536000",
+        "effectiveRate#0"
+      ],
+      "stack_out": [
+        "effectiveRate#0",
+        "31536000"
+      ]
+    },
+    "1050": {
+      "op": "*",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "1051": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "tmp%2#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "1053": {
+      "op": "*",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "1054": {
+      "op": "intc_3 // 1000000000000",
+      "defined_out": [
+        "1000000000000",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0",
+        "1000000000000"
+      ]
+    },
+    "1055": {
+      "op": "/",
+      "defined_out": [
+        "annualRewards#0"
+      ],
+      "stack_out": [
+        "annualRewards#0"
+      ]
+    },
+    "1056": {
+      "op": "intc_2 // 100",
+      "stack_out": [
+        "annualRewards#0",
+        "100"
+      ]
+    },
+    "1057": {
+      "op": "*",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "1058": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "tmp%4#0",
+        "totalStaked#0 (copy)"
+      ]
+    },
+    "1060": {
+      "op": "/",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "1061": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}

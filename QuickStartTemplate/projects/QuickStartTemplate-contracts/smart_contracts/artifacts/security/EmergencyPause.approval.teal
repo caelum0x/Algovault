@@ -1,0 +1,2332 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 0 1 2 4
+    bytecblock "emergencyActive" "admin" "currentEmergencyLevel" "emergencyCount" "recoveryMode" "recoveryApprovals" 0x151f7c75 "currentDailyVolume" "maxDailyVolume" 0x00 "lastVolumeReset" "_timestamp" "lastEmergencyTime" "largeWithdrawalThreshold" "_level" "_resolved" "_resolvedAt" "_resolvedBy" "emergency" 0x0026 "cooldownPeriod" "autoResolveTime" "maxEmergencyDuration" "suspiciousActivityThreshold" "failedTransactionThreshold" "_reason" "_triggeredBy" "view"
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@23
+    pushbytess 0x746dbfad 0xaab98960 0x93a8a511 0x55855f63 0xc49c7b9f 0x3d65945c 0x677197b6 0xa9bc75a7 0xadcaf210 0x018f01e9 0x124da275 0xdace6156 0x8b9c86e6 0x040674ff 0x9cdf7976 0x4ce275f3 0xbc2f94d1 0x0da7ee6e // method "initialize(byte[],uint64,uint64,uint64)void", method "triggerEmergency(uint64,string)void", method "resolveEmergency(uint64,string)void", method "escalateEmergency(uint64,string)void", method "autoResolveCheck()void", method "addEmergencyOperator(byte[])void", method "removeEmergencyOperator(byte[])void", method "activateRecoveryMode()void", method "executeRecovery()void", method "checkCircuitBreaker(uint64)bool", method "reportSuspiciousActivity(string,string)void", method "updateEmergencyThresholds(uint64,uint64,uint64,uint64)void", method "isOperationAllowed(string)bool", method "isAuthorizedOperator(byte[])bool", method "getEmergencyEvent(uint64)(uint64,byte[],byte[],uint64,uint64,uint64,byte[])", method "getCurrentEmergencyStatus()(bool,uint64,uint64,uint64,bool)", method "getCircuitBreakerStatus()(uint64,uint64,uint64,uint64)", method "getEmergencyHistory(uint64)(uint64,byte[],byte[],uint64,uint64,uint64,byte[])[]"
+    txna ApplicationArgs 0
+    match main_initialize_route@3 main_triggerEmergency_route@4 main_resolveEmergency_route@5 main_escalateEmergency_route@6 main_autoResolveCheck_route@7 main_addEmergencyOperator_route@8 main_removeEmergencyOperator_route@9 main_activateRecoveryMode_route@10 main_executeRecovery_route@11 main_checkCircuitBreaker_route@12 main_reportSuspiciousActivity_route@13 main_updateEmergencyThresholds_route@14 main_isOperationAllowed_route@15 main_isAuthorizedOperator_route@16 main_getEmergencyEvent_route@17 main_getCurrentEmergencyStatus_route@18 main_getCircuitBreakerStatus_route@19 main_getEmergencyHistory_route@20
+
+main_after_if_else@27:
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    intc_0 // 0
+    return
+
+main_getEmergencyHistory_route@20:
+    // smart_contracts/security/emergency_pause.algo.ts:346
+    // getEmergencyHistory(limit: uint64): { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes }[] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/security/emergency_pause.algo.ts:346
+    // getEmergencyHistory(limit: uint64): { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes }[] {
+    callsub getEmergencyHistory
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getCircuitBreakerStatus_route@19:
+    // smart_contracts/security/emergency_pause.algo.ts:333
+    // getCircuitBreakerStatus(): { currentDailyVolume: uint64, maxDailyVolume: uint64, remainingVolume: uint64, lastReset: uint64 } {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getCircuitBreakerStatus
+    uncover 3
+    itob
+    uncover 3
+    itob
+    uncover 3
+    itob
+    uncover 3
+    itob
+    uncover 3
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getCurrentEmergencyStatus_route@18:
+    // smart_contracts/security/emergency_pause.algo.ts:318
+    // getCurrentEmergencyStatus(): { active: boolean, level: uint64, eventId: uint64, duration: uint64, recoveryMode: boolean } {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getCurrentEmergencyStatus
+    bytec 9 // 0x00
+    intc_0 // 0
+    uncover 6
+    setbit
+    uncover 4
+    itob
+    uncover 4
+    itob
+    uncover 4
+    itob
+    bytec 9 // 0x00
+    intc_0 // 0
+    uncover 6
+    setbit
+    uncover 4
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getEmergencyEvent_route@17:
+    // smart_contracts/security/emergency_pause.algo.ts:299
+    // getEmergencyEvent(eventId: uint64): { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes } {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/security/emergency_pause.algo.ts:299
+    // getEmergencyEvent(eventId: uint64): { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes } {
+    callsub getEmergencyEvent
+    uncover 6
+    itob
+    dig 6
+    len
+    itob
+    extract 6 2
+    uncover 7
+    concat
+    dig 6
+    len
+    itob
+    extract 6 2
+    uncover 7
+    concat
+    uncover 6
+    itob
+    uncover 6
+    itob
+    uncover 6
+    itob
+    dig 6
+    len
+    itob
+    extract 6 2
+    uncover 7
+    concat
+    uncover 6
+    bytec 19 // 0x0026
+    concat
+    dig 6
+    len
+    pushint 38 // 38
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 6
+    len
+    uncover 2
+    +
+    swap
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    swap
+    itob
+    extract 6 2
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_isAuthorizedOperator_route@16:
+    // smart_contracts/security/emergency_pause.algo.ts:294
+    // isAuthorizedOperator(operator: bytes): boolean {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:294
+    // isAuthorizedOperator(operator: bytes): boolean {
+    callsub isAuthorizedOperator
+    bytec 9 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_isOperationAllowed_route@15:
+    // smart_contracts/security/emergency_pause.algo.ts:263
+    // isOperationAllowed(operationType: string): boolean {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:263
+    // isOperationAllowed(operationType: string): boolean {
+    callsub isOperationAllowed
+    bytec 9 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_updateEmergencyThresholds_route@14:
+    // smart_contracts/security/emergency_pause.algo.ts:247
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/security/emergency_pause.algo.ts:247
+    // @abimethod()
+    callsub updateEmergencyThresholds
+    intc_1 // 1
+    return
+
+main_reportSuspiciousActivity_route@13:
+    // smart_contracts/security/emergency_pause.algo.ts:237
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:237
+    // @abimethod()
+    callsub reportSuspiciousActivity
+    intc_1 // 1
+    return
+
+main_checkCircuitBreaker_route@12:
+    // smart_contracts/security/emergency_pause.algo.ts:212
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/security/emergency_pause.algo.ts:212
+    // @abimethod()
+    callsub checkCircuitBreaker
+    bytec 9 // 0x00
+    intc_0 // 0
+    uncover 2
+    setbit
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_executeRecovery_route@11:
+    // smart_contracts/security/emergency_pause.algo.ts:197
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub executeRecovery
+    intc_1 // 1
+    return
+
+main_activateRecoveryMode_route@10:
+    // smart_contracts/security/emergency_pause.algo.ts:180
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub activateRecoveryMode
+    intc_1 // 1
+    return
+
+main_removeEmergencyOperator_route@9:
+    // smart_contracts/security/emergency_pause.algo.ts:172
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:172
+    // @abimethod()
+    callsub removeEmergencyOperator
+    intc_1 // 1
+    return
+
+main_addEmergencyOperator_route@8:
+    // smart_contracts/security/emergency_pause.algo.ts:163
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:163
+    // @abimethod()
+    callsub addEmergencyOperator
+    intc_1 // 1
+    return
+
+main_autoResolveCheck_route@7:
+    // smart_contracts/security/emergency_pause.algo.ts:146
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub autoResolveCheck
+    intc_1 // 1
+    return
+
+main_escalateEmergency_route@6:
+    // smart_contracts/security/emergency_pause.algo.ts:135
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:135
+    // @abimethod()
+    callsub escalateEmergency
+    intc_1 // 1
+    return
+
+main_resolveEmergency_route@5:
+    // smart_contracts/security/emergency_pause.algo.ts:112
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:112
+    // @abimethod()
+    callsub resolveEmergency
+    intc_1 // 1
+    return
+
+main_triggerEmergency_route@4:
+    // smart_contracts/security/emergency_pause.algo.ts:88
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    extract 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:88
+    // @abimethod()
+    callsub triggerEmergency
+    intc_1 // 1
+    return
+
+main_initialize_route@3:
+    // smart_contracts/security/emergency_pause.algo.ts:56
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/security/emergency_pause.algo.ts:56
+    // @abimethod()
+    callsub initialize
+    intc_1 // 1
+    return
+
+main_bare_routing@23:
+    // smart_contracts/security/emergency_pause.algo.ts:25
+    // export class EmergencyPause extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@27
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_1 // 1
+    return
+
+
+// _puya_lib.arc4.dynamic_array_concat_dynamic_element(array_items_count: uint64, array_head_and_tail: bytes, new_items_count: uint64, new_head_and_tail: bytes) -> bytes:
+dynamic_array_concat_dynamic_element:
+    proto 4 1
+    pushbytes ""
+    dup
+    frame_dig -2
+    intc_2 // 2
+    *
+    frame_dig -4
+    intc_2 // 2
+    *
+    intc_0 // 0
+
+dynamic_array_concat_dynamic_element_for_header@1:
+    frame_dig 4
+    frame_dig 3
+    <
+    bz dynamic_array_concat_dynamic_element_after_for@4
+    frame_dig -3
+    frame_dig 4
+    dup
+    cover 2
+    extract_uint16
+    frame_dig 2
+    +
+    itob
+    extract 6 2
+    frame_dig 1
+    swap
+    concat
+    frame_bury 1
+    intc_2 // 2
+    +
+    frame_bury 4
+    b dynamic_array_concat_dynamic_element_for_header@1
+
+dynamic_array_concat_dynamic_element_after_for@4:
+    frame_dig -3
+    len
+    frame_bury 0
+    intc_0 // 0
+    frame_bury 4
+
+dynamic_array_concat_dynamic_element_for_header@5:
+    frame_dig 4
+    frame_dig 2
+    <
+    bz dynamic_array_concat_dynamic_element_after_for@8
+    frame_dig -1
+    frame_dig 4
+    dup
+    cover 2
+    extract_uint16
+    frame_dig 0
+    +
+    itob
+    extract 6 2
+    frame_dig 1
+    swap
+    concat
+    frame_bury 1
+    intc_2 // 2
+    +
+    frame_bury 4
+    b dynamic_array_concat_dynamic_element_for_header@5
+
+dynamic_array_concat_dynamic_element_after_for@8:
+    frame_dig -4
+    frame_dig -2
+    +
+    itob
+    extract 6 2
+    frame_dig 1
+    concat
+    frame_dig -3
+    frame_dig 3
+    frame_dig 0
+    substring3
+    concat
+    frame_dig -1
+    len
+    frame_dig -1
+    frame_dig 2
+    uncover 2
+    substring3
+    concat
+    frame_bury 0
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.initialize(admin: bytes, cooldownPeriod: uint64, autoResolveTime: uint64, maxEmergencyDuration: uint64) -> void:
+initialize:
+    // smart_contracts/security/emergency_pause.algo.ts:56-62
+    // @abimethod()
+    // initialize(
+    //   admin: bytes,
+    //   cooldownPeriod: uint64,
+    //   autoResolveTime: uint64,
+    //   maxEmergencyDuration: uint64
+    // ): void {
+    proto 4 0
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:63
+    // assert(!this.emergencyActive.value)
+    !
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    bytec_1 // "admin"
+    // smart_contracts/security/emergency_pause.algo.ts:65
+    // this.admin.value = admin
+    frame_dig -4
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    bytec_2 // "currentEmergencyLevel"
+    // smart_contracts/security/emergency_pause.algo.ts:4
+    // const EMERGENCY_LEVEL_NONE: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:66
+    // this.currentEmergencyLevel.value = EMERGENCY_LEVEL_NONE
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    bytec_0 // "emergencyActive"
+    // smart_contracts/security/emergency_pause.algo.ts:67
+    // this.emergencyActive.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    bytec_3 // "emergencyCount"
+    // smart_contracts/security/emergency_pause.algo.ts:68
+    // this.emergencyCount.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:30
+    // lastEmergencyTime = GlobalState<uint64>()
+    bytec 12 // "lastEmergencyTime"
+    // smart_contracts/security/emergency_pause.algo.ts:69
+    // this.lastEmergencyTime.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:37
+    // cooldownPeriod = GlobalState<uint64>() // Minimum time between emergency activations
+    bytec 20 // "cooldownPeriod"
+    // smart_contracts/security/emergency_pause.algo.ts:70
+    // this.cooldownPeriod.value = cooldownPeriod
+    frame_dig -3
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:38
+    // autoResolveTime = GlobalState<uint64>() // Auto-resolve after this time for low-level emergencies
+    bytec 21 // "autoResolveTime"
+    // smart_contracts/security/emergency_pause.algo.ts:71
+    // this.autoResolveTime.value = autoResolveTime
+    frame_dig -2
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:39
+    // maxEmergencyDuration = GlobalState<uint64>() // Maximum duration for any emergency
+    bytec 22 // "maxEmergencyDuration"
+    // smart_contracts/security/emergency_pause.algo.ts:72
+    // this.maxEmergencyDuration.value = maxEmergencyDuration
+    frame_dig -1
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:42
+    // suspiciousActivityThreshold = GlobalState<uint64>()
+    bytec 23 // "suspiciousActivityThreshold"
+    // smart_contracts/security/emergency_pause.algo.ts:75
+    // this.suspiciousActivityThreshold.value = 10 // 10 suspicious events
+    pushint 10 // 10
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:43
+    // failedTransactionThreshold = GlobalState<uint64>()
+    bytec 24 // "failedTransactionThreshold"
+    // smart_contracts/security/emergency_pause.algo.ts:76
+    // this.failedTransactionThreshold.value = 100 // 100 failed transactions
+    pushint 100 // 100
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:44
+    // largeWithdrawalThreshold = GlobalState<uint64>()
+    bytec 13 // "largeWithdrawalThreshold"
+    // smart_contracts/security/emergency_pause.algo.ts:77
+    // this.largeWithdrawalThreshold.value = 1000000000 // 1B microALGO
+    pushint 1000000000 // 1000000000
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:47
+    // maxDailyVolume = GlobalState<uint64>()
+    bytec 8 // "maxDailyVolume"
+    // smart_contracts/security/emergency_pause.algo.ts:80
+    // this.maxDailyVolume.value = 10000000000 // 10B microALGO daily limit
+    pushint 10000000000 // 10000000000
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    bytec 7 // "currentDailyVolume"
+    // smart_contracts/security/emergency_pause.algo.ts:81
+    // this.currentDailyVolume.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:49
+    // lastVolumeReset = GlobalState<uint64>()
+    bytec 10 // "lastVolumeReset"
+    // smart_contracts/security/emergency_pause.algo.ts:82
+    // this.lastVolumeReset.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    bytec 4 // "recoveryMode"
+    // smart_contracts/security/emergency_pause.algo.ts:84
+    // this.recoveryMode.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    bytec 5 // "recoveryApprovals"
+    // smart_contracts/security/emergency_pause.algo.ts:85
+    // this.recoveryApprovals.value = 0
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.triggerEmergency(level: uint64, reason: bytes) -> void:
+triggerEmergency:
+    // smart_contracts/security/emergency_pause.algo.ts:88-89
+    // @abimethod()
+    // triggerEmergency(level: uint64, reason: string): void {
+    proto 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:90
+    // assert(this.isAuthorizedOperator(Txn.sender.bytes) || Txn.sender.bytes === this.admin.value)
+    txn Sender
+    callsub isAuthorizedOperator
+    bnz triggerEmergency_bool_true@2
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:90
+    // assert(this.isAuthorizedOperator(Txn.sender.bytes) || Txn.sender.bytes === this.admin.value)
+    ==
+    bz triggerEmergency_bool_false@3
+
+triggerEmergency_bool_true@2:
+    intc_1 // 1
+
+triggerEmergency_bool_merge@4:
+    // smart_contracts/security/emergency_pause.algo.ts:90
+    // assert(this.isAuthorizedOperator(Txn.sender.bytes) || Txn.sender.bytes === this.admin.value)
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:91
+    // assert(level !== EMERGENCY_LEVEL_NONE)
+    frame_dig -2
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:92
+    // if (level < EMERGENCY_LEVEL_CRITICAL) {
+    frame_dig -2
+    // smart_contracts/security/emergency_pause.algo.ts:8
+    // const EMERGENCY_LEVEL_CRITICAL: uint64 = 4;
+    intc_3 // 4
+    // smart_contracts/security/emergency_pause.algo.ts:92
+    // if (level < EMERGENCY_LEVEL_CRITICAL) {
+    <
+    bz triggerEmergency_after_if_else@6
+    // smart_contracts/security/emergency_pause.algo.ts:93
+    // const timeSinceLastEmergency: uint64 = Global.latestTimestamp - this.lastEmergencyTime.value
+    global LatestTimestamp
+    // smart_contracts/security/emergency_pause.algo.ts:30
+    // lastEmergencyTime = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 12 // "lastEmergencyTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:93
+    // const timeSinceLastEmergency: uint64 = Global.latestTimestamp - this.lastEmergencyTime.value
+    -
+    // smart_contracts/security/emergency_pause.algo.ts:37
+    // cooldownPeriod = GlobalState<uint64>() // Minimum time between emergency activations
+    intc_0 // 0
+    bytec 20 // "cooldownPeriod"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:94
+    // assert(timeSinceLastEmergency >= this.cooldownPeriod.value)
+    >=
+    assert
+
+triggerEmergency_after_if_else@6:
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:96
+    // const eventId: uint64 = this.emergencyCount.value + 1 as uint64
+    intc_1 // 1
+    +
+    // smart_contracts/security/emergency_pause.algo.ts:98
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_level')) }).value = level
+    dup
+    itob
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/emergency_pause.algo.ts:98
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_level')) }).value = level
+    bytec 14 // "_level"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:98
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_level')) }).value = level
+    frame_dig -2
+    itob
+    swap
+    dig 1
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/security/emergency_pause.algo.ts:99
+    // Box<bytes>({ key: concat(Bytes(eventId), Bytes('_reason')) }).value = Bytes(reason)
+    bytec 25 // "_reason"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:99
+    // Box<bytes>({ key: concat(Bytes(eventId), Bytes('_reason')) }).value = Bytes(reason)
+    dup
+    box_del
+    pop
+    frame_dig -1
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/security/emergency_pause.algo.ts:100
+    // Box<bytes>({ key: concat(Bytes(eventId), Bytes('_triggeredBy')) }).value = Txn.sender.bytes
+    bytec 26 // "_triggeredBy"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:100
+    // Box<bytes>({ key: concat(Bytes(eventId), Bytes('_triggeredBy')) }).value = Txn.sender.bytes
+    txn Sender
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/security/emergency_pause.algo.ts:101
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_timestamp')) }).value = Global.latestTimestamp
+    bytec 11 // "_timestamp"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:101
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_timestamp')) }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/security/emergency_pause.algo.ts:102
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_resolved')) }).value = 0
+    bytec 15 // "_resolved"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:102
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_resolved')) }).value = 0
+    intc_0 // 0
+    itob
+    swap
+    dig 1
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/security/emergency_pause.algo.ts:103
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_resolvedAt')) }).value = 0
+    bytec 16 // "_resolvedAt"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:103
+    // Box<uint64>({ key: concat(Bytes(eventId), Bytes('_resolvedAt')) }).value = 0
+    swap
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    swap
+    // smart_contracts/security/emergency_pause.algo.ts:104
+    // Box<bytes>({ key: concat(Bytes(eventId), Bytes('_resolvedBy')) }).value = Global.zeroAddress.bytes
+    bytec 17 // "_resolvedBy"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:104
+    // Box<bytes>({ key: concat(Bytes(eventId), Bytes('_resolvedBy')) }).value = Global.zeroAddress.bytes
+    global ZeroAddress
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    bytec_2 // "currentEmergencyLevel"
+    // smart_contracts/security/emergency_pause.algo.ts:105
+    // this.currentEmergencyLevel.value = level
+    frame_dig -2
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    bytec_0 // "emergencyActive"
+    // smart_contracts/security/emergency_pause.algo.ts:106
+    // this.emergencyActive.value = true
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    bytec_3 // "emergencyCount"
+    // smart_contracts/security/emergency_pause.algo.ts:107
+    // this.emergencyCount.value = eventId
+    uncover 2
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:30
+    // lastEmergencyTime = GlobalState<uint64>()
+    bytec 12 // "lastEmergencyTime"
+    // smart_contracts/security/emergency_pause.algo.ts:108
+    // this.lastEmergencyTime.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:109
+    // log('EMERGENCY_ACTIVATED', level, reason, Txn.sender)
+    pushbytes "EMERGENCY_ACTIVATED"
+    swap
+    concat
+    frame_dig -1
+    concat
+    txn Sender
+    concat
+    log
+    retsub
+
+triggerEmergency_bool_false@3:
+    intc_0 // 0
+    b triggerEmergency_bool_merge@4
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.resolveEmergency(eventId: uint64, resolution: bytes) -> void:
+resolveEmergency:
+    // smart_contracts/security/emergency_pause.algo.ts:112-113
+    // @abimethod()
+    // resolveEmergency(eventId: uint64, resolution: string): void {
+    proto 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:114
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:114
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:115
+    // assert(this.emergencyActive.value)
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:116
+    // const resolvedKey = concat(Bytes(eventId), Bytes('_resolved'))
+    frame_dig -2
+    itob
+    dupn 2
+    bytec 15 // "_resolved"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    dig 1
+    // smart_contracts/security/emergency_pause.algo.ts:117
+    // const resolvedAtKey = concat(Bytes(eventId), Bytes('_resolvedAt'))
+    bytec 16 // "_resolvedAt"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    uncover 2
+    // smart_contracts/security/emergency_pause.algo.ts:118
+    // const resolvedByKey = concat(Bytes(eventId), Bytes('_resolvedBy'))
+    bytec 17 // "_resolvedBy"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:119
+    // assert(Box<uint64>({ key: resolvedKey }).exists)
+    dig 2
+    box_len
+    bury 1
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:120
+    // const resolved = Box<uint64>({ key: resolvedKey }).value
+    dig 2
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:121
+    // assert(resolved === 0)
+    !
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:122
+    // assert(eventId === this.emergencyCount.value)
+    frame_dig -2
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:123
+    // Box<uint64>({ key: resolvedKey }).value = 1
+    intc_1 // 1
+    itob
+    uncover 3
+    swap
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:124
+    // Box<uint64>({ key: resolvedAtKey }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    uncover 2
+    swap
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:125
+    // Box<bytes>({ key: resolvedByKey }).value = Txn.sender.bytes
+    txn Sender
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    bytec_2 // "currentEmergencyLevel"
+    // smart_contracts/security/emergency_pause.algo.ts:4
+    // const EMERGENCY_LEVEL_NONE: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:126
+    // this.currentEmergencyLevel.value = EMERGENCY_LEVEL_NONE
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    bytec_0 // "emergencyActive"
+    // smart_contracts/security/emergency_pause.algo.ts:127
+    // this.emergencyActive.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 4 // "recoveryMode"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:128
+    // if (this.recoveryMode.value) {
+    bz resolveEmergency_after_if_else@2
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    bytec 4 // "recoveryMode"
+    // smart_contracts/security/emergency_pause.algo.ts:129
+    // this.recoveryMode.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    bytec 5 // "recoveryApprovals"
+    // smart_contracts/security/emergency_pause.algo.ts:130
+    // this.recoveryApprovals.value = 0
+    intc_0 // 0
+    app_global_put
+
+resolveEmergency_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:132
+    // log('EMERGENCY_RESOLVED', eventId, resolution, Txn.sender)
+    pushbytes "EMERGENCY_RESOLVED"
+    frame_dig 0
+    concat
+    frame_dig -1
+    concat
+    txn Sender
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.escalateEmergency(newLevel: uint64, reason: bytes) -> void:
+escalateEmergency:
+    // smart_contracts/security/emergency_pause.algo.ts:135-136
+    // @abimethod()
+    // escalateEmergency(newLevel: uint64, reason: string): void {
+    proto 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:137
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:137
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:138
+    // assert(this.emergencyActive.value)
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "currentEmergencyLevel"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:139
+    // assert(newLevel > this.currentEmergencyLevel.value)
+    frame_dig -2
+    <
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    bytec_2 // "currentEmergencyLevel"
+    // smart_contracts/security/emergency_pause.algo.ts:141
+    // this.currentEmergencyLevel.value = newLevel
+    frame_dig -2
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:143
+    // log('EMERGENCY_ESCALATED', newLevel, reason, Txn.sender)
+    frame_dig -2
+    itob
+    pushbytes "EMERGENCY_ESCALATED"
+    swap
+    concat
+    frame_dig -1
+    concat
+    txn Sender
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.autoResolveCheck() -> void:
+autoResolveCheck:
+    // smart_contracts/security/emergency_pause.algo.ts:146-147
+    // @abimethod()
+    // autoResolveCheck(): void {
+    proto 0 0
+    pushbytes ""
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:148
+    // if (!this.emergencyActive.value) return
+    bnz autoResolveCheck_after_if_else@2
+    retsub
+
+autoResolveCheck_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:149
+    // const currentEventTimestamp = Box<uint64>({ key: concat(Bytes(this.emergencyCount.value), Bytes('_timestamp')) }).value
+    itob
+    bytec 11 // "_timestamp"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:149
+    // const currentEventTimestamp = Box<uint64>({ key: concat(Bytes(this.emergencyCount.value), Bytes('_timestamp')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:150
+    // let emergencyDuration: uint64 = Global.latestTimestamp - currentEventTimestamp
+    global LatestTimestamp
+    swap
+    -
+    frame_bury 0
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "currentEmergencyLevel"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:5
+    // const EMERGENCY_LEVEL_LOW: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/emergency_pause.algo.ts:152
+    // if (this.currentEmergencyLevel.value === EMERGENCY_LEVEL_LOW && emergencyDuration >= this.autoResolveTime.value) {
+    ==
+    bz autoResolveCheck_after_if_else@5
+    // smart_contracts/security/emergency_pause.algo.ts:38
+    // autoResolveTime = GlobalState<uint64>() // Auto-resolve after this time for low-level emergencies
+    intc_0 // 0
+    bytec 21 // "autoResolveTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:152
+    // if (this.currentEmergencyLevel.value === EMERGENCY_LEVEL_LOW && emergencyDuration >= this.autoResolveTime.value) {
+    frame_dig 0
+    <=
+    bz autoResolveCheck_after_if_else@5
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:153
+    // this.resolveEmergency(this.emergencyCount.value, 'Auto-resolved after timeout')
+    pushbytes "Auto-resolved after timeout"
+    callsub resolveEmergency
+    // smart_contracts/security/emergency_pause.algo.ts:154
+    // return
+    retsub
+
+autoResolveCheck_after_if_else@5:
+    // smart_contracts/security/emergency_pause.algo.ts:39
+    // maxEmergencyDuration = GlobalState<uint64>() // Maximum duration for any emergency
+    intc_0 // 0
+    bytec 22 // "maxEmergencyDuration"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:157
+    // if (emergencyDuration >= this.maxEmergencyDuration.value) {
+    frame_dig 0
+    <=
+    bz autoResolveCheck_after_if_else@7
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    bytec_2 // "currentEmergencyLevel"
+    // smart_contracts/security/emergency_pause.algo.ts:8
+    // const EMERGENCY_LEVEL_CRITICAL: uint64 = 4;
+    intc_3 // 4
+    // smart_contracts/security/emergency_pause.algo.ts:158
+    // this.currentEmergencyLevel.value = EMERGENCY_LEVEL_CRITICAL
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:159
+    // log('EMERGENCY_MAX_DURATION_EXCEEDED', this.emergencyCount.value)
+    itob
+    pushbytes "EMERGENCY_MAX_DURATION_EXCEEDED"
+    swap
+    concat
+    log
+
+autoResolveCheck_after_if_else@7:
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.addEmergencyOperator(operator: bytes) -> void:
+addEmergencyOperator:
+    // smart_contracts/security/emergency_pause.algo.ts:163-164
+    // @abimethod()
+    // addEmergencyOperator(operator: bytes): void {
+    proto 1 0
+    // smart_contracts/security/emergency_pause.algo.ts:165
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:165
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:169
+    // log('EMERGENCY_OPERATOR_ADDED', operator)
+    pushbytes "EMERGENCY_OPERATOR_ADDED"
+    frame_dig -1
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.removeEmergencyOperator(operator: bytes) -> void:
+removeEmergencyOperator:
+    // smart_contracts/security/emergency_pause.algo.ts:172-173
+    // @abimethod()
+    // removeEmergencyOperator(operator: bytes): void {
+    proto 1 0
+    // smart_contracts/security/emergency_pause.algo.ts:174
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:174
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:177
+    // log('EMERGENCY_OPERATOR_REMOVED', operator)
+    pushbytes "EMERGENCY_OPERATOR_REMOVED"
+    frame_dig -1
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.activateRecoveryMode() -> void:
+activateRecoveryMode:
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "currentEmergencyLevel"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:8
+    // const EMERGENCY_LEVEL_CRITICAL: uint64 = 4;
+    intc_3 // 4
+    // smart_contracts/security/emergency_pause.algo.ts:182
+    // assert(this.currentEmergencyLevel.value === EMERGENCY_LEVEL_CRITICAL)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:183
+    // assert(this.isAuthorizedOperator(Txn.sender.bytes))
+    txn Sender
+    callsub isAuthorizedOperator
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 4 // "recoveryMode"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:185
+    // if (!this.recoveryMode.value) {
+    bnz activateRecoveryMode_after_if_else@2
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    bytec 4 // "recoveryMode"
+    // smart_contracts/security/emergency_pause.algo.ts:186
+    // this.recoveryMode.value = true
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:53
+    // recoveryStartTime = GlobalState<uint64>()
+    pushbytes "recoveryStartTime"
+    // smart_contracts/security/emergency_pause.algo.ts:187
+    // this.recoveryStartTime.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    bytec 5 // "recoveryApprovals"
+    // smart_contracts/security/emergency_pause.algo.ts:188
+    // this.recoveryApprovals.value = 0
+    intc_0 // 0
+    app_global_put
+
+activateRecoveryMode_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    intc_0 // 0
+    bytec 5 // "recoveryApprovals"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:192
+    // this.recoveryApprovals.value = this.recoveryApprovals.value + 1
+    intc_1 // 1
+    +
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    bytec 5 // "recoveryApprovals"
+    // smart_contracts/security/emergency_pause.algo.ts:192
+    // this.recoveryApprovals.value = this.recoveryApprovals.value + 1
+    swap
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:194
+    // log('RECOVERY_MODE_APPROVAL', Txn.sender, this.recoveryApprovals.value)
+    pushbytes "RECOVERY_MODE_APPROVAL"
+    txn Sender
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    intc_0 // 0
+    bytec 5 // "recoveryApprovals"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:194
+    // log('RECOVERY_MODE_APPROVAL', Txn.sender, this.recoveryApprovals.value)
+    itob
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.executeRecovery() -> void:
+executeRecovery:
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 4 // "recoveryMode"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:199
+    // assert(this.recoveryMode.value)
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    intc_0 // 0
+    bytec 5 // "recoveryApprovals"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:200
+    // assert(this.recoveryApprovals.value >= 3) // Require 3 operator approvals
+    pushint 3 // 3
+    >=
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:201
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:201
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    bytec_2 // "currentEmergencyLevel"
+    // smart_contracts/security/emergency_pause.algo.ts:4
+    // const EMERGENCY_LEVEL_NONE: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:204
+    // this.currentEmergencyLevel.value = EMERGENCY_LEVEL_NONE
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    bytec_0 // "emergencyActive"
+    // smart_contracts/security/emergency_pause.algo.ts:205
+    // this.emergencyActive.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    bytec 4 // "recoveryMode"
+    // smart_contracts/security/emergency_pause.algo.ts:206
+    // this.recoveryMode.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:54
+    // recoveryApprovals = GlobalState<uint64>() // Number of operator approvals for recovery
+    bytec 5 // "recoveryApprovals"
+    // smart_contracts/security/emergency_pause.algo.ts:207
+    // this.recoveryApprovals.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:209
+    // log('RECOVERY_EXECUTED', Txn.sender)
+    pushbytes "RECOVERY_EXECUTED"
+    txn Sender
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.checkCircuitBreaker(transactionAmount: uint64) -> uint64:
+checkCircuitBreaker:
+    // smart_contracts/security/emergency_pause.algo.ts:212-213
+    // @abimethod()
+    // checkCircuitBreaker(transactionAmount: uint64): boolean {
+    proto 1 1
+    pushbytes ""
+    // smart_contracts/security/emergency_pause.algo.ts:215
+    // let daysSinceReset: uint64 = (Global.latestTimestamp - this.lastVolumeReset.value) / 86400 as uint64
+    global LatestTimestamp
+    // smart_contracts/security/emergency_pause.algo.ts:49
+    // lastVolumeReset = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 10 // "lastVolumeReset"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:215
+    // let daysSinceReset: uint64 = (Global.latestTimestamp - this.lastVolumeReset.value) / 86400 as uint64
+    -
+    pushint 86400 // 86400
+    /
+    // smart_contracts/security/emergency_pause.algo.ts:216
+    // if (daysSinceReset >= 1) {
+    bz checkCircuitBreaker_after_if_else@2
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    bytec 7 // "currentDailyVolume"
+    // smart_contracts/security/emergency_pause.algo.ts:217
+    // this.currentDailyVolume.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:49
+    // lastVolumeReset = GlobalState<uint64>()
+    bytec 10 // "lastVolumeReset"
+    // smart_contracts/security/emergency_pause.algo.ts:218
+    // this.lastVolumeReset.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+
+checkCircuitBreaker_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "currentDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:221
+    // let newDailyVolume: uint64 = this.currentDailyVolume.value + transactionAmount as uint64
+    frame_dig -1
+    +
+    dup
+    frame_bury 0
+    // smart_contracts/security/emergency_pause.algo.ts:47
+    // maxDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 8 // "maxDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:222
+    // if (newDailyVolume > this.maxDailyVolume.value) {
+    >
+    bz checkCircuitBreaker_after_if_else@4
+    // smart_contracts/security/emergency_pause.algo.ts:6
+    // const EMERGENCY_LEVEL_MEDIUM: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/emergency_pause.algo.ts:223
+    // this.triggerEmergency(EMERGENCY_LEVEL_MEDIUM, 'Daily volume limit exceeded')
+    pushbytes "Daily volume limit exceeded"
+    callsub triggerEmergency
+    // smart_contracts/security/emergency_pause.algo.ts:224
+    // return false
+    intc_0 // 0
+    swap
+    retsub
+
+checkCircuitBreaker_after_if_else@4:
+    // smart_contracts/security/emergency_pause.algo.ts:44
+    // largeWithdrawalThreshold = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 13 // "largeWithdrawalThreshold"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:227
+    // if (transactionAmount >= this.largeWithdrawalThreshold.value) {
+    frame_dig -1
+    <=
+    bz checkCircuitBreaker_after_if_else@8
+    // smart_contracts/security/emergency_pause.algo.ts:228
+    // log('LARGE_WITHDRAWAL_DETECTED', transactionAmount, Txn.sender)
+    frame_dig -1
+    itob
+    pushbytes "LARGE_WITHDRAWAL_DETECTED"
+    swap
+    concat
+    txn Sender
+    concat
+    log
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:229
+    // if (!this.emergencyActive.value) {
+    bnz checkCircuitBreaker_after_if_else@8
+    // smart_contracts/security/emergency_pause.algo.ts:5
+    // const EMERGENCY_LEVEL_LOW: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/emergency_pause.algo.ts:230
+    // this.triggerEmergency(EMERGENCY_LEVEL_LOW, 'Large withdrawal detected')
+    pushbytes "Large withdrawal detected"
+    callsub triggerEmergency
+
+checkCircuitBreaker_after_if_else@8:
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    bytec 7 // "currentDailyVolume"
+    // smart_contracts/security/emergency_pause.algo.ts:233
+    // this.currentDailyVolume.value = newDailyVolume
+    frame_dig 0
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:234
+    // return true
+    intc_1 // 1
+    swap
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.reportSuspiciousActivity(activityType: bytes, details: bytes) -> void:
+reportSuspiciousActivity:
+    // smart_contracts/security/emergency_pause.algo.ts:237-238
+    // @abimethod()
+    // reportSuspiciousActivity(activityType: string, details: string): void {
+    proto 2 0
+    // smart_contracts/security/emergency_pause.algo.ts:241
+    // log('SUSPICIOUS_ACTIVITY_REPORTED', activityType, details, Txn.sender)
+    pushbytes "SUSPICIOUS_ACTIVITY_REPORTED"
+    frame_dig -2
+    concat
+    frame_dig -1
+    concat
+    txn Sender
+    concat
+    log
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.updateEmergencyThresholds(suspiciousThreshold: uint64, failedTxThreshold: uint64, largeWithdrawalThreshold: uint64, maxDailyVolume: uint64) -> void:
+updateEmergencyThresholds:
+    // smart_contracts/security/emergency_pause.algo.ts:247-253
+    // @abimethod()
+    // updateEmergencyThresholds(
+    //   suspiciousThreshold: uint64,
+    //   failedTxThreshold: uint64,
+    //   largeWithdrawalThreshold: uint64,
+    //   maxDailyVolume: uint64
+    // ): void {
+    proto 4 0
+    // smart_contracts/security/emergency_pause.algo.ts:254
+    // assert(Txn.sender.bytes === this.admin.value)
+    txn Sender
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:254
+    // assert(Txn.sender.bytes === this.admin.value)
+    ==
+    assert
+    // smart_contracts/security/emergency_pause.algo.ts:42
+    // suspiciousActivityThreshold = GlobalState<uint64>()
+    bytec 23 // "suspiciousActivityThreshold"
+    // smart_contracts/security/emergency_pause.algo.ts:256
+    // this.suspiciousActivityThreshold.value = suspiciousThreshold
+    frame_dig -4
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:43
+    // failedTransactionThreshold = GlobalState<uint64>()
+    bytec 24 // "failedTransactionThreshold"
+    // smart_contracts/security/emergency_pause.algo.ts:257
+    // this.failedTransactionThreshold.value = failedTxThreshold
+    frame_dig -3
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:44
+    // largeWithdrawalThreshold = GlobalState<uint64>()
+    bytec 13 // "largeWithdrawalThreshold"
+    // smart_contracts/security/emergency_pause.algo.ts:258
+    // this.largeWithdrawalThreshold.value = largeWithdrawalThreshold
+    frame_dig -2
+    app_global_put
+    // smart_contracts/security/emergency_pause.algo.ts:47
+    // maxDailyVolume = GlobalState<uint64>()
+    bytec 8 // "maxDailyVolume"
+    // smart_contracts/security/emergency_pause.algo.ts:259
+    // this.maxDailyVolume.value = maxDailyVolume
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.isOperationAllowed(operationType: bytes) -> uint64:
+isOperationAllowed:
+    // smart_contracts/security/emergency_pause.algo.ts:263
+    // isOperationAllowed(operationType: string): boolean {
+    proto 1 1
+    pushbytes ""
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:264
+    // if (!this.emergencyActive.value) {
+    bnz isOperationAllowed_after_if_else@2
+    // smart_contracts/security/emergency_pause.algo.ts:265
+    // return true // Normal operations allowed
+    intc_1 // 1
+    swap
+    retsub
+
+isOperationAllowed_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "currentEmergencyLevel"
+    app_global_get_ex
+    swap
+    dup
+    cover 2
+    frame_bury 0
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:8
+    // const EMERGENCY_LEVEL_CRITICAL: uint64 = 4;
+    intc_3 // 4
+    // smart_contracts/security/emergency_pause.algo.ts:270
+    // if (level === EMERGENCY_LEVEL_CRITICAL) {
+    ==
+    bz isOperationAllowed_after_if_else@8
+    // smart_contracts/security/emergency_pause.algo.ts:272
+    // return operationType === 'emergency' || operationType === 'admin'
+    frame_dig -1
+    bytec 18 // "emergency"
+    ==
+    bnz isOperationAllowed_bool_true@5
+    frame_dig -1
+    bytec_1 // "admin"
+    ==
+    bz isOperationAllowed_bool_false@6
+
+isOperationAllowed_bool_true@5:
+    intc_1 // 1
+
+isOperationAllowed_bool_merge@7:
+    // smart_contracts/security/emergency_pause.algo.ts:272
+    // return operationType === 'emergency' || operationType === 'admin'
+    swap
+    retsub
+
+isOperationAllowed_bool_false@6:
+    intc_0 // 0
+    b isOperationAllowed_bool_merge@7
+
+isOperationAllowed_after_if_else@8:
+    // smart_contracts/security/emergency_pause.algo.ts:275
+    // if (level === EMERGENCY_LEVEL_HIGH) {
+    frame_dig 0
+    // smart_contracts/security/emergency_pause.algo.ts:7
+    // const EMERGENCY_LEVEL_HIGH: uint64 = 3;
+    pushint 3 // 3
+    // smart_contracts/security/emergency_pause.algo.ts:275
+    // if (level === EMERGENCY_LEVEL_HIGH) {
+    ==
+    bz isOperationAllowed_after_if_else@15
+    // smart_contracts/security/emergency_pause.algo.ts:277
+    // return operationType === 'emergency' || operationType === 'admin' || operationType === 'view'
+    frame_dig -1
+    bytec 18 // "emergency"
+    ==
+    bnz isOperationAllowed_bool_true@12
+    frame_dig -1
+    bytec_1 // "admin"
+    ==
+    bnz isOperationAllowed_bool_true@12
+    frame_dig -1
+    bytec 27 // "view"
+    ==
+    bz isOperationAllowed_bool_false@13
+
+isOperationAllowed_bool_true@12:
+    intc_1 // 1
+
+isOperationAllowed_bool_merge@14:
+    // smart_contracts/security/emergency_pause.algo.ts:277
+    // return operationType === 'emergency' || operationType === 'admin' || operationType === 'view'
+    swap
+    retsub
+
+isOperationAllowed_bool_false@13:
+    intc_0 // 0
+    b isOperationAllowed_bool_merge@14
+
+isOperationAllowed_after_if_else@15:
+    // smart_contracts/security/emergency_pause.algo.ts:280
+    // if (level === EMERGENCY_LEVEL_MEDIUM) {
+    frame_dig 0
+    // smart_contracts/security/emergency_pause.algo.ts:6
+    // const EMERGENCY_LEVEL_MEDIUM: uint64 = 2;
+    intc_2 // 2
+    // smart_contracts/security/emergency_pause.algo.ts:280
+    // if (level === EMERGENCY_LEVEL_MEDIUM) {
+    ==
+    bz isOperationAllowed_after_if_else@23
+    // smart_contracts/security/emergency_pause.algo.ts:282
+    // return operationType === 'withdraw' || operationType === 'view' || operationType === 'emergency' || operationType === 'admin'
+    frame_dig -1
+    pushbytes "withdraw"
+    ==
+    bnz isOperationAllowed_bool_true@20
+    frame_dig -1
+    bytec 27 // "view"
+    ==
+    bnz isOperationAllowed_bool_true@20
+    frame_dig -1
+    bytec 18 // "emergency"
+    ==
+    bnz isOperationAllowed_bool_true@20
+    frame_dig -1
+    bytec_1 // "admin"
+    ==
+    bz isOperationAllowed_bool_false@21
+
+isOperationAllowed_bool_true@20:
+    intc_1 // 1
+
+isOperationAllowed_bool_merge@22:
+    // smart_contracts/security/emergency_pause.algo.ts:282
+    // return operationType === 'withdraw' || operationType === 'view' || operationType === 'emergency' || operationType === 'admin'
+    swap
+    retsub
+
+isOperationAllowed_bool_false@21:
+    intc_0 // 0
+    b isOperationAllowed_bool_merge@22
+
+isOperationAllowed_after_if_else@23:
+    // smart_contracts/security/emergency_pause.algo.ts:285
+    // if (level === EMERGENCY_LEVEL_LOW) {
+    frame_dig 0
+    // smart_contracts/security/emergency_pause.algo.ts:5
+    // const EMERGENCY_LEVEL_LOW: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/security/emergency_pause.algo.ts:285
+    // if (level === EMERGENCY_LEVEL_LOW) {
+    ==
+    bz isOperationAllowed_after_if_else@25
+    // smart_contracts/security/emergency_pause.algo.ts:287
+    // return operationType !== 'deposit'
+    frame_dig -1
+    pushbytes "deposit"
+    !=
+    swap
+    retsub
+
+isOperationAllowed_after_if_else@25:
+    // smart_contracts/security/emergency_pause.algo.ts:290
+    // return true
+    intc_1 // 1
+    swap
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.isAuthorizedOperator(operator: bytes) -> uint64:
+isAuthorizedOperator:
+    // smart_contracts/security/emergency_pause.algo.ts:294
+    // isAuthorizedOperator(operator: bytes): boolean {
+    proto 1 1
+    // smart_contracts/security/emergency_pause.algo.ts:33
+    // admin = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "admin"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:296
+    // return operator === this.admin.value // Simplified for now
+    frame_dig -1
+    ==
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.getEmergencyEvent(eventId: uint64) -> uint64, bytes, bytes, uint64, uint64, uint64, bytes:
+getEmergencyEvent:
+    // smart_contracts/security/emergency_pause.algo.ts:299
+    // getEmergencyEvent(eventId: uint64): { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes } {
+    proto 1 7
+    // smart_contracts/security/emergency_pause.algo.ts:300
+    // const levelKey = concat(Bytes(eventId), Bytes('_level'))
+    frame_dig -1
+    itob
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    dup
+    // smart_contracts/security/emergency_pause.algo.ts:300
+    // const levelKey = concat(Bytes(eventId), Bytes('_level'))
+    bytec 14 // "_level"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    dig 1
+    // smart_contracts/security/emergency_pause.algo.ts:301
+    // const reasonKey = concat(Bytes(eventId), Bytes('_reason'))
+    bytec 25 // "_reason"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    dig 2
+    // smart_contracts/security/emergency_pause.algo.ts:302
+    // const triggeredByKey = concat(Bytes(eventId), Bytes('_triggeredBy'))
+    bytec 26 // "_triggeredBy"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    dig 3
+    // smart_contracts/security/emergency_pause.algo.ts:303
+    // const timestampKey = concat(Bytes(eventId), Bytes('_timestamp'))
+    bytec 11 // "_timestamp"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    dig 4
+    // smart_contracts/security/emergency_pause.algo.ts:304
+    // const resolvedKey = concat(Bytes(eventId), Bytes('_resolved'))
+    bytec 15 // "_resolved"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    dig 5
+    // smart_contracts/security/emergency_pause.algo.ts:305
+    // const resolvedAtKey = concat(Bytes(eventId), Bytes('_resolvedAt'))
+    bytec 16 // "_resolvedAt"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    uncover 6
+    // smart_contracts/security/emergency_pause.algo.ts:306
+    // const resolvedByKey = concat(Bytes(eventId), Bytes('_resolvedBy'))
+    bytec 17 // "_resolvedBy"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:308
+    // level: Box<uint64>({ key: levelKey }).value,
+    uncover 6
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:309
+    // reason: Box<bytes>({ key: reasonKey }).value,
+    uncover 6
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:310
+    // triggeredBy: Box<bytes>({ key: triggeredByKey }).value,
+    uncover 6
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:311
+    // timestamp: Box<uint64>({ key: timestampKey }).value,
+    uncover 6
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:312
+    // resolved: Box<uint64>({ key: resolvedKey }).value,
+    uncover 6
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:313
+    // resolvedAt: Box<uint64>({ key: resolvedAtKey }).value,
+    uncover 6
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:314
+    // resolvedBy: Box<bytes>({ key: resolvedByKey }).value
+    uncover 6
+    box_get
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:307-315
+    // return {
+    //   level: Box<uint64>({ key: levelKey }).value,
+    //   reason: Box<bytes>({ key: reasonKey }).value,
+    //   triggeredBy: Box<bytes>({ key: triggeredByKey }).value,
+    //   timestamp: Box<uint64>({ key: timestampKey }).value,
+    //   resolved: Box<uint64>({ key: resolvedKey }).value,
+    //   resolvedAt: Box<uint64>({ key: resolvedAtKey }).value,
+    //   resolvedBy: Box<bytes>({ key: resolvedByKey }).value
+    // }
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.getCurrentEmergencyStatus() -> uint64, uint64, uint64, uint64, uint64:
+getCurrentEmergencyStatus:
+    // smart_contracts/security/emergency_pause.algo.ts:318
+    // getCurrentEmergencyStatus(): { active: boolean, level: uint64, eventId: uint64, duration: uint64, recoveryMode: boolean } {
+    proto 0 5
+    // smart_contracts/security/emergency_pause.algo.ts:319
+    // let duration: uint64 = 0
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    dup
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:320
+    // if (this.emergencyActive.value) {
+    bz getCurrentEmergencyStatus_after_if_else@2
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:321
+    // const currentEventTimestamp = Box<uint64>({ key: concat(Bytes(this.emergencyCount.value), Bytes('_timestamp')) }).value
+    itob
+    bytec 11 // "_timestamp"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:321
+    // const currentEventTimestamp = Box<uint64>({ key: concat(Bytes(this.emergencyCount.value), Bytes('_timestamp')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/security/emergency_pause.algo.ts:322
+    // duration = Global.latestTimestamp - currentEventTimestamp
+    global LatestTimestamp
+    swap
+    -
+    frame_bury 0
+
+getCurrentEmergencyStatus_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:28
+    // emergencyActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec_0 // "emergencyActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:27
+    // currentEmergencyLevel = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_2 // "currentEmergencyLevel"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:52
+    // recoveryMode = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 4 // "recoveryMode"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:324-330
+    // return {
+    //   active: this.emergencyActive.value,
+    //   level: this.currentEmergencyLevel.value,
+    //   eventId: this.emergencyCount.value,
+    //   duration: duration,
+    //   recoveryMode: this.recoveryMode.value
+    // }
+    cover 3
+    frame_dig 0
+    uncover 4
+    uncover 5
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.getCircuitBreakerStatus() -> uint64, uint64, uint64, uint64:
+getCircuitBreakerStatus:
+    // smart_contracts/security/emergency_pause.algo.ts:333
+    // getCircuitBreakerStatus(): { currentDailyVolume: uint64, maxDailyVolume: uint64, remainingVolume: uint64, lastReset: uint64 } {
+    proto 0 4
+    // smart_contracts/security/emergency_pause.algo.ts:334
+    // let remaining: uint64 = 0
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:47
+    // maxDailyVolume = GlobalState<uint64>()
+    dup
+    bytec 8 // "maxDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "currentDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:335
+    // if (this.maxDailyVolume.value > this.currentDailyVolume.value) {
+    >
+    bz getCircuitBreakerStatus_after_if_else@2
+    // smart_contracts/security/emergency_pause.algo.ts:47
+    // maxDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 8 // "maxDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "currentDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:336
+    // remaining = this.maxDailyVolume.value - this.currentDailyVolume.value
+    -
+    frame_bury 0
+
+getCircuitBreakerStatus_after_if_else@2:
+    // smart_contracts/security/emergency_pause.algo.ts:48
+    // currentDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "currentDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:47
+    // maxDailyVolume = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 8 // "maxDailyVolume"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:49
+    // lastVolumeReset = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 10 // "lastVolumeReset"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/security/emergency_pause.algo.ts:338-343
+    // return {
+    //   currentDailyVolume: this.currentDailyVolume.value,
+    //   maxDailyVolume: this.maxDailyVolume.value,
+    //   remainingVolume: remaining,
+    //   lastReset: this.lastVolumeReset.value
+    // }
+    cover 2
+    frame_dig 0
+    uncover 3
+    uncover 4
+    retsub
+
+
+// smart_contracts/security/emergency_pause.algo.ts::EmergencyPause.getEmergencyHistory(limit: uint64) -> bytes:
+getEmergencyHistory:
+    // smart_contracts/security/emergency_pause.algo.ts:346
+    // getEmergencyHistory(limit: uint64): { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes }[] {
+    proto 1 1
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:347
+    // let events: { level: uint64, reason: bytes, triggeredBy: bytes, timestamp: uint64, resolved: uint64, resolvedAt: uint64, resolvedBy: bytes }[] = []
+    pushbytess "" 0x0000 // "", 0x0000
+    // smart_contracts/security/emergency_pause.algo.ts:348
+    // let count: uint64 = 0
+    intc_0 // 0
+    // smart_contracts/security/emergency_pause.algo.ts:29
+    // emergencyCount = GlobalState<uint64>()
+    dup
+    bytec_3 // "emergencyCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+
+getEmergencyHistory_while_top@1:
+    // smart_contracts/security/emergency_pause.algo.ts:350
+    // while (i > 0 && count < limit) {
+    frame_dig 4
+    bz getEmergencyHistory_after_while@6
+    frame_dig 3
+    frame_dig -1
+    <
+    bz getEmergencyHistory_after_while@6
+    // smart_contracts/security/emergency_pause.algo.ts:351
+    // const levelKey = concat(Bytes(i), Bytes('_level'))
+    frame_dig 4
+    itob
+    bytec 14 // "_level"
+    // smart_contracts/security/emergency_pause.algo.ts:22
+    // return a.concat(b)
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:352
+    // if (Box<uint64>({ key: levelKey }).exists) {
+    box_len
+    bury 1
+    frame_dig 2
+    frame_bury 0
+    frame_dig 3
+    frame_bury 1
+    bz getEmergencyHistory_after_if_else@5
+    // smart_contracts/security/emergency_pause.algo.ts:353
+    // const event = this.getEmergencyEvent(i)
+    frame_dig 4
+    callsub getEmergencyEvent
+    uncover 6
+    itob
+    dig 6
+    len
+    itob
+    extract 6 2
+    uncover 7
+    concat
+    dig 6
+    len
+    itob
+    extract 6 2
+    uncover 7
+    concat
+    uncover 6
+    itob
+    uncover 6
+    itob
+    uncover 6
+    itob
+    dig 6
+    len
+    itob
+    extract 6 2
+    uncover 7
+    concat
+    // smart_contracts/security/emergency_pause.algo.ts:354
+    // events = events.concat([event])
+    uncover 6
+    bytec 19 // 0x0026
+    concat
+    dig 6
+    len
+    pushint 38 // 38
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 6
+    len
+    uncover 2
+    +
+    swap
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    swap
+    itob
+    extract 6 2
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    pushbytes 0x0002
+    swap
+    concat
+    intc_0 // 0
+    pushbytes 0x
+    intc_1 // 1
+    uncover 3
+    callsub dynamic_array_concat_dynamic_element
+    frame_dig 2
+    dup
+    intc_0 // 0
+    extract_uint16
+    swap
+    extract 2 0
+    dig 2
+    intc_0 // 0
+    extract_uint16
+    uncover 3
+    extract 2 0
+    callsub dynamic_array_concat_dynamic_element
+    // smart_contracts/security/emergency_pause.algo.ts:355
+    // count = count + 1 as uint64
+    frame_dig 3
+    intc_1 // 1
+    +
+    frame_bury 1
+    frame_bury 0
+
+getEmergencyHistory_after_if_else@5:
+    frame_dig 0
+    frame_bury 2
+    frame_dig 1
+    frame_bury 3
+    // smart_contracts/security/emergency_pause.algo.ts:357
+    // i = i - 1 as uint64
+    frame_dig 4
+    intc_1 // 1
+    -
+    frame_bury 4
+    b getEmergencyHistory_while_top@1
+
+getEmergencyHistory_after_while@6:
+    // smart_contracts/security/emergency_pause.algo.ts:359
+    // return events
+    frame_dig 2
+    frame_bury 0
+    retsub

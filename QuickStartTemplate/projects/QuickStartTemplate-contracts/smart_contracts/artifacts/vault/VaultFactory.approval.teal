@@ -1,0 +1,1899 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 0 1
+    bytecblock "totalTVL" "factoryOwner" "_totalStaked" 0x151f7c75 "emergencyPause" "factoryActive" "poolCount" "maxPoolsPerUser" "minimumInitialStake" "templateCount" "defaultTemplate" "_status" "_totalRewards" "_participantCount" "_apy" "_name" "poolCreationFee" "factoryFeeRate" "_assetId" "_stakingContract" "_rewardDistributor" "_autoCompounder" "_governanceVault" "_creator" "_createdAt" "_minimumStake" "_maxStakePerUser" "_lockupPeriod" "_earlyWithdrawPenalty" "_stakingContractTemplate" "_rewardDistributorTemplate" "_autoCompounderTemplate" "_defaultParameters"
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@17
+    pushbytess 0xa2c81b0d 0x8cd6c250 0xc199de0d 0x246171f6 0x863cc7e1 0x24348827 0xa84c81af 0x5432cca6 0x13e3ccd8 0x06633e4a 0x9b7d94f5 0x8ed1c0ed // method "initialize(uint64,uint64,byte[],uint64,uint64)void", method "createPool(uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64)uint64", method "updatePoolStatus(uint64,uint64)void", method "updatePoolMetrics(uint64,uint64,uint64,uint64,uint64)void", method "addPoolTemplate(byte[],byte[],byte[],byte[],byte[])uint64", method "setDefaultTemplate(uint64)void", method "updateFactorySettings(uint64,uint64,uint64,uint64)void", method "emergencyPauseFactory()void", method "resumeFactory()void", method "setGovernanceContract(byte[])void", method "getPoolInfo(uint64)(uint64,uint64,byte[],byte[],byte[],byte[],byte[],uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64,uint64)", method "getTemplate(uint64)(byte[],byte[],byte[],byte[],byte[])"
+    txna ApplicationArgs 0
+    match main_initialize_route@3 main_createPool_route@4 main_updatePoolStatus_route@5 main_updatePoolMetrics_route@6 main_addPoolTemplate_route@7 main_setDefaultTemplate_route@8 main_updateFactorySettings_route@9 main_emergencyPauseFactory_route@10 main_resumeFactory_route@11 main_setGovernanceContract_route@12 main_getPoolInfo_route@13 main_getTemplate_route@14
+
+main_after_if_else@21:
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    intc_0 // 0
+    return
+
+main_getTemplate_route@14:
+    // smart_contracts/vault/vault_factory.algo.ts:278
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:278
+    // @abimethod()
+    callsub getTemplate
+    dig 4
+    len
+    itob
+    extract 6 2
+    uncover 5
+    concat
+    dig 4
+    len
+    itob
+    extract 6 2
+    uncover 5
+    concat
+    dig 4
+    len
+    itob
+    extract 6 2
+    uncover 5
+    concat
+    dig 4
+    len
+    itob
+    extract 6 2
+    uncover 5
+    concat
+    dig 4
+    len
+    itob
+    extract 6 2
+    uncover 5
+    concat
+    dig 4
+    len
+    pushint 10 // 10
+    +
+    dup
+    itob
+    extract 6 2
+    pushbytes 0x000a
+    swap
+    concat
+    dig 5
+    len
+    uncover 2
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 4
+    len
+    uncover 2
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 3
+    len
+    uncover 2
+    +
+    itob
+    extract 6 2
+    concat
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getPoolInfo_route@13:
+    // smart_contracts/vault/vault_factory.algo.ts:254
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:254
+    // @abimethod()
+    callsub getPoolInfo
+    uncover 16
+    itob
+    uncover 16
+    itob
+    dig 16
+    len
+    itob
+    extract 6 2
+    uncover 17
+    concat
+    dig 16
+    len
+    itob
+    extract 6 2
+    uncover 17
+    concat
+    dig 16
+    len
+    itob
+    extract 6 2
+    uncover 17
+    concat
+    dig 16
+    len
+    itob
+    extract 6 2
+    uncover 17
+    concat
+    dig 16
+    len
+    itob
+    extract 6 2
+    uncover 17
+    concat
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    itob
+    uncover 16
+    uncover 16
+    concat
+    pushbytes 0x006a
+    concat
+    dig 15
+    len
+    pushint 106 // 106
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 15
+    len
+    uncover 2
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 14
+    len
+    uncover 2
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    dig 13
+    len
+    uncover 2
+    +
+    itob
+    extract 6 2
+    concat
+    uncover 10
+    concat
+    uncover 9
+    concat
+    uncover 8
+    concat
+    uncover 7
+    concat
+    uncover 6
+    concat
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_setGovernanceContract_route@12:
+    // smart_contracts/vault/vault_factory.algo.ts:246
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/vault/vault_factory.algo.ts:246
+    // @abimethod()
+    callsub setGovernanceContract
+    intc_1 // 1
+    return
+
+main_resumeFactory_route@11:
+    // smart_contracts/vault/vault_factory.algo.ts:239
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub resumeFactory
+    intc_1 // 1
+    return
+
+main_emergencyPauseFactory_route@10:
+    // smart_contracts/vault/vault_factory.algo.ts:232
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub emergencyPauseFactory
+    intc_1 // 1
+    return
+
+main_updateFactorySettings_route@9:
+    // smart_contracts/vault/vault_factory.algo.ts:217
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:217
+    // @abimethod()
+    callsub updateFactorySettings
+    intc_1 // 1
+    return
+
+main_setDefaultTemplate_route@8:
+    // smart_contracts/vault/vault_factory.algo.ts:209
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:209
+    // @abimethod()
+    callsub setDefaultTemplate
+    intc_1 // 1
+    return
+
+main_addPoolTemplate_route@7:
+    // smart_contracts/vault/vault_factory.algo.ts:186
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    extract 2 0
+    txna ApplicationArgs 4
+    extract 2 0
+    txna ApplicationArgs 5
+    extract 2 0
+    // smart_contracts/vault/vault_factory.algo.ts:186
+    // @abimethod()
+    callsub addPoolTemplate
+    itob
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_updatePoolMetrics_route@6:
+    // smart_contracts/vault/vault_factory.algo.ts:175
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:175
+    // @abimethod()
+    callsub updatePoolMetrics
+    intc_1 // 1
+    return
+
+main_updatePoolStatus_route@5:
+    // smart_contracts/vault/vault_factory.algo.ts:157
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:157
+    // @abimethod()
+    callsub updatePoolStatus
+    intc_1 // 1
+    return
+
+main_createPool_route@4:
+    // smart_contracts/vault/vault_factory.algo.ts:94
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    btoi
+    txna ApplicationArgs 6
+    btoi
+    txna ApplicationArgs 7
+    btoi
+    txna ApplicationArgs 8
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:94
+    // @abimethod()
+    callsub createPool
+    itob
+    bytec_3 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_initialize_route@3:
+    // smart_contracts/vault/vault_factory.algo.ts:71
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    extract 2 0
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    btoi
+    // smart_contracts/vault/vault_factory.algo.ts:71
+    // @abimethod()
+    callsub initialize
+    intc_1 // 1
+    return
+
+main_bare_routing@17:
+    // smart_contracts/vault/vault_factory.algo.ts:47
+    // export class VaultFactory extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@21
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_1 // 1
+    return
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.initialize(poolCreationFee: uint64, factoryFeeRate: uint64, feeCollector: bytes, maxPoolsPerUser: uint64, minimumInitialStake: uint64) -> void:
+initialize:
+    // smart_contracts/vault/vault_factory.algo.ts:71-78
+    // @abimethod()
+    // initialize(
+    //   poolCreationFee: uint64,
+    //   factoryFeeRate: uint64,
+    //   feeCollector: bytes,
+    //   maxPoolsPerUser: uint64,
+    //   minimumInitialStake: uint64
+    // ): void {
+    proto 5 0
+    // smart_contracts/vault/vault_factory.algo.ts:61
+    // factoryActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 5 // "factoryActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:79
+    // assert(!this.factoryActive.value)
+    !
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:49
+    // poolCount = GlobalState<uint64>()
+    bytec 6 // "poolCount"
+    // smart_contracts/vault/vault_factory.algo.ts:80
+    // this.poolCount.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    bytec_0 // "totalTVL"
+    // smart_contracts/vault/vault_factory.algo.ts:81
+    // this.totalTVL.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    bytec_1 // "factoryOwner"
+    // smart_contracts/vault/vault_factory.algo.ts:82
+    // this.factoryOwner.value = Txn.sender.bytes
+    txn Sender
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:54
+    // poolCreationFee = GlobalState<uint64>()
+    bytec 16 // "poolCreationFee"
+    // smart_contracts/vault/vault_factory.algo.ts:83
+    // this.poolCreationFee.value = poolCreationFee
+    frame_dig -5
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:55
+    // factoryFeeRate = GlobalState<uint64>() // Fee percentage from all pools
+    bytec 17 // "factoryFeeRate"
+    // smart_contracts/vault/vault_factory.algo.ts:84
+    // this.factoryFeeRate.value = factoryFeeRate
+    frame_dig -4
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:56
+    // feeCollector = GlobalState<bytes>()
+    pushbytes "feeCollector"
+    // smart_contracts/vault/vault_factory.algo.ts:85
+    // this.feeCollector.value = feeCollector
+    frame_dig -3
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:59
+    // maxPoolsPerUser = GlobalState<uint64>()
+    bytec 7 // "maxPoolsPerUser"
+    // smart_contracts/vault/vault_factory.algo.ts:86
+    // this.maxPoolsPerUser.value = maxPoolsPerUser
+    frame_dig -2
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:60
+    // minimumInitialStake = GlobalState<uint64>()
+    bytec 8 // "minimumInitialStake"
+    // smart_contracts/vault/vault_factory.algo.ts:87
+    // this.minimumInitialStake.value = minimumInitialStake
+    frame_dig -1
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:61
+    // factoryActive = GlobalState<boolean>()
+    bytec 5 // "factoryActive"
+    // smart_contracts/vault/vault_factory.algo.ts:88
+    // this.factoryActive.value = true
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:68
+    // emergencyPause = GlobalState<boolean>()
+    bytec 4 // "emergencyPause"
+    // smart_contracts/vault/vault_factory.algo.ts:89
+    // this.emergencyPause.value = false
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:64
+    // templateCount = GlobalState<uint64>()
+    bytec 9 // "templateCount"
+    // smart_contracts/vault/vault_factory.algo.ts:90
+    // this.templateCount.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:65
+    // defaultTemplate = GlobalState<uint64>()
+    bytec 10 // "defaultTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:91
+    // this.defaultTemplate.value = 0
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.createPool(assetId: uint64, initialRewardPool: uint64, rewardRate: uint64, minimumStake: uint64, maxStakePerUser: uint64, lockupPeriod: uint64, earlyWithdrawPenalty: uint64, templateId: uint64) -> uint64:
+createPool:
+    // smart_contracts/vault/vault_factory.algo.ts:94-104
+    // @abimethod()
+    // createPool(
+    //   assetId: uint64,
+    //   initialRewardPool: uint64,
+    //   rewardRate: uint64,
+    //   minimumStake: uint64,
+    //   maxStakePerUser: uint64,
+    //   lockupPeriod: uint64,
+    //   earlyWithdrawPenalty: uint64,
+    //   templateId: uint64
+    // ): uint64 {
+    proto 8 1
+    // smart_contracts/vault/vault_factory.algo.ts:61
+    // factoryActive = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 5 // "factoryActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:105
+    // assert(this.factoryActive.value)
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:68
+    // emergencyPause = GlobalState<boolean>()
+    intc_0 // 0
+    bytec 4 // "emergencyPause"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:106
+    // assert(!this.emergencyPause.value)
+    !
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:60
+    // minimumInitialStake = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 8 // "minimumInitialStake"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:108
+    // assert(initialRewardPool >= this.minimumInitialStake.value)
+    frame_dig -7
+    <=
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:109
+    // const userPoolsKey = Box<uint64>({ key: Txn.sender.bytes })
+    txn Sender
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:110
+    // const userPools: uint64 = userPoolsKey.exists ? userPoolsKey.value : 0
+    box_len
+    bury 1
+    bz createPool_ternary_false@2
+    frame_dig 0
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+
+createPool_ternary_merge@3:
+    // smart_contracts/vault/vault_factory.algo.ts:59
+    // maxPoolsPerUser = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 7 // "maxPoolsPerUser"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:111
+    // assert(userPools < this.maxPoolsPerUser.value)
+    dig 1
+    >
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:49
+    // poolCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 6 // "poolCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:112
+    // const poolId: uint64 = this.poolCount.value + 1
+    intc_1 // 1
+    +
+    // smart_contracts/vault/vault_factory.algo.ts:49
+    // poolCount = GlobalState<uint64>()
+    bytec 6 // "poolCount"
+    // smart_contracts/vault/vault_factory.algo.ts:113
+    // this.poolCount.value = poolId
+    dig 1
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:132
+    // const stakingContract = Txn.sender.bytes // Placeholder - would be actual app ID
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:133-135
+    // const rewardDistributor = Txn.sender.bytes // Placeholder - would be actual app ID
+    // const autoCompounder = Txn.sender.bytes // Placeholder - would be actual app ID
+    // const governanceVault = Txn.sender.bytes // Store each PoolInfo field in a separate box
+    dupn 3
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    dig 4
+    itob
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:136
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_assetId')) }).value = assetId
+    bytec 18 // "_assetId"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:136
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_assetId')) }).value = assetId
+    frame_dig -8
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:137
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_stakingContract')) }).value = stakingContract
+    bytec 19 // "_stakingContract"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:137
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_stakingContract')) }).value = stakingContract
+    dup
+    box_del
+    pop
+    uncover 5
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:138
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_rewardDistributor')) }).value = rewardDistributor
+    bytec 20 // "_rewardDistributor"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:138
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_rewardDistributor')) }).value = rewardDistributor
+    dup
+    box_del
+    pop
+    uncover 4
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:139
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_autoCompounder')) }).value = autoCompounder
+    bytec 21 // "_autoCompounder"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:139
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_autoCompounder')) }).value = autoCompounder
+    dup
+    box_del
+    pop
+    uncover 3
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:140
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_governanceVault')) }).value = governanceVault
+    bytec 22 // "_governanceVault"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:140
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_governanceVault')) }).value = governanceVault
+    dup
+    box_del
+    pop
+    uncover 2
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:141
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_creator')) }).value = Txn.sender.bytes
+    bytec 23 // "_creator"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:141
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_creator')) }).value = Txn.sender.bytes
+    txn Sender
+    dig 1
+    box_del
+    pop
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:142
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_createdAt')) }).value = Global.latestTimestamp
+    bytec 24 // "_createdAt"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:142
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_createdAt')) }).value = Global.latestTimestamp
+    global LatestTimestamp
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:143
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_status')) }).value = POOL_STATUS_ACTIVE
+    bytec 11 // "_status"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:14
+    // const POOL_STATUS_ACTIVE: uint64 = 0;
+    intc_0 // 0
+    // smart_contracts/vault/vault_factory.algo.ts:143
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_status')) }).value = POOL_STATUS_ACTIVE
+    itob
+    swap
+    dig 1
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:144
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value = 0
+    bytec_2 // "_totalStaked"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:144
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value = 0
+    dig 1
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:145
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value = initialRewardPool
+    bytec 12 // "_totalRewards"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:145
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value = initialRewardPool
+    frame_dig -7
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:146
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value = 0
+    bytec 13 // "_participantCount"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:146
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value = 0
+    dig 1
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:147
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value = 0
+    bytec 14 // "_apy"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:147
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value = 0
+    swap
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:148
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_minimumStake')) }).value = minimumStake
+    bytec 25 // "_minimumStake"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:148
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_minimumStake')) }).value = minimumStake
+    frame_dig -5
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:149
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_maxStakePerUser')) }).value = maxStakePerUser
+    bytec 26 // "_maxStakePerUser"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:149
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_maxStakePerUser')) }).value = maxStakePerUser
+    frame_dig -4
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:150
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_lockupPeriod')) }).value = lockupPeriod
+    bytec 27 // "_lockupPeriod"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:150
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_lockupPeriod')) }).value = lockupPeriod
+    frame_dig -3
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:151
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_earlyWithdrawPenalty')) }).value = earlyWithdrawPenalty
+    bytec 28 // "_earlyWithdrawPenalty"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:151
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_earlyWithdrawPenalty')) }).value = earlyWithdrawPenalty
+    frame_dig -2
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:152
+    // userPoolsKey.value = userPools + 1 as uint64
+    swap
+    intc_1 // 1
+    +
+    itob
+    frame_dig 0
+    swap
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalTVL"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:153
+    // this.totalTVL.value = this.totalTVL.value + initialRewardPool
+    frame_dig -7
+    +
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    bytec_0 // "totalTVL"
+    // smart_contracts/vault/vault_factory.algo.ts:153
+    // this.totalTVL.value = this.totalTVL.value + initialRewardPool
+    swap
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:154
+    // return poolId
+    swap
+    retsub
+
+createPool_ternary_false@2:
+    // smart_contracts/vault/vault_factory.algo.ts:110
+    // const userPools: uint64 = userPoolsKey.exists ? userPoolsKey.value : 0
+    intc_0 // 0
+    b createPool_ternary_merge@3
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.updatePoolStatus(poolId: uint64, newStatus: uint64) -> void:
+updatePoolStatus:
+    // smart_contracts/vault/vault_factory.algo.ts:157-158
+    // @abimethod()
+    // updatePoolStatus(poolId: uint64, newStatus: uint64): void {
+    proto 2 0
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    frame_dig -2
+    itob
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:160
+    // const statusKey = concat(uint64ToBytes(poolId), Bytes('_status'))
+    bytec 11 // "_status"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:161
+    // const oldStatus = Box<uint64>({ key: statusKey }).value
+    dup
+    box_get
+    swap
+    btoi
+    dup
+    cover 2
+    cover 3
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:162
+    // Box<uint64>({ key: statusKey }).value = newStatus
+    frame_dig -1
+    itob
+    uncover 2
+    swap
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:164
+    // if ((oldStatus === POOL_STATUS_ACTIVE) && (newStatus === POOL_STATUS_PAUSED || newStatus === POOL_STATUS_DEPRECATED)) {
+    bnz updatePoolStatus_after_if_else@4
+    frame_dig -1
+    // smart_contracts/vault/vault_factory.algo.ts:15
+    // const POOL_STATUS_PAUSED: uint64 = 1;
+    intc_1 // 1
+    // smart_contracts/vault/vault_factory.algo.ts:164
+    // if ((oldStatus === POOL_STATUS_ACTIVE) && (newStatus === POOL_STATUS_PAUSED || newStatus === POOL_STATUS_DEPRECATED)) {
+    ==
+    bnz updatePoolStatus_if_body@3
+    frame_dig -1
+    // smart_contracts/vault/vault_factory.algo.ts:16
+    // const POOL_STATUS_DEPRECATED: uint64 = 2;
+    pushint 2 // 2
+    // smart_contracts/vault/vault_factory.algo.ts:164
+    // if ((oldStatus === POOL_STATUS_ACTIVE) && (newStatus === POOL_STATUS_PAUSED || newStatus === POOL_STATUS_DEPRECATED)) {
+    ==
+    bz updatePoolStatus_after_if_else@4
+
+updatePoolStatus_if_body@3:
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    frame_dig 0
+    // smart_contracts/vault/vault_factory.algo.ts:165
+    // const staked = Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value
+    bytec_2 // "_totalStaked"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:165
+    // const staked = Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalTVL"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:166
+    // this.totalTVL.value = this.totalTVL.value - staked
+    swap
+    -
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    bytec_0 // "totalTVL"
+    // smart_contracts/vault/vault_factory.algo.ts:166
+    // this.totalTVL.value = this.totalTVL.value - staked
+    swap
+    app_global_put
+
+updatePoolStatus_after_if_else@4:
+    // smart_contracts/vault/vault_factory.algo.ts:169
+    // if ((oldStatus !== POOL_STATUS_ACTIVE) && (newStatus === POOL_STATUS_ACTIVE)) {
+    frame_dig 1
+    bz updatePoolStatus_after_if_else@7
+    frame_dig -1
+    bnz updatePoolStatus_after_if_else@7
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    frame_dig 0
+    // smart_contracts/vault/vault_factory.algo.ts:170
+    // const staked = Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value
+    bytec_2 // "_totalStaked"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:170
+    // const staked = Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalTVL"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:171
+    // this.totalTVL.value = this.totalTVL.value + staked
+    +
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    bytec_0 // "totalTVL"
+    // smart_contracts/vault/vault_factory.algo.ts:171
+    // this.totalTVL.value = this.totalTVL.value + staked
+    swap
+    app_global_put
+
+updatePoolStatus_after_if_else@7:
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.updatePoolMetrics(poolId: uint64, totalStaked: uint64, totalRewards: uint64, participantCount: uint64, apy: uint64) -> void:
+updatePoolMetrics:
+    // smart_contracts/vault/vault_factory.algo.ts:175-176
+    // @abimethod()
+    // updatePoolMetrics(poolId: uint64, totalStaked: uint64, totalRewards: uint64, participantCount: uint64, apy: uint64): void {
+    proto 5 0
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    frame_dig -5
+    itob
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:178
+    // const oldStaked = Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value
+    bytec_2 // "_totalStaked"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:178
+    // const oldStaked = Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:179
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value = totalStaked
+    frame_dig -4
+    itob
+    uncover 2
+    swap
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:180
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value = totalRewards
+    bytec 12 // "_totalRewards"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:180
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value = totalRewards
+    frame_dig -3
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:181
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value = participantCount
+    bytec 13 // "_participantCount"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:181
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value = participantCount
+    frame_dig -2
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    swap
+    // smart_contracts/vault/vault_factory.algo.ts:182
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value = apy
+    bytec 14 // "_apy"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:182
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value = apy
+    frame_dig -1
+    itob
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_0 // "totalTVL"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:183
+    // this.totalTVL.value = this.totalTVL.value - oldStaked + totalStaked
+    swap
+    -
+    frame_dig -4
+    +
+    // smart_contracts/vault/vault_factory.algo.ts:50
+    // totalTVL = GlobalState<uint64>()
+    bytec_0 // "totalTVL"
+    // smart_contracts/vault/vault_factory.algo.ts:183
+    // this.totalTVL.value = this.totalTVL.value - oldStaked + totalStaked
+    swap
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.addPoolTemplate(name: bytes, stakingTemplate: bytes, distributorTemplate: bytes, compounderTemplate: bytes, defaultParams: bytes) -> uint64:
+addPoolTemplate:
+    // smart_contracts/vault/vault_factory.algo.ts:186-193
+    // @abimethod()
+    // addPoolTemplate(
+    //   name: bytes,
+    //   stakingTemplate: bytes,
+    //   distributorTemplate: bytes,
+    //   compounderTemplate: bytes,
+    //   defaultParams: bytes
+    // ): uint64 {
+    proto 5 1
+    // smart_contracts/vault/vault_factory.algo.ts:194
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "factoryOwner"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:194
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    ==
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:64
+    // templateCount = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 9 // "templateCount"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:195
+    // const templateId: uint64 = this.templateCount.value + 1
+    intc_1 // 1
+    +
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:64
+    // templateCount = GlobalState<uint64>()
+    bytec 9 // "templateCount"
+    // smart_contracts/vault/vault_factory.algo.ts:196
+    // this.templateCount.value = templateId
+    dig 1
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    dup
+    itob
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:198
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).value = name
+    bytec 15 // "_name"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:198
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).value = name
+    dup
+    box_del
+    pop
+    frame_dig -5
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:199
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_stakingContractTemplate')) }).value = stakingTemplate
+    bytec 29 // "_stakingContractTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:199
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_stakingContractTemplate')) }).value = stakingTemplate
+    dup
+    box_del
+    pop
+    frame_dig -4
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:200
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_rewardDistributorTemplate')) }).value = distributorTemplate
+    bytec 30 // "_rewardDistributorTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:200
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_rewardDistributorTemplate')) }).value = distributorTemplate
+    dup
+    box_del
+    pop
+    frame_dig -3
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:201
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_autoCompounderTemplate')) }).value = compounderTemplate
+    bytec 31 // "_autoCompounderTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:201
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_autoCompounderTemplate')) }).value = compounderTemplate
+    dup
+    box_del
+    pop
+    frame_dig -2
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:202
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_defaultParameters')) }).value = defaultParams
+    bytec 32 // "_defaultParameters"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:202
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_defaultParameters')) }).value = defaultParams
+    dup
+    box_del
+    pop
+    frame_dig -1
+    box_put
+    // smart_contracts/vault/vault_factory.algo.ts:203
+    // if (templateId === 1 as uint64) {
+    intc_1 // 1
+    ==
+    bz addPoolTemplate_after_if_else@2
+    // smart_contracts/vault/vault_factory.algo.ts:65
+    // defaultTemplate = GlobalState<uint64>()
+    bytec 10 // "defaultTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:204
+    // this.defaultTemplate.value = templateId
+    frame_dig 0
+    app_global_put
+
+addPoolTemplate_after_if_else@2:
+    // smart_contracts/vault/vault_factory.algo.ts:206
+    // return templateId
+    frame_dig 0
+    swap
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.setDefaultTemplate(templateId: uint64) -> void:
+setDefaultTemplate:
+    // smart_contracts/vault/vault_factory.algo.ts:209-210
+    // @abimethod()
+    // setDefaultTemplate(templateId: uint64): void {
+    proto 1 0
+    // smart_contracts/vault/vault_factory.algo.ts:211
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "factoryOwner"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:211
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    ==
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/vault_factory.algo.ts:213
+    // assert(Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).exists)
+    bytec 15 // "_name"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:213
+    // assert(Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).exists)
+    box_len
+    bury 1
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:65
+    // defaultTemplate = GlobalState<uint64>()
+    bytec 10 // "defaultTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:214
+    // this.defaultTemplate.value = templateId
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.updateFactorySettings(newCreationFee: uint64, newFactoryFee: uint64, newMaxPools: uint64, newMinStake: uint64) -> void:
+updateFactorySettings:
+    // smart_contracts/vault/vault_factory.algo.ts:217-223
+    // @abimethod()
+    // updateFactorySettings(
+    //   newCreationFee: uint64,
+    //   newFactoryFee: uint64,
+    //   newMaxPools: uint64,
+    //   newMinStake: uint64
+    // ): void {
+    proto 4 0
+    // smart_contracts/vault/vault_factory.algo.ts:224
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "factoryOwner"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:224
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    ==
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:54
+    // poolCreationFee = GlobalState<uint64>()
+    bytec 16 // "poolCreationFee"
+    // smart_contracts/vault/vault_factory.algo.ts:226
+    // this.poolCreationFee.value = newCreationFee
+    frame_dig -4
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:55
+    // factoryFeeRate = GlobalState<uint64>() // Fee percentage from all pools
+    bytec 17 // "factoryFeeRate"
+    // smart_contracts/vault/vault_factory.algo.ts:227
+    // this.factoryFeeRate.value = newFactoryFee
+    frame_dig -3
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:59
+    // maxPoolsPerUser = GlobalState<uint64>()
+    bytec 7 // "maxPoolsPerUser"
+    // smart_contracts/vault/vault_factory.algo.ts:228
+    // this.maxPoolsPerUser.value = newMaxPools
+    frame_dig -2
+    app_global_put
+    // smart_contracts/vault/vault_factory.algo.ts:60
+    // minimumInitialStake = GlobalState<uint64>()
+    bytec 8 // "minimumInitialStake"
+    // smart_contracts/vault/vault_factory.algo.ts:229
+    // this.minimumInitialStake.value = newMinStake
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.emergencyPauseFactory() -> void:
+emergencyPauseFactory:
+    // smart_contracts/vault/vault_factory.algo.ts:234
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "factoryOwner"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:234
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    ==
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:68
+    // emergencyPause = GlobalState<boolean>()
+    bytec 4 // "emergencyPause"
+    // smart_contracts/vault/vault_factory.algo.ts:236
+    // this.emergencyPause.value = true
+    intc_1 // 1
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.resumeFactory() -> void:
+resumeFactory:
+    // smart_contracts/vault/vault_factory.algo.ts:241
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "factoryOwner"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:241
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    ==
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:68
+    // emergencyPause = GlobalState<boolean>()
+    bytec 4 // "emergencyPause"
+    // smart_contracts/vault/vault_factory.algo.ts:243
+    // this.emergencyPause.value = false
+    intc_0 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.setGovernanceContract(governanceAddr: bytes) -> void:
+setGovernanceContract:
+    // smart_contracts/vault/vault_factory.algo.ts:246-247
+    // @abimethod()
+    // setGovernanceContract(governanceAddr: bytes): void {
+    proto 1 0
+    // smart_contracts/vault/vault_factory.algo.ts:248
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    txn Sender
+    // smart_contracts/vault/vault_factory.algo.ts:51
+    // factoryOwner = GlobalState<bytes>()
+    intc_0 // 0
+    bytec_1 // "factoryOwner"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/vault_factory.algo.ts:248
+    // assert(Txn.sender.bytes === this.factoryOwner.value)
+    ==
+    assert
+    // smart_contracts/vault/vault_factory.algo.ts:69
+    // governanceContract = GlobalState<bytes>()
+    pushbytes "governanceContract"
+    // smart_contracts/vault/vault_factory.algo.ts:250
+    // this.governanceContract.value = governanceAddr
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.getPoolInfo(poolId: uint64) -> uint64, uint64, bytes, bytes, bytes, bytes, bytes, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64:
+getPoolInfo:
+    // smart_contracts/vault/vault_factory.algo.ts:254-255
+    // @abimethod()
+    // getPoolInfo(poolId: uint64): [uint64, uint64, bytes, bytes, bytes, bytes, bytes, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64] {
+    proto 1 17
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:259
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_assetId')) }).value,
+    bytec 18 // "_assetId"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:259
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_assetId')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:260
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_stakingContract')) }).value,
+    bytec 19 // "_stakingContract"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:260
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_stakingContract')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/vault/vault_factory.algo.ts:261
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_rewardDistributor')) }).value,
+    bytec 20 // "_rewardDistributor"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:261
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_rewardDistributor')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 3
+    // smart_contracts/vault/vault_factory.algo.ts:262
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_autoCompounder')) }).value,
+    bytec 21 // "_autoCompounder"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:262
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_autoCompounder')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 4
+    // smart_contracts/vault/vault_factory.algo.ts:263
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_governanceVault')) }).value,
+    bytec 22 // "_governanceVault"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:263
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_governanceVault')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 5
+    // smart_contracts/vault/vault_factory.algo.ts:264
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_creator')) }).value,
+    bytec 23 // "_creator"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:264
+    // Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_creator')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 6
+    // smart_contracts/vault/vault_factory.algo.ts:265
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_createdAt')) }).value,
+    bytec 24 // "_createdAt"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:265
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_createdAt')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 7
+    // smart_contracts/vault/vault_factory.algo.ts:266
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_status')) }).value,
+    bytec 11 // "_status"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:266
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_status')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 8
+    // smart_contracts/vault/vault_factory.algo.ts:267
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value,
+    bytec_2 // "_totalStaked"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:267
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 9
+    // smart_contracts/vault/vault_factory.algo.ts:268
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value,
+    bytec 12 // "_totalRewards"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:268
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 10
+    // smart_contracts/vault/vault_factory.algo.ts:269
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value,
+    bytec 13 // "_participantCount"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:269
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 11
+    // smart_contracts/vault/vault_factory.algo.ts:270
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value,
+    bytec 14 // "_apy"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:270
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 12
+    // smart_contracts/vault/vault_factory.algo.ts:271
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_minimumStake')) }).value,
+    bytec 25 // "_minimumStake"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:271
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_minimumStake')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 13
+    // smart_contracts/vault/vault_factory.algo.ts:272
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_maxStakePerUser')) }).value,
+    bytec 26 // "_maxStakePerUser"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:272
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_maxStakePerUser')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 14
+    // smart_contracts/vault/vault_factory.algo.ts:273
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_lockupPeriod')) }).value,
+    bytec 27 // "_lockupPeriod"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:273
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_lockupPeriod')) }).value,
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    uncover 15
+    // smart_contracts/vault/vault_factory.algo.ts:274
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_earlyWithdrawPenalty')) }).value
+    bytec 28 // "_earlyWithdrawPenalty"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:274
+    // Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_earlyWithdrawPenalty')) }).value
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:257-275
+    // return [
+    //   poolId,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_assetId')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_stakingContract')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_rewardDistributor')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_autoCompounder')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_governanceVault')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(poolId), Bytes('_creator')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_createdAt')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_status')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalStaked')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_totalRewards')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_participantCount')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_apy')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_minimumStake')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_maxStakePerUser')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_lockupPeriod')) }).value,
+    //   Box<uint64>({ key: concat(uint64ToBytes(poolId), Bytes('_earlyWithdrawPenalty')) }).value
+    // ]
+    frame_dig -1
+    cover 16
+    retsub
+
+
+// smart_contracts/vault/vault_factory.algo.ts::VaultFactory.getTemplate(templateId: uint64) -> bytes, bytes, bytes, bytes, bytes:
+getTemplate:
+    // smart_contracts/vault/vault_factory.algo.ts:278-279
+    // @abimethod()
+    // getTemplate(templateId: uint64): [bytes, bytes, bytes, bytes, bytes] {
+    proto 1 5
+    // smart_contracts/vault/vault_factory.algo.ts:10
+    // return Bytes(x)
+    frame_dig -1
+    itob
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/vault_factory.algo.ts:282
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).value,
+    bytec 15 // "_name"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:282
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/vault_factory.algo.ts:283
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_stakingContractTemplate')) }).value,
+    bytec 29 // "_stakingContractTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:283
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_stakingContractTemplate')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 2
+    // smart_contracts/vault/vault_factory.algo.ts:284
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_rewardDistributorTemplate')) }).value,
+    bytec 30 // "_rewardDistributorTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:284
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_rewardDistributorTemplate')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    dig 3
+    // smart_contracts/vault/vault_factory.algo.ts:285
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_autoCompounderTemplate')) }).value,
+    bytec 31 // "_autoCompounderTemplate"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:285
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_autoCompounderTemplate')) }).value,
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    uncover 4
+    // smart_contracts/vault/vault_factory.algo.ts:286
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_defaultParameters')) }).value
+    bytec 32 // "_defaultParameters"
+    // smart_contracts/vault/vault_factory.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/vault_factory.algo.ts:286
+    // Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_defaultParameters')) }).value
+    box_get
+    assert // Box must have value
+    // smart_contracts/vault/vault_factory.algo.ts:281-287
+    // return [
+    //   Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_name')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_stakingContractTemplate')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_rewardDistributorTemplate')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_autoCompounderTemplate')) }).value,
+    //   Box<bytes>({ key: concat(uint64ToBytes(templateId), Bytes('_defaultParameters')) }).value
+    // ]
+    retsub

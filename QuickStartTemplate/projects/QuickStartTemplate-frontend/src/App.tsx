@@ -1,6 +1,7 @@
+import React from 'react'
 import { SupportedWallet, WalletId, WalletManager, WalletProvider } from '@txnlab/use-wallet-react'
 import { SnackbarProvider } from 'notistack'
-import Home from './Home'
+import VaultDashboard from './VaultDashboard'
 import { getAlgodConfigFromViteEnvironment, getKmdConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
 
 let supportedWallets: SupportedWallet[]
@@ -47,10 +48,11 @@ export default function App() {
   })
 
   return (
-    <SnackbarProvider maxSnack={3}>
+    <SnackbarProvider maxSnack={4}>
       <WalletProvider manager={walletManager}>
-        <Home />
+        <VaultDashboard />
       </WalletProvider>
     </SnackbarProvider>
   )
 }
+

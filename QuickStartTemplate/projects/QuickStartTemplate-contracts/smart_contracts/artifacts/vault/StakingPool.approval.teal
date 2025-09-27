@@ -1,0 +1,1559 @@
+#pragma version 10
+#pragma typetrack false
+
+// @algorandfoundation/algorand-typescript/arc4/index.d.ts::Contract.approvalProgram() -> uint64:
+main:
+    intcblock 0 1 1000000000000
+    bytecblock "accRewardPerShare" "totalStaked" "poolActive" "lastUpdateTime" "_amount" "_rewardDebt" 0x151f7c75 "rewardRate" "_lastStakeTime" "emergencyPaused" "minimumStake"
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txn NumAppArgs
+    bz main_bare_routing@14
+    pushbytess 0x1c9a8b7f 0xd37319d8 0xfa9d92f5 0x21f1ddff 0x0e708755 0x5ed22589 0x38802374 0x2342c0eb 0xccd3ed26 // method "initialize(uint64,uint64,uint64)void", method "updatePool()void", method "stake(uint64)void", method "withdraw(uint64)void", method "claimRewards()uint64", method "emergencyWithdraw()void", method "getUserStake(byte[])(uint64,uint64,uint64)", method "getPendingRewards(byte[])uint64", method "getPoolInfo()(uint64,uint64,uint64,uint64,uint64,uint64)"
+    txna ApplicationArgs 0
+    match main_initialize_route@3 main_updatePool_route@4 main_stake_route@5 main_withdraw_route@6 main_claimRewards_route@7 main_emergencyWithdraw_route@8 main_getUserStake_route@9 main_getPendingRewards_route@10 main_getPoolInfo_route@11
+
+main_after_if_else@18:
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    intc_0 // 0
+    return
+
+main_getPoolInfo_route@11:
+    // smart_contracts/vault/staking_pool.algo.ts:217
+    // getPoolInfo(): [uint64, uint64, uint64, uint64, uint64, uint64] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub getPoolInfo
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    itob
+    uncover 5
+    uncover 5
+    concat
+    uncover 4
+    concat
+    uncover 3
+    concat
+    uncover 2
+    concat
+    swap
+    concat
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getPendingRewards_route@10:
+    // smart_contracts/vault/staking_pool.algo.ts:197
+    // getPendingRewards(user: bytes): uint64 {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/vault/staking_pool.algo.ts:197
+    // getPendingRewards(user: bytes): uint64 {
+    callsub getPendingRewards
+    itob
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_getUserStake_route@9:
+    // smart_contracts/vault/staking_pool.algo.ts:186
+    // getUserStake(user: bytes): [uint64, uint64, uint64] {
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txna ApplicationArgs 1
+    extract 2 0
+    // smart_contracts/vault/staking_pool.algo.ts:186
+    // getUserStake(user: bytes): [uint64, uint64, uint64] {
+    callsub getUserStake
+    uncover 2
+    itob
+    uncover 2
+    itob
+    uncover 2
+    itob
+    cover 2
+    concat
+    swap
+    concat
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_emergencyWithdraw_route@8:
+    // smart_contracts/vault/staking_pool.algo.ts:169
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub emergencyWithdraw
+    intc_1 // 1
+    return
+
+main_claimRewards_route@7:
+    // smart_contracts/vault/staking_pool.algo.ts:144
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub claimRewards
+    itob
+    bytec 6 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+main_withdraw_route@6:
+    // smart_contracts/vault/staking_pool.algo.ts:96
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/staking_pool.algo.ts:96
+    // @abimethod()
+    callsub withdraw
+    intc_1 // 1
+    return
+
+main_stake_route@5:
+    // smart_contracts/vault/staking_pool.algo.ts:58
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    // smart_contracts/vault/staking_pool.algo.ts:58
+    // @abimethod()
+    callsub stake
+    intc_1 // 1
+    return
+
+main_updatePool_route@4:
+    // smart_contracts/vault/staking_pool.algo.ts:43
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    callsub updatePool
+    intc_1 // 1
+    return
+
+main_initialize_route@3:
+    // smart_contracts/vault/staking_pool.algo.ts:24
+    // @abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is not NoOp
+    txn ApplicationID
+    assert // can only call when not creating
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txna ApplicationArgs 3
+    btoi
+    // smart_contracts/vault/staking_pool.algo.ts:24
+    // @abimethod()
+    callsub initialize
+    intc_1 // 1
+    return
+
+main_bare_routing@14:
+    // smart_contracts/vault/staking_pool.algo.ts:10
+    // export class StakingPool extends Contract {
+    txn OnCompletion
+    bnz main_after_if_else@18
+    txn ApplicationID
+    !
+    assert // can only call when creating
+    intc_1 // 1
+    return
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.initialize(assetId: uint64, rewardRate: uint64, minimumStake: uint64) -> void:
+initialize:
+    // smart_contracts/vault/staking_pool.algo.ts:24-29
+    // @abimethod()
+    // initialize(
+    //   assetId: uint64,
+    //   rewardRate: uint64,
+    //   minimumStake: uint64
+    // ): void {
+    proto 3 0
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_2 // "poolActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:30
+    // assert(this.poolActive.value === 0 as uint64)
+    !
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:17
+    // assetId = GlobalState<uint64>() // Asset ID for the staking token
+    pushbytes "assetId"
+    // smart_contracts/vault/staking_pool.algo.ts:32
+    // this.assetId.value = assetId
+    frame_dig -3
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:13
+    // rewardRate = GlobalState<uint64>() // Rewards per second per unit staked
+    bytec 7 // "rewardRate"
+    // smart_contracts/vault/staking_pool.algo.ts:33
+    // this.rewardRate.value = rewardRate
+    frame_dig -2
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:18
+    // minimumStake = GlobalState<uint64>()
+    bytec 10 // "minimumStake"
+    // smart_contracts/vault/staking_pool.algo.ts:34
+    // this.minimumStake.value = minimumStake
+    frame_dig -1
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    bytec_1 // "totalStaked"
+    // smart_contracts/vault/staking_pool.algo.ts:35
+    // this.totalStaked.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    bytec_3 // "lastUpdateTime"
+    // smart_contracts/vault/staking_pool.algo.ts:36
+    // this.lastUpdateTime.value = Global.latestTimestamp
+    global LatestTimestamp
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    bytec_0 // "accRewardPerShare"
+    // smart_contracts/vault/staking_pool.algo.ts:37
+    // this.accRewardPerShare.value = 0
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    bytec_2 // "poolActive"
+    // smart_contracts/vault/staking_pool.algo.ts:38
+    // this.poolActive.value = 1 as uint64
+    intc_1 // 1
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:19
+    // emergencyPaused = GlobalState<uint64>() // 1 = true, 0 = false
+    bytec 9 // "emergencyPaused"
+    // smart_contracts/vault/staking_pool.algo.ts:39
+    // this.emergencyPaused.value = 0 as uint64
+    intc_0 // 0
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:22
+    // admin = GlobalState<bytes>()
+    pushbytes "admin"
+    // smart_contracts/vault/staking_pool.algo.ts:40
+    // this.admin.value = Txn.sender.bytes
+    txn Sender
+    app_global_put
+    retsub
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.updatePool() -> void:
+updatePool:
+    // smart_contracts/vault/staking_pool.algo.ts:43-44
+    // @abimethod()
+    // updatePool(): void {
+    proto 0 0
+    pushbytes ""
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_2 // "poolActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:45
+    // assert(this.poolActive.value === 1 as uint64)
+    intc_1 // 1
+    ==
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:47
+    // const currentTime = Global.latestTimestamp
+    global LatestTimestamp
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "lastUpdateTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:48
+    // const timeDiff: uint64 = currentTime > this.lastUpdateTime.value ? currentTime - this.lastUpdateTime.value : 0 as uint64
+    >
+    bz updatePool_ternary_false@2
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "lastUpdateTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:48
+    // const timeDiff: uint64 = currentTime > this.lastUpdateTime.value ? currentTime - this.lastUpdateTime.value : 0 as uint64
+    frame_dig 1
+    swap
+    -
+    frame_bury 0
+
+updatePool_ternary_merge@3:
+    // smart_contracts/vault/staking_pool.algo.ts:50
+    // if (timeDiff > 0 && this.totalStaked.value > 0) {
+    frame_dig 0
+    bz updatePool_after_if_else@6
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:50
+    // if (timeDiff > 0 && this.totalStaked.value > 0) {
+    bz updatePool_after_if_else@6
+    // smart_contracts/vault/staking_pool.algo.ts:13
+    // rewardRate = GlobalState<uint64>() // Rewards per second per unit staked
+    intc_0 // 0
+    bytec 7 // "rewardRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:51
+    // const reward: uint64 = timeDiff * this.rewardRate.value
+    frame_dig 0
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:52
+    // this.accRewardPerShare.value = this.accRewardPerShare.value + ((reward * SCALE) / this.totalStaked.value as uint64)
+    swap
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:52
+    // this.accRewardPerShare.value = this.accRewardPerShare.value + ((reward * SCALE) / this.totalStaked.value as uint64)
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:52
+    // this.accRewardPerShare.value = this.accRewardPerShare.value + ((reward * SCALE) / this.totalStaked.value as uint64)
+    /
+    +
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    bytec_0 // "accRewardPerShare"
+    // smart_contracts/vault/staking_pool.algo.ts:52
+    // this.accRewardPerShare.value = this.accRewardPerShare.value + ((reward * SCALE) / this.totalStaked.value as uint64)
+    swap
+    app_global_put
+
+updatePool_after_if_else@6:
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    bytec_3 // "lastUpdateTime"
+    // smart_contracts/vault/staking_pool.algo.ts:55
+    // this.lastUpdateTime.value = currentTime
+    frame_dig 1
+    app_global_put
+    retsub
+
+updatePool_ternary_false@2:
+    // smart_contracts/vault/staking_pool.algo.ts:48
+    // const timeDiff: uint64 = currentTime > this.lastUpdateTime.value ? currentTime - this.lastUpdateTime.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 0
+    b updatePool_ternary_merge@3
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.stake(payment: uint64) -> void:
+stake:
+    // smart_contracts/vault/staking_pool.algo.ts:58-59
+    // @abimethod()
+    // stake(payment: uint64): void {
+    proto 1 0
+    pushbytes ""
+    dupn 2
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_2 // "poolActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:60
+    // assert(this.poolActive.value === 1 as uint64)
+    intc_1 // 1
+    ==
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:19
+    // emergencyPaused = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec 9 // "emergencyPaused"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:61
+    // assert(this.emergencyPaused.value === 0 as uint64)
+    !
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:18
+    // minimumStake = GlobalState<uint64>()
+    intc_0 // 0
+    bytec 10 // "minimumStake"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:62
+    // assert(payment >= this.minimumStake.value)
+    frame_dig -1
+    <=
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:64
+    // this.updatePool()
+    callsub updatePool
+    // smart_contracts/vault/staking_pool.algo.ts:66
+    // const userKey = Txn.sender.bytes
+    txn Sender
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:67
+    // const amountBox = Box<uint64>({ key: concat(userKey, Bytes('_amount')) })
+    bytec 4 // "_amount"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    dup
+    uncover 2
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:68
+    // const rewardDebtBox = Box<uint64>({ key: concat(userKey, Bytes('_rewardDebt')) })
+    bytec 5 // "_rewardDebt"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    cover 2
+    // smart_contracts/vault/staking_pool.algo.ts:69
+    // const lastStakeTimeBox = Box<uint64>({ key: concat(userKey, Bytes('_lastStakeTime')) })
+    bytec 8 // "_lastStakeTime"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/vault/staking_pool.algo.ts:71
+    // let amount: uint64 = amountBox.exists ? amountBox.value : 0 as uint64
+    box_len
+    bury 1
+    bz stake_ternary_false@2
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 0
+
+stake_ternary_merge@3:
+    // smart_contracts/vault/staking_pool.algo.ts:72
+    // let rewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    frame_dig 4
+    box_len
+    bury 1
+    bz stake_ternary_false@5
+    frame_dig 4
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 2
+
+stake_ternary_merge@6:
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:75
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    frame_dig 0
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:75
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    /
+    frame_dig 2
+    >
+    bz stake_ternary_false@8
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:75
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    frame_dig 0
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:75
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    /
+    frame_dig 2
+    -
+    frame_bury 1
+
+stake_ternary_merge@9:
+    // smart_contracts/vault/staking_pool.algo.ts:76
+    // if (pending > 0) {
+    frame_dig 1
+    bz stake_after_if_else@12
+    // smart_contracts/vault/staking_pool.algo.ts:77-80
+    // itxn.payment({
+    //   receiver: Txn.sender,
+    //   amount: pending,
+    // }).submit()
+    itxn_begin
+    // smart_contracts/vault/staking_pool.algo.ts:78
+    // receiver: Txn.sender,
+    txn Sender
+    frame_dig 1
+    itxn_field Amount
+    itxn_field Receiver
+    // smart_contracts/vault/staking_pool.algo.ts:77-80
+    // itxn.payment({
+    //   receiver: Txn.sender,
+    //   amount: pending,
+    // }).submit()
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+stake_after_if_else@12:
+    // smart_contracts/vault/staking_pool.algo.ts:84
+    // amount = amount + payment
+    frame_dig 0
+    frame_dig -1
+    +
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:85
+    // rewardDebt = (amount * this.accRewardPerShare.value) / SCALE
+    dig 1
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:85
+    // rewardDebt = (amount * this.accRewardPerShare.value) / SCALE
+    /
+    // smart_contracts/vault/staking_pool.algo.ts:86
+    // const now = Global.latestTimestamp
+    global LatestTimestamp
+    // smart_contracts/vault/staking_pool.algo.ts:88
+    // amountBox.value = amount
+    uncover 2
+    itob
+    frame_dig 3
+    swap
+    box_put
+    // smart_contracts/vault/staking_pool.algo.ts:89
+    // rewardDebtBox.value = rewardDebt
+    swap
+    itob
+    frame_dig 4
+    swap
+    box_put
+    // smart_contracts/vault/staking_pool.algo.ts:90
+    // lastStakeTimeBox.value = now
+    itob
+    frame_dig 5
+    swap
+    box_put
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:93
+    // this.totalStaked.value = this.totalStaked.value + payment
+    frame_dig -1
+    +
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    bytec_1 // "totalStaked"
+    // smart_contracts/vault/staking_pool.algo.ts:93
+    // this.totalStaked.value = this.totalStaked.value + payment
+    swap
+    app_global_put
+    retsub
+
+stake_ternary_false@8:
+    // smart_contracts/vault/staking_pool.algo.ts:75
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    intc_0 // 0
+    frame_bury 1
+    b stake_ternary_merge@9
+
+stake_ternary_false@5:
+    // smart_contracts/vault/staking_pool.algo.ts:72
+    // let rewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 2
+    b stake_ternary_merge@6
+
+stake_ternary_false@2:
+    // smart_contracts/vault/staking_pool.algo.ts:71
+    // let amount: uint64 = amountBox.exists ? amountBox.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 0
+    b stake_ternary_merge@3
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.withdraw(amount: uint64) -> void:
+withdraw:
+    // smart_contracts/vault/staking_pool.algo.ts:96-97
+    // @abimethod()
+    // withdraw(amount: uint64): void {
+    proto 1 0
+    pushbytes ""
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_2 // "poolActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:98
+    // assert(this.poolActive.value === 1 as uint64)
+    intc_1 // 1
+    ==
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:99
+    // assert(amount > 0)
+    frame_dig -1
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:101
+    // this.updatePool()
+    callsub updatePool
+    // smart_contracts/vault/staking_pool.algo.ts:103
+    // const userKey = Txn.sender.bytes
+    txn Sender
+    dupn 2
+    // smart_contracts/vault/staking_pool.algo.ts:104
+    // const amountBox = Box<uint64>({ key: concat(userKey, Bytes('_amount')) })
+    bytec 4 // "_amount"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    dup
+    uncover 2
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:105
+    // const rewardDebtBox = Box<uint64>({ key: concat(userKey, Bytes('_rewardDebt')) })
+    bytec 5 // "_rewardDebt"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    dup
+    cover 3
+    cover 3
+    // smart_contracts/vault/staking_pool.algo.ts:106
+    // const lastStakeTimeBox = Box<uint64>({ key: concat(userKey, Bytes('_lastStakeTime')) })
+    bytec 8 // "_lastStakeTime"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    cover 2
+    // smart_contracts/vault/staking_pool.algo.ts:108
+    // assert(amountBox.exists)
+    dup
+    box_len
+    bury 1
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:109
+    // let userAmount: uint64 = amountBox.value
+    box_get
+    swap
+    btoi
+    cover 2
+    assert // Box must have value
+    // smart_contracts/vault/staking_pool.algo.ts:110
+    // let userRewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    box_len
+    bury 1
+    bz withdraw_ternary_false@2
+    frame_dig 4
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 1
+
+withdraw_ternary_merge@3:
+    // smart_contracts/vault/staking_pool.algo.ts:111
+    // assert(userAmount >= amount)
+    frame_dig 6
+    dup
+    frame_dig -1
+    >=
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:114
+    // const pending: uint64 = (userAmount * this.accRewardPerShare.value) / SCALE > userRewardDebt ? (userAmount * this.accRewardPerShare.value) / SCALE - userRewardDebt : 0 as uint64
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:114
+    // const pending: uint64 = (userAmount * this.accRewardPerShare.value) / SCALE > userRewardDebt ? (userAmount * this.accRewardPerShare.value) / SCALE - userRewardDebt : 0 as uint64
+    /
+    frame_dig 1
+    >
+    bz withdraw_ternary_false@5
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:114
+    // const pending: uint64 = (userAmount * this.accRewardPerShare.value) / SCALE > userRewardDebt ? (userAmount * this.accRewardPerShare.value) / SCALE - userRewardDebt : 0 as uint64
+    frame_dig 6
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:114
+    // const pending: uint64 = (userAmount * this.accRewardPerShare.value) / SCALE > userRewardDebt ? (userAmount * this.accRewardPerShare.value) / SCALE - userRewardDebt : 0 as uint64
+    /
+    frame_dig 1
+    -
+    frame_bury 0
+
+withdraw_ternary_merge@6:
+    // smart_contracts/vault/staking_pool.algo.ts:117
+    // userAmount = userAmount - amount
+    frame_dig 6
+    frame_dig -1
+    -
+    dup
+    frame_bury 6
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:118
+    // userRewardDebt = (userAmount * this.accRewardPerShare.value) / SCALE
+    dig 1
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:118
+    // userRewardDebt = (userAmount * this.accRewardPerShare.value) / SCALE
+    /
+    frame_bury 1
+    // smart_contracts/vault/staking_pool.algo.ts:120
+    // if (userAmount === 0 as uint64) {
+    bnz withdraw_else_body@8
+    // smart_contracts/vault/staking_pool.algo.ts:121
+    // amountBox.delete()
+    frame_dig 3
+    box_del
+    pop
+    // smart_contracts/vault/staking_pool.algo.ts:122
+    // rewardDebtBox.delete()
+    frame_dig 4
+    box_del
+    pop
+    // smart_contracts/vault/staking_pool.algo.ts:123
+    // lastStakeTimeBox.delete()
+    frame_dig 5
+    box_del
+    pop
+
+withdraw_after_if_else@9:
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:129
+    // this.totalStaked.value = this.totalStaked.value - amount
+    frame_dig -1
+    -
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    bytec_1 // "totalStaked"
+    // smart_contracts/vault/staking_pool.algo.ts:129
+    // this.totalStaked.value = this.totalStaked.value - amount
+    swap
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:131-134
+    // itxn.payment({
+    //   receiver: userKey,
+    //   amount: amount,
+    // }).submit()
+    itxn_begin
+    frame_dig -1
+    itxn_field Amount
+    frame_dig 2
+    itxn_field Receiver
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    // smart_contracts/vault/staking_pool.algo.ts:136
+    // if (pending > 0) {
+    frame_dig 0
+    bz withdraw_after_if_else@13
+    // smart_contracts/vault/staking_pool.algo.ts:137-140
+    // itxn.payment({
+    //   receiver: userKey,
+    //   amount: pending,
+    // }).submit()
+    itxn_begin
+    frame_dig 0
+    itxn_field Amount
+    frame_dig 2
+    itxn_field Receiver
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+withdraw_after_if_else@13:
+    retsub
+
+withdraw_else_body@8:
+    // smart_contracts/vault/staking_pool.algo.ts:125
+    // amountBox.value = userAmount
+    frame_dig 6
+    itob
+    frame_dig 3
+    swap
+    box_put
+    // smart_contracts/vault/staking_pool.algo.ts:126
+    // rewardDebtBox.value = userRewardDebt
+    frame_dig 1
+    itob
+    frame_dig 4
+    swap
+    box_put
+    b withdraw_after_if_else@9
+
+withdraw_ternary_false@5:
+    // smart_contracts/vault/staking_pool.algo.ts:114
+    // const pending: uint64 = (userAmount * this.accRewardPerShare.value) / SCALE > userRewardDebt ? (userAmount * this.accRewardPerShare.value) / SCALE - userRewardDebt : 0 as uint64
+    intc_0 // 0
+    frame_bury 0
+    b withdraw_ternary_merge@6
+
+withdraw_ternary_false@2:
+    // smart_contracts/vault/staking_pool.algo.ts:110
+    // let userRewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 1
+    b withdraw_ternary_merge@3
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.claimRewards() -> uint64:
+claimRewards:
+    // smart_contracts/vault/staking_pool.algo.ts:144-145
+    // @abimethod()
+    // claimRewards(): uint64 {
+    proto 0 1
+    pushbytes ""
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_2 // "poolActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:146
+    // assert(this.poolActive.value === 1 as uint64)
+    intc_1 // 1
+    ==
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:147
+    // this.updatePool()
+    callsub updatePool
+    // smart_contracts/vault/staking_pool.algo.ts:149
+    // const userKey = Txn.sender.bytes
+    txn Sender
+    dupn 2
+    // smart_contracts/vault/staking_pool.algo.ts:150
+    // const amountBox = Box<uint64>({ key: concat(userKey, Bytes('_amount')) })
+    bytec 4 // "_amount"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/vault/staking_pool.algo.ts:151
+    // const rewardDebtBox = Box<uint64>({ key: concat(userKey, Bytes('_rewardDebt')) })
+    bytec 5 // "_rewardDebt"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    dup
+    uncover 2
+    // smart_contracts/vault/staking_pool.algo.ts:153
+    // assert(amountBox.exists)
+    dup
+    box_len
+    bury 1
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:154
+    // let amount: uint64 = amountBox.value
+    box_get
+    swap
+    btoi
+    cover 2
+    assert // Box must have value
+    // smart_contracts/vault/staking_pool.algo.ts:155
+    // let rewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    box_len
+    bury 1
+    bz claimRewards_ternary_false@2
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 1
+
+claimRewards_ternary_merge@3:
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:156
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    frame_dig 4
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:156
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    /
+    frame_dig 1
+    >
+    bz claimRewards_ternary_false@5
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:156
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    frame_dig 4
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:156
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    /
+    frame_dig 1
+    -
+    frame_bury 0
+
+claimRewards_ternary_merge@6:
+    // smart_contracts/vault/staking_pool.algo.ts:158
+    // if (pending > 0) {
+    frame_dig 0
+    bz claimRewards_after_if_else@9
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:159
+    // rewardDebt = (amount * this.accRewardPerShare.value) / SCALE
+    frame_dig 4
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:159
+    // rewardDebt = (amount * this.accRewardPerShare.value) / SCALE
+    /
+    // smart_contracts/vault/staking_pool.algo.ts:160
+    // rewardDebtBox.value = rewardDebt
+    itob
+    frame_dig 3
+    swap
+    box_put
+    // smart_contracts/vault/staking_pool.algo.ts:161-164
+    // itxn.payment({
+    //   receiver: userKey,
+    //   amount: pending,
+    // }).submit()
+    itxn_begin
+    frame_dig 0
+    itxn_field Amount
+    frame_dig 2
+    itxn_field Receiver
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+
+claimRewards_after_if_else@9:
+    // smart_contracts/vault/staking_pool.algo.ts:166
+    // return pending
+    retsub
+
+claimRewards_ternary_false@5:
+    // smart_contracts/vault/staking_pool.algo.ts:156
+    // const pending: uint64 = (amount * this.accRewardPerShare.value) / SCALE > rewardDebt ? (amount * this.accRewardPerShare.value) / SCALE - rewardDebt : 0 as uint64
+    intc_0 // 0
+    frame_bury 0
+    b claimRewards_ternary_merge@6
+
+claimRewards_ternary_false@2:
+    // smart_contracts/vault/staking_pool.algo.ts:155
+    // let rewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 1
+    b claimRewards_ternary_merge@3
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.emergencyWithdraw() -> void:
+emergencyWithdraw:
+    // smart_contracts/vault/staking_pool.algo.ts:171
+    // const userKey = Txn.sender.bytes
+    txn Sender
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:172
+    // const amountBox = Box<uint64>({ key: concat(userKey, Bytes('_amount')) })
+    bytec 4 // "_amount"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/staking_pool.algo.ts:173
+    // assert(amountBox.exists)
+    dup
+    box_len
+    bury 1
+    assert
+    // smart_contracts/vault/staking_pool.algo.ts:174
+    // const amount: uint64 = amountBox.value
+    dup
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    // smart_contracts/vault/staking_pool.algo.ts:175
+    // amountBox.delete()
+    swap
+    box_del
+    pop
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/staking_pool.algo.ts:176
+    // Box<uint64>({ key: concat(userKey, Bytes('_rewardDebt')) }).delete()
+    bytec 5 // "_rewardDebt"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/staking_pool.algo.ts:176
+    // Box<uint64>({ key: concat(userKey, Bytes('_rewardDebt')) }).delete()
+    box_del
+    pop
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    dig 1
+    // smart_contracts/vault/staking_pool.algo.ts:177
+    // Box<uint64>({ key: concat(userKey, Bytes('_lastStakeTime')) }).delete()
+    bytec 8 // "_lastStakeTime"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    // smart_contracts/vault/staking_pool.algo.ts:177
+    // Box<uint64>({ key: concat(userKey, Bytes('_lastStakeTime')) }).delete()
+    box_del
+    pop
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:178
+    // this.totalStaked.value = this.totalStaked.value - amount
+    dig 1
+    -
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    bytec_1 // "totalStaked"
+    // smart_contracts/vault/staking_pool.algo.ts:178
+    // this.totalStaked.value = this.totalStaked.value - amount
+    swap
+    app_global_put
+    // smart_contracts/vault/staking_pool.algo.ts:179-182
+    // itxn.payment({
+    //   receiver: userKey,
+    //   amount: amount,
+    // }).submit()
+    itxn_begin
+    itxn_field Amount
+    itxn_field Receiver
+    intc_1 // 1
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    retsub
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.getUserStake(user: bytes) -> uint64, uint64, uint64:
+getUserStake:
+    // smart_contracts/vault/staking_pool.algo.ts:186
+    // getUserStake(user: bytes): [uint64, uint64, uint64] {
+    proto 1 3
+    pushbytes ""
+    dup
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    frame_dig -1
+    // smart_contracts/vault/staking_pool.algo.ts:187
+    // const amountBox = Box<uint64>({ key: concat(user, Bytes('_amount')) })
+    bytec 4 // "_amount"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    dup
+    frame_dig -1
+    // smart_contracts/vault/staking_pool.algo.ts:188
+    // const rewardDebtBox = Box<uint64>({ key: concat(user, Bytes('_rewardDebt')) })
+    bytec 5 // "_rewardDebt"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    swap
+    frame_dig -1
+    // smart_contracts/vault/staking_pool.algo.ts:189
+    // const lastStakeTimeBox = Box<uint64>({ key: concat(user, Bytes('_lastStakeTime')) })
+    bytec 8 // "_lastStakeTime"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/vault/staking_pool.algo.ts:191
+    // amountBox.exists ? amountBox.value : 0 as uint64,
+    box_len
+    bury 1
+    bz getUserStake_ternary_false@2
+    frame_dig 2
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 0
+
+getUserStake_ternary_merge@3:
+    // smart_contracts/vault/staking_pool.algo.ts:192
+    // rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64,
+    frame_dig 3
+    box_len
+    bury 1
+    bz getUserStake_ternary_false@5
+    frame_dig 3
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 1
+
+getUserStake_ternary_merge@6:
+    // smart_contracts/vault/staking_pool.algo.ts:193
+    // lastStakeTimeBox.exists ? lastStakeTimeBox.value : 0 as uint64
+    frame_dig 4
+    box_len
+    bury 1
+    bz getUserStake_ternary_false@8
+    frame_dig 4
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+
+getUserStake_ternary_merge@9:
+    // smart_contracts/vault/staking_pool.algo.ts:190-194
+    // return [
+    //   amountBox.exists ? amountBox.value : 0 as uint64,
+    //   rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64,
+    //   lastStakeTimeBox.exists ? lastStakeTimeBox.value : 0 as uint64
+    // ]
+    frame_dig 0
+    frame_dig 1
+    uncover 2
+    frame_bury 2
+    frame_bury 1
+    frame_bury 0
+    retsub
+
+getUserStake_ternary_false@8:
+    // smart_contracts/vault/staking_pool.algo.ts:193
+    // lastStakeTimeBox.exists ? lastStakeTimeBox.value : 0 as uint64
+    intc_0 // 0
+    b getUserStake_ternary_merge@9
+
+getUserStake_ternary_false@5:
+    // smart_contracts/vault/staking_pool.algo.ts:192
+    // rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64,
+    intc_0 // 0
+    frame_bury 1
+    b getUserStake_ternary_merge@6
+
+getUserStake_ternary_false@2:
+    // smart_contracts/vault/staking_pool.algo.ts:191
+    // amountBox.exists ? amountBox.value : 0 as uint64,
+    intc_0 // 0
+    frame_bury 0
+    b getUserStake_ternary_merge@3
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.getPendingRewards(user: bytes) -> uint64:
+getPendingRewards:
+    // smart_contracts/vault/staking_pool.algo.ts:197
+    // getPendingRewards(user: bytes): uint64 {
+    proto 1 1
+    pushbytes ""
+    dupn 6
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    frame_dig -1
+    // smart_contracts/vault/staking_pool.algo.ts:198
+    // const amountBox = Box<uint64>({ key: concat(user, Bytes('_amount')) })
+    bytec 4 // "_amount"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    dup
+    frame_dig -1
+    // smart_contracts/vault/staking_pool.algo.ts:199
+    // const rewardDebtBox = Box<uint64>({ key: concat(user, Bytes('_rewardDebt')) })
+    bytec 5 // "_rewardDebt"
+    // smart_contracts/vault/staking_pool.algo.ts:5
+    // return a.concat(b)
+    concat
+    swap
+    // smart_contracts/vault/staking_pool.algo.ts:200
+    // if (!amountBox.exists) {
+    box_len
+    bury 1
+    bnz getPendingRewards_after_if_else@2
+    // smart_contracts/vault/staking_pool.algo.ts:201
+    // return 0 as uint64
+    intc_0 // 0
+    frame_bury 0
+    retsub
+
+getPendingRewards_after_if_else@2:
+    // smart_contracts/vault/staking_pool.algo.ts:203
+    // let amount: uint64 = amountBox.value
+    frame_dig 7
+    box_get
+    swap
+    btoi
+    frame_bury 2
+    assert // Box must have value
+    // smart_contracts/vault/staking_pool.algo.ts:204
+    // let rewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    frame_dig 8
+    box_len
+    bury 1
+    bz getPendingRewards_ternary_false@4
+    frame_dig 8
+    box_get
+    swap
+    btoi
+    swap
+    assert // Box must have value
+    frame_bury 4
+
+getPendingRewards_ternary_merge@5:
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    swap
+    dup
+    cover 2
+    frame_bury 0
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    swap
+    frame_bury 1
+    // smart_contracts/vault/staking_pool.algo.ts:206
+    // if (this.totalStaked.value > 0) {
+    bz getPendingRewards_after_if_else@12
+    // smart_contracts/vault/staking_pool.algo.ts:207
+    // const currentTime = Global.latestTimestamp
+    global LatestTimestamp
+    dup
+    frame_bury 3
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "lastUpdateTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:208
+    // const timeDiff: uint64 = currentTime > this.lastUpdateTime.value ? currentTime - this.lastUpdateTime.value : 0 as uint64
+    >
+    bz getPendingRewards_ternary_false@8
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "lastUpdateTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:208
+    // const timeDiff: uint64 = currentTime > this.lastUpdateTime.value ? currentTime - this.lastUpdateTime.value : 0 as uint64
+    frame_dig 3
+    swap
+    -
+    frame_bury 5
+
+getPendingRewards_ternary_merge@9:
+    frame_dig 0
+    frame_bury 1
+    // smart_contracts/vault/staking_pool.algo.ts:209
+    // if (timeDiff > 0) {
+    frame_dig 5
+    bz getPendingRewards_after_if_else@12
+    // smart_contracts/vault/staking_pool.algo.ts:13
+    // rewardRate = GlobalState<uint64>() // Rewards per second per unit staked
+    intc_0 // 0
+    bytec 7 // "rewardRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:210
+    // const reward: uint64 = timeDiff * this.rewardRate.value
+    frame_dig 5
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:211
+    // accRewardPerShare = accRewardPerShare + ((reward * SCALE) / this.totalStaked.value as uint64)
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:211
+    // accRewardPerShare = accRewardPerShare + ((reward * SCALE) / this.totalStaked.value as uint64)
+    /
+    frame_dig 0
+    +
+    frame_bury 1
+
+getPendingRewards_after_if_else@12:
+    // smart_contracts/vault/staking_pool.algo.ts:214
+    // return (amount * accRewardPerShare) / SCALE > rewardDebt ? (amount * accRewardPerShare) / SCALE - rewardDebt : 0 as uint64
+    frame_dig 2
+    frame_dig 1
+    *
+    // smart_contracts/vault/staking_pool.algo.ts:8
+    // const SCALE: uint64 = 1000000000000 as uint64;
+    intc_2 // 1000000000000
+    // smart_contracts/vault/staking_pool.algo.ts:214
+    // return (amount * accRewardPerShare) / SCALE > rewardDebt ? (amount * accRewardPerShare) / SCALE - rewardDebt : 0 as uint64
+    /
+    dup
+    frame_bury 6
+    frame_dig 4
+    >
+    bz getPendingRewards_ternary_false@14
+    frame_dig 6
+    frame_dig 4
+    -
+
+getPendingRewards_ternary_merge@15:
+    // smart_contracts/vault/staking_pool.algo.ts:214
+    // return (amount * accRewardPerShare) / SCALE > rewardDebt ? (amount * accRewardPerShare) / SCALE - rewardDebt : 0 as uint64
+    frame_bury 0
+    retsub
+
+getPendingRewards_ternary_false@14:
+    // smart_contracts/vault/staking_pool.algo.ts:214
+    // return (amount * accRewardPerShare) / SCALE > rewardDebt ? (amount * accRewardPerShare) / SCALE - rewardDebt : 0 as uint64
+    intc_0 // 0
+    b getPendingRewards_ternary_merge@15
+
+getPendingRewards_ternary_false@8:
+    // smart_contracts/vault/staking_pool.algo.ts:208
+    // const timeDiff: uint64 = currentTime > this.lastUpdateTime.value ? currentTime - this.lastUpdateTime.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 5
+    b getPendingRewards_ternary_merge@9
+
+getPendingRewards_ternary_false@4:
+    // smart_contracts/vault/staking_pool.algo.ts:204
+    // let rewardDebt: uint64 = rewardDebtBox.exists ? rewardDebtBox.value : 0 as uint64
+    intc_0 // 0
+    frame_bury 4
+    b getPendingRewards_ternary_merge@5
+
+
+// smart_contracts/vault/staking_pool.algo.ts::StakingPool.getPoolInfo() -> uint64, uint64, uint64, uint64, uint64, uint64:
+getPoolInfo:
+    // smart_contracts/vault/staking_pool.algo.ts:12
+    // totalStaked = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_1 // "totalStaked"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:13
+    // rewardRate = GlobalState<uint64>() // Rewards per second per unit staked
+    intc_0 // 0
+    bytec 7 // "rewardRate"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:15
+    // accRewardPerShare = GlobalState<uint64>() // Accumulated rewards per share
+    intc_0 // 0
+    bytec_0 // "accRewardPerShare"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:14
+    // lastUpdateTime = GlobalState<uint64>()
+    intc_0 // 0
+    bytec_3 // "lastUpdateTime"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:16
+    // poolActive = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec_2 // "poolActive"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:19
+    // emergencyPaused = GlobalState<uint64>() // 1 = true, 0 = false
+    intc_0 // 0
+    bytec 9 // "emergencyPaused"
+    app_global_get_ex
+    assert // check GlobalState exists
+    // smart_contracts/vault/staking_pool.algo.ts:218-225
+    // return [
+    //   this.totalStaked.value,
+    //   this.rewardRate.value,
+    //   this.accRewardPerShare.value,
+    //   this.lastUpdateTime.value,
+    //   this.poolActive.value,
+    //   this.emergencyPaused.value
+    // ]
+    retsub
