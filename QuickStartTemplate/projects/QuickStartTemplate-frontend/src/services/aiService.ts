@@ -55,6 +55,7 @@ class AIService {
   private groqClient: OpenAI | null = null
   private openRouterClient: OpenAI | null = null
   private config: AIConfig
+  chat: any
 
   constructor(config: AIConfig) {
     this.config = config

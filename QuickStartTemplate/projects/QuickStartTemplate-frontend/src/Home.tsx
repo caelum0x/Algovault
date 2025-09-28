@@ -5,13 +5,15 @@
 import React, { useState } from 'react'
 import { useWallet } from '@txnlab/use-wallet-react'
 import { AiOutlineWallet, AiOutlineSend, AiOutlineStar, AiOutlineDeploymentUnit } from 'react-icons/ai'
-import { BsArrowUpRightCircle, BsWallet2 } from 'react-icons/bs'
+import { BsArrowUpRightCircle, BsWallet2, BsArrowLeftRight } from 'react-icons/bs'
 
 // Frontend modals
 import ConnectWallet from './components/ConnectWallet'
 import Transact from './components/Transact'
 import NFTmint from './components/NFTmint'
 import Tokenmint from './components/Tokenmint'
+import TinymanSwapWidget from './components/TinymanSwapWidget'
+import TinymanDashboard from './components/tinyman/TinymanDashboard'
 
 // Smart contract demo modal (backend app calls)
 import AppCalls from './components/AppCalls'
@@ -24,6 +26,8 @@ const Home: React.FC<HomeProps> = () => {
   const [openMintModal, setOpenMintModal] = useState<boolean>(false)
   const [openTokenModal, setOpenTokenModal] = useState<boolean>(false)
   const [openAppCallsModal, setOpenAppCallsModal] = useState<boolean>(false)
+  const [openSwapModal, setOpenSwapModal] = useState<boolean>(false)
+  const [openTinymanDashboard, setOpenTinymanDashboard] = useState<boolean>(false)
 
   const { activeAddress } = useWallet()
 
@@ -57,7 +61,7 @@ const Home: React.FC<HomeProps> = () => {
       {/* ---------------- Features Grid ---------------- */}
       <main className="flex-1 px-6 pb-12">
         {activeAddress ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Send Payment */}
             <div className="p-6 bg-neutral-800 rounded-2xl border border-neutral-700 hover:border-cyan-500 transition">
               <AiOutlineSend className="text-4xl mb-3 text-green-400" />
@@ -103,6 +107,29 @@ const Home: React.FC<HomeProps> = () => {
               </button>
             </div>
 
+            {/* Tinyman AI Dashboard */}
+            <div className="p-6 bg-neutral-800 rounded-2xl border border-neutral-700 hover:border-blue-500 transition">
+              <BsArrowLeftRight className="text-4xl mb-3 text-blue-400" />
+              <h3 className="text-lg font-semibold mb-2">Tinyman AI Dashboard</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                Advanced DeFi trading with AI-powered strategies, market intelligence, and automated optimization.
+              </p>
+              <div className="flex gap-2">
+                <button
+                  className="flex-1 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold transition"
+                  onClick={() => setOpenTinymanDashboard(true)}
+                >
+                  AI Dashboard
+                </button>
+                <button
+                  className="px-4 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold transition"
+                  onClick={() => setOpenSwapModal(true)}
+                >
+                  Quick Swap
+                </button>
+              </div>
+            </div>
+
             {/* Contract Interactions */}
             <div className="p-6 bg-neutral-800 rounded-2xl border border-neutral-700 hover:border-amber-500 transition">
               <AiOutlineDeploymentUnit className="text-4xl mb-3 text-amber-400" />
@@ -130,6 +157,8 @@ const Home: React.FC<HomeProps> = () => {
       <Transact openModal={openPaymentModal} setModalState={setOpenPaymentModal} />
       <NFTmint openModal={openMintModal} setModalState={setOpenMintModal} />
       <Tokenmint openModal={openTokenModal} setModalState={setOpenTokenModal} />
+      <TinymanSwapWidget openModal={openSwapModal} closeModal={() => setOpenSwapModal(false)} />
+      <TinymanDashboard openModal={openTinymanDashboard} closeModal={() => setOpenTinymanDashboard(false)} />
       <AppCalls openModal={openAppCallsModal} setModalState={setOpenAppCallsModal} />
     </div>
   )
