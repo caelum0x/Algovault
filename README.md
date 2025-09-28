@@ -1,7 +1,7 @@
 🏦 AlgoVault - AI-Powered DeFi Platform on Algorand
 
 AlgoVault creates an AI-powered platform on Algorand that helps new DeFi users easily stake assets, manage portfolios, and govern protocols with a chatbot.
-
+![alt text](<Ekran Resmi 2025-09-28 11.33.34.png>)
 AlgoVault is an innovative decentralized finance (DeFi) superapp that transforms the Algorand blockchain into an accessible ecosystem for yield farming, token sending, NFT minting, token creation, and governance. Designed for hackathons, it leverages an AI-driven chatbot to simplify DeFi tasks, making them as intuitive as texting, even for beginners.
 🎯 Team Information
 Team Name
