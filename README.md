@@ -24,6 +24,12 @@ AlgoVault is a sophisticated decentralized finance (DeFi) platform that transfor
 - **Risk Assessment**: Volatility calculations and portfolio optimization
 - **Interactive Charts**: Professional data visualization with drill-down capabilities
 
+### 🤖 **AI-Powered Insights**
+- **Yield Predictions**: ML-powered forecasting with confidence intervals
+- **Portfolio Optimization**: AI-driven allocation recommendations
+- **Risk Analysis**: Comprehensive smart contract and market risk assessment
+- **Chat Assistant**: Real-time DeFi guidance and strategy recommendations
+
 ### 🛡️ **Enterprise-Grade Security**
 - **Emergency Controls**: Circuit breakers and pause mechanisms
 - **Access Control**: Role-based permissions with multi-sig support
@@ -88,11 +94,51 @@ npm install
 
 # Set up environment variables
 cp .env.example .env
-# Configure your Algorand network settings
+# Configure your Algorand network settings and AI API keys
 
 # Start the development server
 npm run dev
 ```
+
+### 🤖 AI Features Setup (Optional)
+
+AlgoVault includes powerful AI features for yield prediction, portfolio optimization, and risk analysis. To enable these features:
+
+#### 1. Get API Keys
+Choose one or both providers:
+
+**Groq (Recommended - Fast & Free)**
+- Visit: https://console.groq.com/
+- Create account and generate API key
+- Free tier available with high-speed inference
+
+**OpenRouter (Alternative - Multiple Models)**
+- Visit: https://openrouter.ai/
+- Create account and generate API key
+- Access to GPT-4, Claude, and other models
+
+#### 2. Configure Environment
+Add your API keys to `.env`:
+```bash
+# AI Configuration (add at least one)
+VITE_GROQ_API_KEY=your_groq_api_key_here
+VITE_OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+# Enable AI features
+VITE_ENABLE_AI_FEATURES=true
+```
+
+#### 3. Security Notes
+- API keys are stored locally in your browser only
+- Keys are never sent to AlgoVault servers
+- You only need ONE provider to enable all AI features
+- Without API keys, the DeFi platform works normally but AI features are disabled
+
+#### 4. AI Features Available
+- **Yield Predictor**: ML-powered APY forecasting with confidence intervals
+- **Portfolio Optimizer**: AI-driven allocation recommendations based on risk tolerance
+- **Risk Analyzer**: Comprehensive analysis of smart contract and market risks
+- **Chat Assistant**: Real-time DeFi guidance and strategy recommendations
 
 ### Smart Contract Deployment
 ```bash

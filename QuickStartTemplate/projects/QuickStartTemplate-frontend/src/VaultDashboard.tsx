@@ -36,11 +36,14 @@ import AIYieldPredictor from './components/ai/AIYieldPredictor'
 import AIPortfolioOptimizer from './components/ai/AIPortfolioOptimizer'
 import AIChatAssistant from './components/ai/AIChatAssistant'
 import AIRiskAssessment from './components/ai/AIRiskAssessment'
+import AISetupGuide from './components/ai/AISetupGuide'
+import AIHeader from './components/ai/AIHeader'
+import AIFloatingActions from './components/ai/AIFloatingActions'
 
-// Import hooks
+// Import hooks and contexts
 import { useStakingPool } from './hooks/useStakingPool'
 import { useGovernance } from './hooks/useGovernance'
-import { initializeAIService } from './services/aiService'
+import { useAI } from './contexts/AIContext'
 
 interface VaultDashboardProps {}
 
@@ -52,7 +55,10 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
   const [selectedPool] = useState<string>('pool-1') // Default pool
   const [aiChatOpen, setAIChatOpen] = useState(false)
   const [aiChatMinimized, setAIChatMinimized] = useState(false)
-  const [aiEnabled, setAIEnabled] = useState(false)
+  const [aiSetupOpen, setAISetupOpen] = useState(false)
+
+  // AI context
+  const { isAIEnabled, showSetupGuide, setShowSetupGuide } = useAI()
 
   // Tool modals
   const [openPaymentModal, setOpenPaymentModal] = useState<boolean>(false)
@@ -65,29 +71,12 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
 
   const { proposals, userVotingPower, governanceStats } = useGovernance()
 
-  // Initialize AI service on mount
+  // Handle AI setup guide
   useEffect(() => {
-    const initAI = async () => {
-      try {
-        // Try to get API keys from environment variables
-        const groqApiKey = import.meta.env.VITE_GROQ_API_KEY
-        const openRouterApiKey = import.meta.env.VITE_OPENROUTER_API_KEY
-
-        if (groqApiKey || openRouterApiKey) {
-          initializeAIService({
-            groqApiKey,
-            openRouterApiKey,
-            preferredProvider: groqApiKey ? 'groq' : 'openrouter',
-          })
-          setAIEnabled(true)
-        }
-      } catch (error) {
-        console.warn('AI service initialization failed:', error)
-      }
+    if (showSetupGuide) {
+      setAISetupOpen(true)
     }
-
-    initAI()
-  }, [])
+  }, [showSetupGuide])
 
   const tabs = [
     {
@@ -114,7 +103,7 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
       icon: <AiOutlineTool />,
       description: 'Algorand utilities: payments, tokens, NFTs, and contracts',
     },
-    ...(aiEnabled
+    ...(isAIEnabled
       ? [
           {
             id: 'ai' as const,
@@ -168,7 +157,7 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
             )}
 
             {/* AI Chat Button */}
-            {aiEnabled && activeAddress && (
+            {isAIEnabled && activeAddress && (
               <button
                 onClick={() => {
                   setAIChatOpen(true)
@@ -192,6 +181,18 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
           </div>
         </div>
       </header>
+
+      {/* AI Header */}
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <AIHeader
+          poolData={poolData || undefined}
+          onOpenChat={() => {
+            setAIChatOpen(true)
+            setAIChatMinimized(false)
+          }}
+          onOpenSetup={() => setAISetupOpen(true)}
+        />
+      </div>
 
       {/* Navigation Tabs */}
       <nav className="bg-neutral-800/50 border-b border-neutral-700">
@@ -505,7 +506,7 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
               </div>
             )}
 
-            {activeTab === 'ai' && aiEnabled && (
+            {activeTab === 'ai' && isAIEnabled && (
               <div className="space-y-8">
                 <div>
                   <h2 className="text-xl font-semibold text-gray-200 mb-2 flex items-center gap-2">
@@ -620,7 +621,7 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
       <AppCalls openModal={openAppCallsModal} setModalState={setOpenAppCallsModal} />
 
       {/* AI Chat Assistant */}
-      {aiEnabled && (
+      {isAIEnabled && (
         <AIChatAssistant
           isOpen={aiChatOpen}
           isMinimized={aiChatMinimized}
@@ -634,6 +635,26 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
           }}
         />
       )}
+
+      {/* AI Setup Guide Modal */}
+      {(aiSetupOpen || showSetupGuide) && (
+        <AISetupGuide onClose={() => {
+          setAISetupOpen(false)
+          setShowSetupGuide(false)
+        }} />
+      )}
+
+      {/* AI Floating Actions */}
+      <AIFloatingActions
+        onOpenChat={() => {
+          setAIChatOpen(true)
+          setAIChatMinimized(false)
+        }}
+        onOpenYieldPredictor={() => setActiveTab('ai')}
+        onOpenPortfolioOptimizer={() => setActiveTab('ai')}
+        onOpenRiskAssessment={() => setActiveTab('ai')}
+        onOpenSetup={() => setAISetupOpen(true)}
+      />
     </div>
   )
 }

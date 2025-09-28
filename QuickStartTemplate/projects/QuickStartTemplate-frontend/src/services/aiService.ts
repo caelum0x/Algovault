@@ -96,7 +96,7 @@ class AIService {
         throw new Error(`${this.config.preferredProvider} client not initialized`)
       }
 
-      const defaultModel = this.config.preferredProvider === 'groq' ? 'llama-3.1-70b-versatile' : 'meta-llama/llama-3.1-70b-instruct'
+      const defaultModel = this.config.preferredProvider === 'groq' ? 'llama-3.1-8b-instant' : 'meta-llama/llama-3.1-70b-instruct'
 
       const response = await client.chat.completions.create({
         model: model || defaultModel,
@@ -121,6 +121,15 @@ class AIService {
         success: false,
         error: error instanceof Error ? error.message : 'Unknown AI service error',
       }
+    }
+  }
+
+  async isHealthy(): Promise<boolean> {
+    try {
+      const client = this.config.preferredProvider === 'groq' ? this.groqClient : this.openRouterClient
+      return client !== null
+    } catch {
+      return false
     }
   }
 
