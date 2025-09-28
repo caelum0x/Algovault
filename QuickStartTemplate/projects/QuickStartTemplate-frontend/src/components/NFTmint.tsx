@@ -124,8 +124,8 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
         signer: transactionSigner,
         total: 1n, // supply = 1 → NFT
         decimals: 0, // indivisible
-        assetName: 'MasterPass Ticket', // <— change name
-        unitName: 'MTK', // <— change ticker
+        assetName: 'AlgoVault NFT', // AlgoVault branded NFT
+        unitName: 'VNFT', // Vault NFT ticker
         url: metadataUrl, // IPFS metadata
         metadataHash,
         defaultFrozen: false,
@@ -152,7 +152,7 @@ const NFTmint = ({ openModal, setModalState }: NFTMintProps) => {
       <div className="modal-box bg-neutral-800 text-gray-100 rounded-2xl shadow-xl border border-neutral-700 p-6">
         <h3 className="flex items-center gap-3 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6">
           <AiOutlineCloudUpload className="text-3xl" />
-          Mint a MasterPass NFT
+          Mint an AlgoVault NFT
         </h3>
 
         <div className="space-y-4">

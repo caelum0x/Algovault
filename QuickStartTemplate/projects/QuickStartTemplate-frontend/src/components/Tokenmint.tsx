@@ -16,11 +16,10 @@ interface TokenMintProps {
 }
 
 const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
-  // 👇 Default placeholder values (safe customization points for learners)
-  const [assetName, setAssetName] = useState<string>('MasterPass Token') // token name
-  const [unitName, setUnitName] = useState<string>('MPT') // short ticker
-  const [total, setTotal] = useState<string>('1000') // human-readable total
-  const [decimals, setDecimals] = useState<string>('0') // 0 = whole tokens only
+  const [assetName, setAssetName] = useState<string>('AlgoVault Token') // token name
+  const [unitName, setUnitName] = useState<string>('VAULT') // short ticker
+  const [total, setTotal] = useState<string>('1000000') // human-readable total
+  const [decimals, setDecimals] = useState<string>('6') // 6 decimals for standard token
 
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -113,7 +112,7 @@ const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
             <input
               type="text"
               className="input input-bordered w-full bg-neutral-700 text-gray-100 border-neutral-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-              placeholder="e.g., MasterPass Token"
+              placeholder="e.g., AlgoVault Token"
               value={assetName}
               onChange={(e) => setAssetName(e.target.value)}
             />
@@ -127,7 +126,7 @@ const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
             <input
               type="text"
               className="input input-bordered w-full bg-neutral-700 text-gray-100 border-neutral-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-              placeholder="e.g., MPT"
+              placeholder="e.g., VAULT"
               value={unitName}
               onChange={(e) => setUnitName(e.target.value)}
             />
@@ -142,7 +141,7 @@ const Tokenmint = ({ openModal, setModalState }: TokenMintProps) => {
               type="number"
               min={1}
               className="input input-bordered w-full bg-neutral-700 text-gray-100 border-neutral-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-              placeholder="e.g., 1000"
+              placeholder="e.g., 1000000"
               value={total}
               onChange={(e) => setTotal(e.target.value)}
             />

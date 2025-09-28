@@ -133,7 +133,7 @@ const Transact = ({ openModal, setModalState }: TransactInterface) => {
             type="text"
             data-test-id="receiver-address"
             className="input input-bordered w-full bg-neutral-700 text-gray-100 border-neutral-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-            placeholder="e.g., KPLX..."
+            placeholder="Recipient's Algorand address"
             value={receiverAddress}
             onChange={(e) => setReceiverAddress(e.target.value)}
           />

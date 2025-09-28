@@ -92,7 +92,7 @@ const AppCalls = ({ openModal, setModalState }: AppCallsInterface) => {
           <input
             type="text"
             className="input input-bordered w-full bg-neutral-700 text-gray-100 border-neutral-600 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-            placeholder="e.g., world!"
+            placeholder="Enter message for contract"
             value={contractInput}
             onChange={(e) => {
               setContractInput(e.target.value)

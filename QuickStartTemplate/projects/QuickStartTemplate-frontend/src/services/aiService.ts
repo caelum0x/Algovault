@@ -85,7 +85,7 @@ class AIService {
     }
   }
 
-  private async makeAIRequest(
+  async makeAIRequest(
     messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>,
     model?: string,
   ): Promise<AIResponse> {
@@ -343,17 +343,21 @@ class AIService {
       recentActivity?: any[]
     },
   ): Promise<AIResponse> {
-    const systemPrompt = `You are an expert DeFi assistant for AlgoVault, a sophisticated yield farming platform on Algorand. 
-    
-    Help users with:
+    const systemPrompt = `You are a friendly AI assistant for AlgoVault. Respond naturally to user messages with personality and helpfulness.
+
+    For casual greetings like "hi", "hello", "hey", "how are you":
+    - Respond conversationally and personally
+    - Be warm and welcoming without excessive marketing
+    - Keep responses brief and natural
+    - Ask how you can help them today
+
+    For questions about DeFi, respond with helpful technical information about:
     - Staking strategies and optimization
     - Yield farming best practices
     - Risk management advice
     - Governance participation
-    - Market analysis and trends
-    - Technical questions about DeFi
-    
-    Be helpful, accurate, and always consider user's risk tolerance. Provide actionable advice.
+
+    Always be conversational, not robotic or overly promotional.
     
     Respond in JSON format:
     {

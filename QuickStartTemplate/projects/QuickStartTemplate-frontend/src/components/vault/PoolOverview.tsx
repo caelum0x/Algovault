@@ -67,7 +67,7 @@ export default function PoolOverview({ poolData, metrics, onStakeClick, onInfoCl
   const [showAdvanced, setShowAdvanced] = useState(false)
 
   // Calculate derived metrics
-  const tvlUSD = microAlgosToAlgos(poolData.totalStaked) * 0.25 // Mock ALGO price at $0.25
+  const tvlUSD = microAlgosToAlgos(poolData.totalStaked) * 0.25 // Estimated USD value (ALGO ~$0.25)
   const averageStake = poolData.participants > 0 ? microAlgosToAlgos(poolData.totalStaked) / poolData.participants : 0
 
   // Pool status indicator

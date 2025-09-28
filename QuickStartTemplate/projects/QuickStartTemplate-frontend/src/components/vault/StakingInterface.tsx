@@ -75,9 +75,9 @@ export default function StakingInterface({ poolId, onTransactionComplete }: Stak
   // Handle max amount
   const handleMaxAmount = () => {
     if (activeTab === 'stake') {
-      // For staking, we'd need to get user's ALGO balance
-      // This is simplified - in real implementation, fetch from wallet
-      setAmount('10') // Mock max available
+      // For staking, set a reasonable default amount
+      // Real implementation would fetch wallet balance
+      setAmount('100')
     } else if (activeTab === 'unstake' && userStake) {
       setAmount(microAlgosToAlgos(userStake.amount).toString())
     }

@@ -35,6 +35,7 @@ import AppCalls from './components/AppCalls'
 import AIYieldPredictor from './components/ai/AIYieldPredictor'
 import AIPortfolioOptimizer from './components/ai/AIPortfolioOptimizer'
 import AIChatAssistant from './components/ai/AIChatAssistant'
+import AIActionableChat from './components/ai/AIActionableChat'
 import AIRiskAssessment from './components/ai/AIRiskAssessment'
 import AISetupGuide from './components/ai/AISetupGuide'
 import AIHeader from './components/ai/AIHeader'
@@ -44,11 +45,14 @@ import AIFloatingActions from './components/ai/AIFloatingActions'
 import { useStakingPool } from './hooks/useStakingPool'
 import { useGovernance } from './hooks/useGovernance'
 import { useAI } from './contexts/AIContext'
+import { AlgorandClient } from '@algorandfoundation/algokit-utils'
+import { AlgoAmount } from '@algorandfoundation/algokit-utils/types/amount'
+import { getAlgodConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
 
 interface VaultDashboardProps {}
 
 const VaultDashboard: React.FC<VaultDashboardProps> = () => {
-  const { activeAddress } = useWallet()
+  const { activeAddress, transactionSigner } = useWallet()
   const [openWalletModal, setOpenWalletModal] = useState<boolean>(false)
   const [openCreateProposalModal, setOpenCreateProposalModal] = useState<boolean>(false)
   const [activeTab, setActiveTab] = useState<'vault' | 'governance' | 'analytics' | 'ai' | 'tools'>('vault')
@@ -67,9 +71,9 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
   const [openAppCallsModal, setOpenAppCallsModal] = useState<boolean>(false)
 
   // Hooks for data
-  const { poolData, userStake, loading: stakingLoading, claimRewards, claiming } = useStakingPool(selectedPool)
+  const { poolData, userStake, loading: stakingLoading, claimRewards, claiming, stake, unstake, canStake, canUnstake } = useStakingPool(selectedPool)
 
-  const { proposals, userVotingPower, governanceStats } = useGovernance()
+  const { proposals, userVotingPower, governanceStats, vote: governanceVote } = useGovernance()
 
   // Handle AI setup guide
   useEffect(() => {
@@ -118,6 +122,164 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
   const handleTransactionComplete = (txId: string, type: 'stake' | 'unstake') => {
     console.log(`Transaction ${type} completed: ${txId}`)
     // Could show success notification, refresh data, etc.
+  }
+
+
+  // AI-executable action functions
+  const handleAIStakeAction = async (amount: number): Promise<void> => {
+    const amountMicroAlgos = BigInt(Math.floor(amount * 1e6))
+
+    const validation = canStake(amountMicroAlgos)
+    if (!validation.canStake) {
+      throw new Error(validation.reason || 'Cannot stake this amount')
+    }
+
+    const txId = await stake(amountMicroAlgos)
+    if (!txId) {
+      throw new Error('Staking transaction failed')
+    }
+  }
+
+  const handleAIUnstakeAction = async (amount: number | 'all'): Promise<void> => {
+    let amountMicroAlgos: bigint
+    if (amount === 'all') {
+      if (!userStake?.stakedAmount) {
+        throw new Error('No staked amount to unstake')
+      }
+      amountMicroAlgos = userStake.stakedAmount
+    } else {
+      amountMicroAlgos = BigInt(Math.floor(amount * 1e6))
+    }
+
+    const validation = canUnstake(amountMicroAlgos)
+    if (!validation.canUnstake) {
+      throw new Error(validation.reason || 'Cannot unstake this amount')
+    }
+
+    const txId = await unstake(amountMicroAlgos)
+    if (!txId) {
+      throw new Error('Unstaking transaction failed')
+    }
+  }
+
+  const handleAIClaimAction = async (): Promise<void> => {
+    if (!claiming) {
+      const txId = await claimRewards()
+      if (!txId) {
+        throw new Error('Claim transaction failed')
+      }
+    }
+  }
+
+  const handleAIVoteAction = async (proposalId: string, vote: string): Promise<void> => {
+    try {
+      // Map string vote to VoteOption enum
+      const voteOption = vote.toLowerCase() === 'for' ? 1 :
+                        vote.toLowerCase() === 'against' ? 0 :
+                        vote.toLowerCase() === 'abstain' ? 2 : 1 // default to 'for'
+
+      // Use the governance hook to cast the vote
+      const txId = await governanceVote(proposalId, voteOption)
+
+      if (txId) {
+        console.log(`AI Vote successful: ${vote} on proposal ${proposalId}, tx: ${txId}`)
+      } else {
+        throw new Error('Vote transaction failed')
+      }
+    } catch (error) {
+      console.error('AI Vote Error:', error)
+      throw error
+    }
+  }
+
+  const handleAISendPayment = async (amount: number, recipient: string): Promise<void> => {
+    if (!activeAddress || !transactionSigner) {
+      throw new Error('Please connect your wallet first')
+    }
+
+    try {
+      const algodConfig = getAlgodConfigFromViteEnvironment()
+      const algorand = AlgorandClient.fromConfig({ algodConfig })
+
+      const result = await algorand.send.payment({
+        signer: transactionSigner,
+        sender: activeAddress,
+        receiver: recipient,
+        amount: AlgoAmount.Algos(amount),
+      })
+
+      console.log(`AI Payment successful: ${amount} ALGO sent to ${recipient}, tx: ${result.txIds[0]}`)
+    } catch (error) {
+      console.error('AI Payment Error:', error)
+      throw error
+    }
+  }
+
+  const handleAICreateToken = async (name: string, symbol: string, supply: number): Promise<void> => {
+    if (!activeAddress || !transactionSigner) {
+      throw new Error('Please connect your wallet first')
+    }
+
+    try {
+      const algodConfig = getAlgodConfigFromViteEnvironment()
+      const algorand = AlgorandClient.fromConfig({ algodConfig })
+
+      const createResult = await algorand.send.assetCreate({
+        sender: activeAddress,
+        signer: transactionSigner,
+        total: BigInt(supply),
+        decimals: 0, // Whole tokens for simplicity
+        assetName: name,
+        unitName: symbol,
+        defaultFrozen: false,
+      })
+
+      console.log(`AI Token creation successful: ${name} (${symbol}) with supply ${supply}, ASA ID: ${createResult.assetId}`)
+    } catch (error) {
+      console.error('AI Token Creation Error:', error)
+      throw error
+    }
+  }
+
+  const handleAIMintNFT = async (name: string, description: string): Promise<void> => {
+    if (!activeAddress || !transactionSigner) {
+      throw new Error('Please connect your wallet first')
+    }
+
+    try {
+      const algodConfig = getAlgodConfigFromViteEnvironment()
+      const algorand = AlgorandClient.fromConfig({ algodConfig })
+
+      // Create simple metadata without file upload for AI-generated NFTs
+      const metadata = {
+        name: name,
+        description: description,
+        image: '', // No image for AI-generated NFTs
+        properties: {
+          creator: 'AI Assistant',
+          created_by: 'AlgoVault AI',
+          generation_time: new Date().toISOString()
+        }
+      }
+
+      // For simplicity, we'll create the NFT without IPFS metadata
+      // In production, you'd want to upload metadata to IPFS first
+      const createNFTResult = await algorand.send.assetCreate({
+        sender: activeAddress,
+        signer: transactionSigner,
+        total: 1n, // supply = 1 → NFT
+        decimals: 0, // indivisible
+        assetName: name,
+        unitName: 'AINFT', // AI NFT ticker
+        url: `data:application/json,${encodeURIComponent(JSON.stringify(metadata))}`, // Inline metadata
+        defaultFrozen: false,
+      })
+
+      console.log(`AI NFT minting successful: ${name} - ${description}, ASA ID: ${createNFTResult.assetId}`)
+    } catch (error) {
+      console.error('AI NFT Minting Error:', error)
+      throw error
+    }
   }
 
   return (
@@ -417,7 +579,7 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
                       <AiOutlineSend className="text-4xl mb-3 text-green-400" />
                       <h3 className="text-lg font-semibold mb-2">Send Payment</h3>
                       <p className="text-sm text-gray-400 mb-4">
-                        Send ALGO or USDC to any address on TestNet. Perfect for testing transactions and funding operations.
+                        Send ALGO or USDC payments instantly through AlgoVault. Perfect for portfolio management and operations.
                       </p>
                       <button
                         className="w-full py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold transition"
@@ -481,12 +643,12 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
                     </h3>
                     <p className="text-gray-400 mb-4">
                       These tools help you interact with the Algorand blockchain for various operations beyond yield farming.
-                      All transactions are performed on TestNet for safe testing.
+                      All transactions are securely processed on the Algorand blockchain.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span className="text-gray-300">TestNet transactions (no real value)</span>
+                        <span className="text-gray-300">Algorand blockchain transactions</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
@@ -620,19 +782,21 @@ const VaultDashboard: React.FC<VaultDashboardProps> = () => {
       <Tokenmint openModal={openTokenModal} setModalState={setOpenTokenModal} />
       <AppCalls openModal={openAppCallsModal} setModalState={setOpenAppCallsModal} />
 
-      {/* AI Chat Assistant */}
+      {/* AI Actionable Chat Assistant */}
       {isAIEnabled && (
-        <AIChatAssistant
+        <AIActionableChat
           isOpen={aiChatOpen}
           isMinimized={aiChatMinimized}
           onClose={() => setAIChatOpen(false)}
           onMinimize={() => setAIChatMinimized(true)}
           onMaximize={() => setAIChatMinimized(false)}
-          userContext={{
-            userStakes: userStake ? [userStake] : [],
-            portfolioValue: userStake ? Number(userStake.stakedAmount) / 1e6 : 0,
-            recentActivity: [],
-          }}
+          onStakeAction={handleAIStakeAction}
+          onUnstakeAction={handleAIUnstakeAction}
+          onClaimAction={handleAIClaimAction}
+          onVoteAction={handleAIVoteAction}
+          onSendPayment={handleAISendPayment}
+          onCreateToken={handleAICreateToken}
+          onMintNFT={handleAIMintNFT}
         />
       )}
 
